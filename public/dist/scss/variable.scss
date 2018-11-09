@@ -1,0 +1,211 @@
+// Custom Variables
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+
+/*Theme Colors*/
+$themecolor: #fb9678;
+$themecolor-alt: #26c6da;
+$sidebar: #fff;
+$sidebar-alt:#f9f9f9;
+$sidebar-text: #8d97ad;
+$sidebar-icons: #787f91; 
+$shadow:1px 0px 20px rgba(0, 0, 0, 0.08);
+$lft:left;
+$rgt:right;
+
+
+// Bootstrap overrides
+
+/**
+ * Table Of Content
+ *
+ * 	1. Color system
+ *	2. Options
+ *	3. Body
+ *	4. Typography
+ *	5. Breadcrumbs
+ *	6. Cards
+ *	7. Dropdowns
+ *	8. Buttons
+ *	9. Typography
+ *	10. Progress bars
+ *	11. Tables
+ *	12. Forms
+ *	14. Component
+ */
+
+//
+// Color system
+//
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #4F5467 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$blue:    #03a9f3 !default;
+$indigo:  #6610f2 !default;
+$purple:  #ab8ce4 !default;
+$pink:    #e83e8c !default;
+$red:     #e46a76 !default;
+$orange:  #fb9678 !default;
+$yellow:  #fec107 !default;
+$green:   #00c292 !default;
+$teal:    #20c997 !default;
+$cyan:    #01c0c8 !default;
+$primary:  #fb9678 !default;
+$text-muted:                  $gray-600 !default;
+
+$colors: (
+  blue:                           $blue,
+  indigo:                         $indigo,
+  purple:                         $purple,
+  pink:                           $pink,
+  red:                            $red,
+  orange:                         $orange,
+  yellow:                         $yellow,
+  green:                          $green,
+  teal:                           $teal,
+  cyan:                           $cyan,
+  white:                          $white,
+  gray:                           $gray-600,
+  gray-dark:                      $gray-800
+);
+
+$theme-colors: (
+  primary:                        $orange,
+  secondary:                      $gray-100,
+  success:                        $green,
+  info:                           $blue,
+  warning:                        $yellow,
+  danger:                         $red,
+  light:                          $gray-100,
+  cyan:                           $cyan,
+  dark:                           $gray-800,
+  purple:                         $purple    
+);
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-caret:              true !default;
+$enable-rounded:            true !default;
+$enable-shadows:            false !default;
+$enable-gradients:          false !default;
+$enable-transitions:        true !default;
+$enable-hover-media-query:  false !default;
+$enable-grid-classes:       true !default;
+$enable-print-styles:       true !default;
+
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg:                   #edf1f5;
+$body-color:                $gray-900 !default;
+$grid-gutter-width:         20px !default;
+
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$font-size-base:              0.875rem;
+$font-family-sans-serif:     'Poppins', sans-serif !default; 
+
+
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+
+$h1-font-size:                36px !default;
+$h2-font-size:                30px !default;
+$h3-font-size:                24px !default;
+$h4-font-size:                18px !default;
+$h5-font-size:                16px !default;
+$h6-font-size:                14px !default;
+
+$headings-margin-bottom:      (1rem / 2) !default;
+$headings-font-family:        'Poppins', sans-serif !default;
+$headings-font-weight:        300 !default;
+$headings-color:              inherit !default;
+
+
+
+// Breadcrumbs
+
+$breadcrumb-bg:                   #fff;
+$breadcrumb-margin-bottom:        1.5rem;
+
+// Cards
+$card-border-width:               0px!default
+$card-border-color:               transparent!default;
+
+$card-border-radius:              0px !default;
+
+
+// Dropdowns
+
+$dropdown-item-padding-y:           .65rem !default;
+$dropdown-border-color:           $gray-200;
+$dropdown-divider-bg:             $gray-100;
+
+// Buttons
+
+$btn-secondary-border:            $gray-300;
+
+// Progress bars
+
+$progress-bg:                     $gray-100;
+
+// Tables
+
+$table-bg-accent:                 $gray-100;
+$table-bg-hover:                  $gray-100;
+$table-hover-bg:                  $gray-100 !default;
+$table-cell-padding:              1rem !default;
+$table-bg-level:                    -10 !default;
+$table-bg-level2:                    1 !default;
+$table-bg-level3:                    -5 !default;
+// Components
+$component-active-color:      $white !default;
+$component-active-bg:         $themecolor !default;
+$badge-pill-padding-x:              .2em !default;
+$badge-pill-padding-y:              1em !default;
+
+
+// Forms
+
+$input-group-addon-bg:            $gray-100;
+$input-border-color:              $gray-200;
+$input-group-addon-border-color:  $gray-200;
+$input-btn-focus-color:           rgba(0, 0, 0, .25) !default;
+$input-focus-border-color:        rgba(0,0,0, 0.1) !default;
+$custom-control-indicator-active-bg: rgba(0,0,0, 35%) !default;
+$input-btn-focus-box-shadow: transparent !default;
+$custom-select-focus-box-shadow: transparent !default;
+$custom-select-indicator:           str-replace(url(""),  "%23") !default;
+//
+// Define common padding and border radius sizes and more.
+$border-width:                1px !default;
+$border-color:                $gray-200 !default;
+
+$border-radius:               .25rem !default;
+$border-radius-lg:            .3rem !default;
+$border-radius-sm:            .2rem !default;
+
+
+// Progress bars
+
+$progress-height:                   auto !default;
+
+//Tabs
+$nav-tabs-link-active-bg:           $white !default;

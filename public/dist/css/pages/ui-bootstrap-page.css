@@ -1,0 +1,56 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+/*Theme Colors*/
+/**
+ * Table Of Content
+ *
+ * 	1. Color system
+ *	2. Options
+ *	3. Body
+ *	4. Typography
+ *	5. Breadcrumbs
+ *	6. Cards
+ *	7. Dropdowns
+ *	8. Buttons
+ *	9. Typography
+ *	10. Progress bars
+ *	11. Tables
+ *	12. Forms
+ *	14. Component
+ */
+/*============================================================== 
+ Ui-bootstrap
+ ============================================================== */
+ul.list-icons {
+  margin: 0px;
+  padding: 0px; }
+  ul.list-icons li {
+    list-style: none;
+    line-height: 30px;
+    margin: 5px 0;
+    transition: 0.2s ease-in; }
+    ul.list-icons li a {
+      color: #212529; }
+      ul.list-icons li a:hover {
+        color: #fb9678; }
+    ul.list-icons li i {
+      font-size: 13px;
+      padding-right: 8px; }
+
+ul.list-inline li {
+  display: inline-block;
+  padding: 0 8px; }
+
+ul.two-part {
+  margin: 0px; }
+  ul.two-part li {
+    width: 48.8%; }
+
+/*Accordion*/
+html body .accordion .card {
+  margin-bottom: 0px; }

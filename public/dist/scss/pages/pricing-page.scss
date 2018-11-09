@@ -1,0 +1,70 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+@import '../variable'; 
+
+/*******************
+Pricing Page
+******************/
+.pricing-box {
+  position: relative;
+  text-align: center;
+  margin-top:30px;
+}
+.featured-plan{
+    margin-top:0px;
+    .pricing-body {
+      padding:60px 0;
+      background:$gray-100;
+      border: 1px solid $border-color;
+    }
+    .price-table-content .price-row {
+      border-top:1px solid rgba(120, 130, 140, 0.13);
+    }
+  }
+
+.pricing-body {
+  border-radius: 0px;
+  border-top: 1px solid rgba(120, 130, 140, 0.13);
+  border-bottom: 5px solid rgba(120, 130, 140, 0.13);
+  vertical-align: middle;
+  padding:30px 0;
+  position:relative;
+
+}
+
+.pricing-body h2{
+  position:relative;
+  font-size:56px;
+  margin:20px 0 10px;
+  font-weight:500;
+  span{
+    position:absolute;
+    font-size:15px;
+    top:-10px;
+    margin-left:-10px
+  }
+}
+.price-table-content{
+  .price-row {
+    padding:20px 0;
+    border-top:1px solid rgba(120, 130, 140, 0.13);
+  }
+}
+.pricing-plan  { 
+  padding:0 15px;
+  .no-padding{ padding:0px;}
+}
+.price-lable{
+  position:absolute;
+  top:-10px;
+  padding:5px 10px;
+  margin:0 auto;
+  display:inline-block;
+  width:100px;
+  left:0px;
+  right:0px;
+ }

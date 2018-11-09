@@ -1,0 +1,26 @@
+#wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.register-box {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 2%;
+    a {
+        display: block;
+    }
+}
+
+.step-register {
+    position: absolute;
+    height: 100%;
+}
+
+@media (max-width: 767px) {
+    #msform fieldset, 
+    .login-register, 
+    .step-register {
+        position: relative;
+    }
+}

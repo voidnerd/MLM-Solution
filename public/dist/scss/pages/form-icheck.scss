@@ -1,0 +1,81 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+@import '../variable'; 
+
+/*******************
+Form icheck
+******************/
+
+.icolors,
+.icheck-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.icolors>li {
+    padding: 0;
+    margin: 2px;
+    float: left;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    background: $gray-800;
+    text-align: center;
+}
+
+.icolors>li.active:after {
+    content: "\2713 ";
+    color: $white;
+    line-height: 30px;
+}
+
+.icolors>li:first-child {
+    margin-left: 0;
+}
+
+.icolors>li.orange {
+    background: $orange;
+}
+
+.icolors>li.yellow {
+    background: $yellow;
+}
+
+.icolors>li.info {
+    background: $blue;
+}
+
+.icolors>li.green {
+    background: $green;
+}
+
+.icolors>li.red {
+    background: $red;
+}
+
+.icolors>li.purple {
+    background: $purple;
+}
+
+.icolors>li.blue {
+    background: $cyan;
+}
+
+.icheck-list {
+    float: $lft;
+    padding-right: 50px;
+    padding-top: 10px;
+}
+
+.icheck-list li {
+    padding-bottom: 5px;
+}
+
+.icheck-list li label {
+    padding-left: 10px;
+}

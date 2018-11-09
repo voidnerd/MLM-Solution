@@ -1,0 +1,102 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+/*Theme Colors*/
+/**
+ * Table Of Content
+ *
+ * 	1. Color system
+ *	2. Options
+ *	3. Body
+ *	4. Typography
+ *	5. Breadcrumbs
+ *	6. Cards
+ *	7. Dropdowns
+ *	8. Buttons
+ *	9. Typography
+ *	10. Progress bars
+ *	11. Tables
+ *	12. Forms
+ *	14. Component
+ */
+/*============================================================== 
+widget-chart-page product review
+ ============================================================== */
+.product-review {
+  margin: 0px;
+  padding: 25px; }
+  .product-review li {
+    display: block;
+    padding: 20px 0;
+    list-style: none; }
+    .product-review li .font,
+    .product-review li span {
+      display: inline-block;
+      margin-left: 10px; }
+
+.social-profile {
+  text-align: center;
+  background: rgba(7, 10, 43, 0.8); }
+
+.profile-tab li a.nav-link,
+.customtab li a.nav-link {
+  border: 0px;
+  padding: 15px 20px;
+  color: #212529; }
+  .profile-tab li a.nav-link.active,
+  .customtab li a.nav-link.active {
+    border-bottom: 2px solid #fb9678;
+    color: #fb9678; }
+  .profile-tab li a.nav-link:hover,
+  .customtab li a.nav-link:hover {
+    color: #fb9678; }
+
+/*******************/
+/*widgets -app*/
+/*******************/
+.css-bar:after {
+  z-index: 1; }
+
+.css-bar > i {
+  z-index: 10; }
+
+ul.list-icons {
+  margin: 0px;
+  padding: 0px; }
+  ul.list-icons li {
+    list-style: none;
+    line-height: 30px;
+    margin: 5px 0;
+    transition: 0.2s ease-in; }
+    ul.list-icons li a {
+      color: #212529; }
+      ul.list-icons li a:hover {
+        color: #fb9678; }
+    ul.list-icons li i {
+      padding-right: 8px; }
+
+/*Widget charts page*/
+.total-revenue4 {
+  position: relative; }
+  .total-revenue4 .ct-series-a .ct-line {
+    stroke: #03a9f3;
+    stroke-width: 1px; }
+  .total-revenue4 .ct-series-a .ct-point {
+    stroke: #03a9f3;
+    stroke-width: 5px; }
+  .total-revenue4 .ct-series-b .ct-line {
+    stroke: #00c292;
+    stroke-width: 1px; }
+  .total-revenue4 .ct-series-b .ct-point {
+    stroke: #00c292;
+    stroke-width: 5px; }
+  .total-revenue4 .ct-series-a .ct-area {
+    fill: #03a9f3;
+    fill-opacity: 0.2; }
+  .total-revenue4 .ct-series-b .ct-area {
+    fill: #00c292;
+    fill-opacity: 0.2; }

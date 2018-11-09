@@ -1,0 +1,51 @@
+
+/*******************
+/*States row*/
+/*******************/
+
+.stats-row {
+    margin-bottom: 20px;
+    .stat-item {
+        display: inline-block;
+        padding-right: 15px;
+        &+.stat-item {
+            padding-left: 15px;
+            border-left: 1px solid $border-color;
+        }
+    }
+}
+
+/*******************/
+/*Guage chart*/
+/*******************/
+
+.gaugejs-box {
+    position: relative;
+    margin: 0 auto;
+}
+
+.gaugejs-box canvas.gaugejs {
+    width: 100% !important;
+    height: auto !important;
+}
+
+
+/*******************/
+/*country-state*/
+/*******************/
+
+.country-state {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 10px;
+    li {
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+    h2 {
+        margin-bottom: 0px;
+        font-weight: 400;
+    }
+}
+
+

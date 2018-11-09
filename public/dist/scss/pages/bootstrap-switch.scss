@@ -1,0 +1,102 @@
+
+@import '../variable';
+/*******************
+Bootstrap Switch
+******************/
+.bootstrap-switch, 
+.bootstrap-switch .bootstrap-switch-container {
+    border-radius: 2px;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-on {
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-off {
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary {
+    color: $white;
+    background: $primary;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-info,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-info {
+    color: $white;
+    background: $blue;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-success,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-success {
+    color: $white;
+    background: $green;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-warning,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-warning {
+    color: $white;
+    background: $yellow;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-danger,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-danger {
+    color: $white;
+    background: $red;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default {
+    color: $gray-800;
+    background: $gray-100;    
+}
+.onoffswitch {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    
+}
+.onoffswitch-checkbox { 
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid $green; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; 
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 27px;
+    background-color: $green; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 24px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 23px; margin: 6px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 2px solid $green; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+

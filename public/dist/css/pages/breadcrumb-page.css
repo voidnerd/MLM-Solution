@@ -1,0 +1,40 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+/*Theme Colors*/
+/**
+ * Table Of Content
+ *
+ * 	1. Color system
+ *	2. Options
+ *	3. Body
+ *	4. Typography
+ *	5. Breadcrumbs
+ *	6. Cards
+ *	7. Dropdowns
+ *	8. Buttons
+ *	9. Typography
+ *	10. Progress bars
+ *	11. Tables
+ *	12. Forms
+ *	14. Component
+ */
+/*============================================================== 
+Breadcrumb
+============================================================== */
+.bc-colored .breadcrumb-item,
+.bc-colored .breadcrumb-item a {
+  color: #fff; }
+  .bc-colored .breadcrumb-item.active,
+  .bc-colored .breadcrumb-item a.active {
+    opacity: 0.7; }
+
+.bc-colored .breadcrumb-item + .breadcrumb-item::before {
+  color: rgba(255, 255, 255, 0.4); }
+
+.breadcrumb {
+  margin-bottom: 0px; }

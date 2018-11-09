@@ -1,0 +1,93 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+
+@import '../variable'; 
+/*============================================================== 
+File upload
+ ============================================================== */
+
+.btn-file {
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+    > input {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        font-size: 23px;
+        height: 100%;
+        width: 100%;
+        direction: ltr;
+        cursor: pointer;
+        border-radius: 0px;
+    }
+}
+
+.fileinput {
+    .input-group-addon {
+        border: none;
+        border-bottom: 1px solid $border-color;
+        background: $white;
+        margin-bottom: 1px;
+    }
+}
+
+.fileinput .form-control {
+    padding-top: 7px;
+    padding-bottom: 5px;
+    display: inline-block;
+    margin-bottom: 0px;
+    vertical-align: middle;
+    cursor: text;
+}
+
+.fileinput .thumbnail {
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 5px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.fileinput .thumbnail > img {
+    max-height: 100%;
+}
+
+.fileinput .btn {
+    vertical-align: middle;
+}
+
+.fileinput-exists .fileinput-new,
+.fileinput-new .fileinput-exists {
+    display: none;
+}
+
+.fileinput-inline .fileinput-controls {
+    display: inline;
+}
+
+.fileinput-filename {
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.form-control .fileinput-filename {
+    vertical-align: bottom;
+}
+
+.fileinput.input-group > * {
+    position: relative;
+    z-index: 2;
+}
+
+.fileinput.input-group > .btn-file {
+    z-index: 1;
+}

@@ -1,0 +1,67 @@
+// Green colors
+.skin-red-dark {
+    /*Theme Colors*/
+    $themecolor: #e46a76;
+    $themecolor-alt: #26c6da;
+    $sidebar: #2b2b2b;
+    $sidebar-alt:#1f2023;
+    $sidebar-text: #8d97ad;
+    $sidebar-icons: #787f91; 
+    // Topbar
+    .topbar {
+        background: $themecolor;
+    }
+    //Sidebar
+    .sidebar-nav {
+        ul li a {
+            &.active,
+            &:hover {
+                color: $themecolor;
+                i {
+                    color: $themecolor;
+                }
+            }
+        }
+        > ul > li {
+            &.active > a {
+                color: $themecolor;
+                border-left: 3px solid $themecolor;
+                i {
+                    color: $themecolor;
+                }
+            }
+        }
+    }
+    
+    //Bread-crumb
+    .page-titles .breadcrumb .breadcrumb-item.active{
+        color: $themecolor;
+    }
+    
+    // Sidebar dark
+    
+    .topbar{
+        .top-navbar .navbar-header .navbar-brand .dark-logo {
+            display: none;
+        }
+        .top-navbar .navbar-header .navbar-brand .light-logo {
+            display: inline-block;
+            color: rgba(255, 255, 255, 0.8);
+        }
+    }    
+    .left-sidebar {
+        background: $sidebar;
+        .user-pro-body{
+            a.link{
+                color:$sidebar-text;
+            }
+        }
+    }
+    @media (min-width: 768px){
+        &.mini-sidebar .sidebar-nav #sidebarnav > li > ul, &.mini-sidebar .sidebar-nav #sidebarnav > li:hover > a{
+            background: $sidebar-alt;
+        }
+        
+    }
+    
+}

@@ -1,0 +1,28 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+
+@import '../variable';
+/*============================================================== 
+Breadcrumb
+============================================================== */
+
+.bc-colored {
+    .breadcrumb-item,
+    .breadcrumb-item a {
+        color: $white;
+        &.active {
+            opacity: 0.7;
+        }
+    }
+    .breadcrumb-item+.breadcrumb-item::before {
+        color: rgba(255, 255, 255, 0.4);
+    }
+}
+
+.breadcrumb {
+    margin-bottom: 0px;
+}

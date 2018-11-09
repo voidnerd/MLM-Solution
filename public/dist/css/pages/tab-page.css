@@ -1,0 +1,77 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+/*Theme Colors*/
+/**
+ * Table Of Content
+ *
+ * 	1. Color system
+ *	2. Options
+ *	3. Body
+ *	4. Typography
+ *	5. Breadcrumbs
+ *	6. Cards
+ *	7. Dropdowns
+ *	8. Buttons
+ *	9. Typography
+ *	10. Progress bars
+ *	11. Tables
+ *	12. Forms
+ *	14. Component
+ */
+/*******************
+Vertical tabs
+******************/
+.vtabs {
+  display: table; }
+  .vtabs .tabs-vertical {
+    width: 150px;
+    border-bottom: 0px;
+    border-right: 1px solid #e9ecef;
+    display: table-cell;
+    vertical-align: top; }
+    .vtabs .tabs-vertical li .nav-link {
+      color: #343a40;
+      margin-bottom: 10px;
+      border: 0px;
+      border-radius: 0.25rem 0 0 0.25rem; }
+  .vtabs .tab-content {
+    display: table-cell;
+    padding: 20px;
+    vertical-align: top; }
+
+.tabs-vertical li .nav-link.active,
+.tabs-vertical li .nav-link:hover,
+.tabs-vertical li .nav-link.active:focus {
+  background: #fb9678;
+  border: 0px;
+  color: #fff; }
+
+/*Custom vertical tab*/
+.customvtab .tabs-vertical li .nav-link.active,
+.customvtab .tabs-vertical li .nav-link:hover,
+.customvtab .tabs-vertical li .nav-link:focus {
+  background: #fff;
+  border: 0px;
+  border-right: 2px solid #fb9678;
+  margin-right: -1px;
+  color: #fb9678; }
+
+.tabcontent-border {
+  border: 1px solid #ddd;
+  border-top: 0px; }
+
+.customtab2 li a.nav-link {
+  border: 0px;
+  margin-right: 3px;
+  color: #212529; }
+  .customtab2 li a.nav-link.active {
+    background: #fb9678;
+    color: #fff; }
+  .customtab2 li a.nav-link:hover {
+    color: #fff;
+    background: #fb9678; }

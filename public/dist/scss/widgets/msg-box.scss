@@ -1,0 +1,109 @@
+/*******************/
+/*Msg box*/
+/*******************/
+.msg-item{
+    margin-bottom:20px;
+}
+.msg-body{
+    background:$white;
+    padding:15px;
+    font-size:14px;
+    position:relative;
+    .dwn-aro{
+        width: 0;
+        position: absolute;
+        bottom:-8px; 
+        height: 0;
+        left:10px; 
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid $white;
+    }
+}
+
+.m-pic img{
+    width:40px;
+    border-radius:100%;
+}
+
+.message-box {
+    ul li {
+        .drop-title {
+            font-weight: 500;
+            padding: 11px 20px 15px;
+            border-bottom: 1px solid $border-color;
+        }
+        .nav-link {
+            border-top: 1px solid $border-color;
+            padding-top: 15px;
+        }
+    }
+    .message-widget {
+        position: relative;
+        a {
+            border-bottom: 1px solid $border-color;
+            display: block;
+            text-decoration: none;
+            padding: 9px 15px;
+            &:hover {
+                background: $gray-200;
+            }
+            &:last-child {
+                border-bottom: 0px;
+            }
+            div {
+                white-space: normal;
+            }
+            .user-img {
+                width: 45px;
+                position: relative;
+                display: inline-block;
+                margin: 0 10px 15px 0;
+                img {
+                    width: 100%;
+                }
+                .profile-status {
+                    border: 2px solid $white;
+                    border-radius: 50%;
+                    display: inline-block;
+                    height: 10px;
+                    left: 33px;
+                    position: absolute;
+                    top: -1px;
+                    width: 10px;
+                }
+                .online {
+                    background: $success;
+                }
+                .busy {
+                    background: $danger;
+                }
+                .away {
+                    background: $warning;
+                }
+                .offline {
+                    background: $warning;
+                }
+            }
+            .mail-contnet {
+                display: inline-block;
+                width: 70%;
+                vertical-align: middle;
+                h5 {
+                    margin: 5px 0px 0;
+                    color:$body-color;
+                }
+                .mail-desc,
+                .time {
+                    font-size: 12px;
+                    display: block;
+                    margin: 1px 0;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    color: $body-color;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}

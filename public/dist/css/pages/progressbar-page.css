@@ -1,0 +1,66 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+/*Theme Colors*/
+/**
+ * Table Of Content
+ *
+ * 	1. Color system
+ *	2. Options
+ *	3. Body
+ *	4. Typography
+ *	5. Breadcrumbs
+ *	6. Cards
+ *	7. Dropdowns
+ *	8. Buttons
+ *	9. Typography
+ *	10. Progress bars
+ *	11. Tables
+ *	12. Forms
+ *	14. Component
+ */
+/*******************
+Progress bar
+******************/
+.progress.active .progress-bar,
+.progress-bar.active {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+  -o-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite; }
+
+.progress-vertical {
+  min-height: 250px;
+  height: 250px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0;
+  margin-right: 20px; }
+
+.progress-vertical-bottom {
+  min-height: 250px;
+  height: 250px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0;
+  margin-right: 20px;
+  transform: rotate(180deg); }
+
+.progress-animated {
+  -webkit-animation-duration: 5s;
+  -webkit-animation-name: myanimation;
+  -webkit-transition: 5s all;
+  animation-duration: 5s;
+  animation-name: myanimation;
+  transition: 5s all; }
+
+@-webkit-keyframes myanimation {
+  from {
+    width: 0; } }
+
+@keyframes myanimation {
+  from {
+    width: 0; } }

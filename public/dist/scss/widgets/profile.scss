@@ -1,0 +1,106 @@
+/*******************/
+/*social-profile-first*/ 
+/*******************/
+
+.social-profile-first {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 96px;
+    &.bg-over {
+        background: rgba(56, 83, 161, 0.7);
+    }
+    .middle {
+        vertical-align: middle;
+    }
+}
+/*******************/
+/*profile timeline widget*/
+/*******************/
+
+.profiletimeline {
+    position: relative;
+    padding-left: 40px;
+    margin-right: 10px;
+    border-left:1px solid $border-color;
+    margin-left:30px;
+    .sl-left {
+        float: $lft;
+        margin-left: -60px;
+        z-index: 1;
+        margin-right: 15px;
+        img {
+            max-width: 40px;
+        }
+    }
+}
+.profiletimeline .sl-item {
+    margin-top: 8px;
+    margin-bottom: 30px;
+}
+
+.profiletimeline .sl-date {
+    font-size: 12px;
+    color: $text-muted;
+}
+
+.profiletimeline .time-item {
+    border-color: $border-color;
+    padding-bottom: 1px;
+    position: relative;
+    &:before {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        background-color: $white;
+        border-color: $border-color;
+        border-radius: 10px;
+        border-style: solid;
+        border-width: 2px;
+        bottom: 0;
+        content: '';
+        height: 14px;
+        left: 0;
+        margin-left: -8px;
+        position: absolute;
+        top: 5px;
+        width: 14px;
+    }
+}
+
+.profiletimeline .time-item-item {
+    &:after {
+        content: " ";
+        display: table;
+    }
+}
+
+.profiletimeline .item-info {
+    margin-bottom: 15px;
+    margin-left: 15px;
+    p {
+        margin-bottom: 10px !important;
+    }
+}
+
+/*little-profile*/
+.little-profile{
+    .pro-img{
+        margin-bottom: 20px;
+        img{
+            width:128px;
+            height: 128px;
+            box-shadow: 0 0 15px rgba(0, 0, 0,0.2);
+            border-radius: 100%;
+        }
+    }
+    .soc-pro a{
+        color:$text-muted;
+        &:hover{
+            color:$gray-800;
+        }
+    }
+}

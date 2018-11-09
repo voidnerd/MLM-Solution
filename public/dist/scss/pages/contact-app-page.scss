@@ -1,0 +1,95 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+
+@import '../variable';
+
+
+/*******************
+Contact app Page
+******************/
+
+
+/*left-aside-column*/
+ 
+.contact-page-aside {
+    position: relative;
+}
+
+.left-aside {
+    position: absolute;
+
+    border-right: 1px solid $border-color;
+    padding: 20px;
+    width: 250px;
+    height: 100%;
+}
+
+.right-aside {
+    padding: 20px;
+    margin-left: 250px;
+}
+
+.contact-list {
+    td {
+        vertical-align: middle;
+        padding: 25px 10px;
+        img {
+            width: 30px;
+        }
+    }
+}
+
+.list-style-none {
+    margin: 0px;
+    padding: 0px;
+    li {
+        list-style: none;
+        margin: 0px;
+        &.box-label a {
+            font-weight: 500;
+        }
+        &.divider {
+            margin: 10px 0;
+            height: 1px;
+            background: $border-color;
+        }
+        a {
+            padding: 15px 10px;
+            display: block;
+            color: $body-color;
+            &:hover {
+                color: $themecolor;
+            }
+            span {
+                float: $rgt;
+            }
+        }
+    }
+}
+
+.social-profile {
+    text-align: center;
+    background: rgba(7, 10, 43, 0.8);
+}
+
+.profile-tab,
+.customtab {
+    li {
+        a.nav-link {
+            border: 0px;
+            padding: 15px 20px;
+            color: $body-color;
+            &.active {
+                border-bottom: 2px solid $themecolor;
+                color: $themecolor;
+            }
+            &:hover {
+                color: $themecolor;
+            }
+        }
+    }
+}

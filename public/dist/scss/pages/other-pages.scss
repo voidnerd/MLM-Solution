@@ -1,0 +1,187 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+
+@import '../variable';
+
+
+/*******************
+FAQs Page
+******************/
+
+.minimal-faq {
+    .card {
+        border: 0px;
+        .card-header {
+            background: $white;
+            padding: 20px 0;
+            margin-top: 10px;
+        }
+        .card-body {
+            padding: 15px 0px;
+        }
+    }
+}
+
+
+
+
+/*******************
+Seach listing Page
+******************/
+
+.search-listing {
+    padding: 0px;
+    margin: 0px;
+    li {
+        list-style: none;
+        padding: 15px 0;
+        border-bottom: 1px solid $border-color;
+        h3 {
+            margin: 0px;
+            font-size: 18px;
+            a {
+                color: $blue;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        a {
+            color: $green;
+        }
+    }
+}
+
+
+/*******************
+Gridstack Dragable portlet
+******************/
+
+.grid-stack-item-content {
+    background: $white;
+    color: $gray-600;
+
+    text-align: center;
+    font-size: 20px;
+}
+
+.grid-stack>.grid-stack-item>.grid-stack-item-content {
+    border: 1px solid $border-color;
+}
+
+
+
+/*******************
+Grid page
+******************/
+
+.show-grid {
+    margin-bottom: 10px;
+    padding: 0 15px
+}
+
+.show-grid [class^=col-] {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid $border-color;
+    background-color: $gray-200;
+}
+
+
+/*******************
+Date paginator page
+******************/
+
+.dp-selected[style] {
+    background-color: $themecolor!important;
+}
+
+.datepaginator-sm,
+.datepaginator-lg,
+.datepaginator {
+
+    .pagination {
+        li {
+            a {
+                padding: 0 5px;
+                height: 60px;
+                border: 1px solid $border-color;
+                float: $lft;
+                position: relative;
+            }
+        }
+    }
+}
+
+
+
+/*******************
+Notification page Jquery toaster
+******************/
+
+.jq-icon-info {
+    background-color: $blue;
+    color: $white;
+}
+
+.jq-icon-success {
+    background-color: $green;
+    color: $white;
+}
+
+.jq-icon-error {
+    background-color: $red;
+    color: $white;
+}
+
+.jq-icon-warning {
+    background-color: $yellow;
+    color: $white;
+}
+
+.alert-rounded {
+    border-radius: 60px;
+}
+
+
+/*******************
+list and media
+******************/
+
+.list-group a.list-group-item:hover {
+    background: $gray-200;
+}
+
+.list-group-item.active,
+.list-group .list-group-item.active:hover {
+    background: $themecolor;
+    border-color: $themecolor;
+}
+
+.list-group-item.disabled {
+    color: $text-muted;
+    background: $gray-200;
+}
+
+.media {
+    border: 1px solid $border-color;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+
+/*******************
+/*Documentation page
+******************/
+
+.plugin-details {
+    display: none;
+}
+
+.plugin-details-active {
+    display: block;
+}

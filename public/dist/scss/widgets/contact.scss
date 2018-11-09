@@ -1,0 +1,19 @@
+/*contact widgets*/
+.contact-box {
+    position: relative;
+    .add-ct-btn{
+        position: absolute;
+        right: 4px;
+        top:-46px;
+    }
+    .contact-widget{
+    > a{
+        padding: 15px 10px;
+        .user-img{
+            margin-bottom: 0px!important;
+        }
+    }
+}
+}    
+
+

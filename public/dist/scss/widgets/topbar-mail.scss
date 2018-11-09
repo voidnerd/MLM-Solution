@@ -1,0 +1,116 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+
+ 
+/*******************
+/*User mail widgets*/
+/*******************/
+
+.topbar {
+    .top-navbar {
+        .mailbox {
+            width: 300px;
+            ul {
+                padding: 0px;
+                li {
+                    list-style: none;
+                }
+            }
+        }
+    }
+}
+
+html body .navbar-dark .mailbox {
+    ul li {
+        .drop-title {
+            font-weight: 500;
+            padding: 11px 20px 15px;
+            border-bottom: 1px solid $border-color;
+        }
+        h5{
+            color:$body-color;
+        }
+        .nav-link {
+            border-top: 1px solid $border-color;
+            padding-top: 15px;
+            color:$body-color;
+            &:hover{
+                color:$themecolor;
+            }
+        }
+    }
+    .message-center {
+        height: 317px;
+        overflow: auto;
+        position: relative;
+        a {
+            border-bottom: 1px solid $border-color;
+            display: block;
+            text-decoration: none;
+            padding: 9px 15px;
+            &:hover {
+                background: $gray-200;
+            }
+            div {
+                white-space: normal;
+            }
+            .user-img {
+                width: 40px;
+                position: relative;
+                display: inline-block;
+                margin: 0 10px 15px 0;
+                img {
+                    width: 100%;
+                }
+                .profile-status {
+                    border: 2px solid $white;
+                    border-radius: 50%;
+                    display: inline-block;
+                    height: 10px;
+                    left: 30px;
+                    position: absolute;
+                    top: 1px;
+                    width: 10px;
+                }
+                .online {
+                    background: $success;
+                }
+                .busy {
+                    background: $danger;
+                }
+                .away {
+                    background: $warning;
+                }
+                .offline {
+                    background: $warning;
+                }
+            }
+            .mail-contnet {
+                display: inline-block;
+                width: 75%;
+                padding-left: 10px;
+                vertical-align: middle;
+                h5 {
+                    margin: 5px 0px 0;
+                    
+                }
+                .mail-desc,
+                .time {
+                    font-size: 12px;
+                    display: block;
+                    margin: 1px 0;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    color: $body-color;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,13 @@
+/*Blog widgets*/
+
+.blog-widget{
+    margin-top: 30px;
+    .blog-image img{
+        border-radius: $border-radius;
+        margin-top: -45px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0,0.2);
+    }
+}
+
+

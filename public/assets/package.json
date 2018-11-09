@@ -1,0 +1,32 @@
+{
+  "name": "wrapkit-admin-template",
+  "version": "1.0.0",
+  "description": "Powerfull admin template",
+  "main": "index.js",
+  "dependencies": {
+    "Magnific-Popup-master": "^1.1.0",
+    "bootstrap-treeview-master": "^1.2.0",
+    "bootstrap-material-datetimepicker": "^2.7.1",
+    "flot": "^0.8.3",
+    "dropify": "^0.2.0",
+    "jquery-asColorPicker-master": "^0.3.1",
+    "holderjs": "^2.4.1",
+    "dropzone-master": "^4.3.0",
+    "jqueryui": "^1.12.1",
+    "jquery-steps-master": "^1.1.0",
+    "jquery-wizard-master": "^0.4.3",
+    "morrisjs": "^0.5.0",
+    "sidebar-nav": "^1.1.3",
+    "chartist-plugin-tooltip-master": "^0.0.17",
+    "select2": "^4.0.3",
+    "jsgrid": "^1.5.3",
+    "typeahead.js-master": "^0.11.1",
+    "tablesaw-master": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Niravjoshi",
+  "license": "ISC"
+}

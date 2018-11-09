@@ -1,0 +1,115 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+
+@import '../variable';
+
+
+/*============================================================== 
+widget-chart-page product review
+ ============================================================== */
+
+.product-review {
+    margin: 0px;
+    padding: 25px;
+    li {
+        display: block;
+        padding: 20px 0;
+        list-style: none;
+        .font,
+        span {
+            display: inline-block;
+            margin-left: 10px;
+        }
+    }
+}
+
+.social-profile {
+    text-align: center;
+    background: rgba(7, 10, 43, 0.8);
+}
+
+.profile-tab,
+.customtab {
+    li {
+        a.nav-link {
+            border: 0px;
+            padding: 15px 20px;
+            color: $body-color;
+            &.active {
+                border-bottom: 2px solid $themecolor;
+                color: $themecolor;
+            }
+            &:hover {
+                color: $themecolor;
+            }
+        }
+    }
+}
+
+
+/*******************/
+/*widgets -app*/
+/*******************/
+
+.css-bar:after {
+    z-index: 1;
+}
+
+.css-bar>i {
+    z-index: 10;
+}
+
+ul.list-icons {
+    margin: 0px;
+    padding: 0px;
+    li {
+        list-style: none;
+        line-height: 30px;
+        margin: 5px 0;
+        transition: 0.2s ease-in;
+        a {
+            color: $body-color;
+            &:hover {
+                color: $themecolor;
+            }
+        }
+        i {
+           
+            padding-right: 8px;
+        }
+    }
+}
+
+/*Widget charts page*/
+
+.total-revenue4 {
+    position: relative;
+    .ct-series-a .ct-line { 
+        stroke: $blue;
+        stroke-width: 1px;
+    }
+    .ct-series-a .ct-point {
+        stroke: $blue;
+        stroke-width: 5px;
+    }
+    .ct-series-b .ct-line {
+        stroke: $green;
+        stroke-width: 1px;
+    }
+    .ct-series-b .ct-point {
+        stroke: $green;
+        stroke-width: 5px;
+    }
+    .ct-series-a .ct-area {
+        fill: $blue;
+        fill-opacity: 0.2;
+    }
+    .ct-series-b .ct-area {
+        fill: $green;
+        fill-opacity: 0.2;
+    }
+}

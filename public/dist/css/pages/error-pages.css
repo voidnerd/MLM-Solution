@@ -1,0 +1,45 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+/*Theme Colors*/
+/**
+ * Table Of Content
+ *
+ * 	1. Color system
+ *	2. Options
+ *	3. Body
+ *	4. Typography
+ *	5. Breadcrumbs
+ *	6. Cards
+ *	7. Dropdowns
+ *	8. Buttons
+ *	9. Typography
+ *	10. Progress bars
+ *	11. Tables
+ *	12. Forms
+ *	14. Component
+ */
+/*******************
+Error Page
+******************/
+.error-box {
+  height: 100%;
+  position: fixed;
+  background: url(../../../../assets/images/background/error-bg.jpg) no-repeat center center #fff;
+  width: 100%; }
+  .error-box .footer {
+    width: 100%;
+    left: 0px;
+    right: 0px; }
+
+.error-body {
+  padding-top: 5%; }
+  .error-body h1 {
+    font-size: 210px;
+    font-weight: 900;
+    text-shadow: 4px 4px 0 #fff, 6px 6px 0 #343a40;
+    line-height: 210px; }

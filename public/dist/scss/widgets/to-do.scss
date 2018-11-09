@@ -1,0 +1,55 @@
+/*******************/
+/*To do widgets*/
+/*******************/
+
+.todo-list {
+    li {
+        border: 0px;
+        margin-bottom: 0px;
+        padding: 20px 15px 15px 0px;
+        .custom-checkbox {
+            width: 100%;
+            label {
+                font-weight: 400;
+                
+                width:100%;
+                span:first-child{
+                    width:70%;
+                    display: inline-block;
+                    line-height: 25px;
+                }
+                
+            }
+        }
+        &:last-child {
+            border-bottom: 0px;
+        }
+        .assignedto {
+            padding: 0px 0 0 30px;
+            margin: 0px;
+            li {
+                list-style: none;
+                padding: 0px;
+                display: inline-block;
+                border: 0px;
+                margin-right: 2px;
+                img {
+                    width: 30px;
+                    border-radius: 100%;
+                }
+            }
+        }
+        .item-date {
+            padding-left: 30px;
+            font-size: 12px;
+            margin-top: 5px;
+            display: inline-block;
+        }
+    }
+}
+
+.list-task .task-done span {
+    text-decoration: line-through;
+}
+
+

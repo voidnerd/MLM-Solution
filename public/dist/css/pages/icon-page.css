@@ -1,0 +1,64 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+/*Theme Colors*/
+/**
+ * Table Of Content
+ *
+ * 	1. Color system
+ *	2. Options
+ *	3. Body
+ *	4. Typography
+ *	5. Breadcrumbs
+ *	6. Cards
+ *	7. Dropdowns
+ *	8. Buttons
+ *	9. Typography
+ *	10. Progress bars
+ *	11. Tables
+ *	12. Forms
+ *	14. Component
+ */
+/*******************
+Icon list fontawesom
+******************/
+.icon-list-demo div {
+  cursor: pointer;
+  line-height: 60px;
+  white-space: nowrap;
+  color: #212529; }
+  .icon-list-demo div:hover {
+    color: #343a40; }
+  .icon-list-demo div p {
+    margin: 10px 0;
+    padding: 5px 0; }
+
+.icon-list-demo i {
+  -webkit-transition: all 0.2s;
+  -webkit-transition: font-size .2s;
+  display: inline-block;
+  font-size: 18px;
+  margin: 0 15px 0 10px;
+  text-align: left;
+  transition: all 0.2s;
+  transition: font-size .2s;
+  vertical-align: middle;
+  transition: all 0.3s ease 0s; }
+
+.icon-list-demo .col-md-4, .icon-list-demo .col-3 {
+  border-radius: 0.25rem; }
+  .icon-list-demo .col-md-4:hover, .icon-list-demo .col-3:hover {
+    background-color: #f8f9fa; }
+
+.icon-list-demo .div:hover i {
+  font-size: 2em; }
+
+/*******************
+Icon list material icon
+******************/
+.material-icon-list-demo .mdi {
+  font-size: 21px; }

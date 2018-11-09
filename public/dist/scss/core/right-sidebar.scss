@@ -1,0 +1,206 @@
+/*******************
+ Right side toggle
+*******************/
+.right-sidebar {
+    position: fixed;
+    right: -240px;
+    width: 240px;
+    display: none;
+    z-index: 1100;
+    background: $white;
+    top: 0px;
+    padding-bottom: 20px;
+    height: 100%;
+    box-shadow: 5px 1px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    .rpanel-title {
+        display: block;
+        padding: 22px 20px;
+        color: $white;
+        text-transform: uppercase;
+        font-size: 15px;
+        background: $themecolor;
+        span {
+            float: right;
+            cursor: pointer;
+            font-size: 11px;
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+    .r-panel-body {
+        padding: 20px;
+        ul {
+            margin: 0px;
+            padding: 0px;
+            li {
+                list-style: none;
+                padding: 5px 0;
+            }
+        }
+    }
+}
+
+.shw-rside {
+    right: 0px;
+    width: 240px;
+    display: block;
+}
+
+
+/*******************
+ Right side toggle
+*******************/
+
+ul#themecolors {
+    display: block;
+    li {
+        display: inline-block;
+        &:first-child {
+            display: block;
+        }
+        a {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            margin: 5px;
+            color: transparent;
+            position: relative;
+            &.working:before {
+                content: "\f00c";
+                font-family: "FontAwesome";
+                font-size: 18px;
+                line-height: 50px;
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: $white;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.default-theme {
+    background: $text-muted;
+}
+
+.green-theme {
+    background: $green;
+}
+
+.yellow-theme {
+    background: $yellow;
+}
+
+.red-theme {
+    background: $red;
+}
+
+.blue-theme {
+    background: $blue;
+}
+
+.purple-theme {
+    background: $purple;
+}
+
+.megna-theme {
+    background: $cyan;
+}
+
+.default-dark-theme {
+    background: $dark;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, $dark 0%, $dark 23%, $text-muted 23%, $text-muted 99%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, $dark 0%, $dark 23%, $text-muted 23%, $text-muted 99%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, $dark 0%, $dark 23%, $text-muted 23%, $text-muted 99%);
+}
+
+.green-dark-theme {
+    background: $dark;
+    ;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, $dark 0%, $dark 23%, $success 23%, $success 99%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, $dark 0%, $dark 23%, #00c292 23%, $success 99%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, $dark 0%, $dark 23%, $success 23%, $success 99%);
+}
+
+.yellow-dark-theme {
+    background: $dark;
+    ;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, $dark 0%, $dark 23%, $danger 23%, $danger 99%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, $dark 0%, $dark 23%, $danger 23%, $danger 99%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, $dark 0%, $dark 23%, $danger 23%, $danger 99%);
+}
+
+.blue-dark-theme {
+    background: $dark;
+    ;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, $dark 0%, $dark 23%, $blue 23%, $blue 99%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, $dark 0%, $dark 23%, $blue 23%, $blue 99%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, $dark 0%, $dark 23%, $blue 23%, $blue 99%);
+}
+
+.purple-dark-theme {
+    background: $dark;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, $dark 0%, $dark 23%, $purple 23%, $purple 99%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, $dark 0%, $dark 23%, $purple 23%, $purple 99%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, $dark 0%, $dark 23%, $purple 23%, $purple 99%);
+}
+
+.megna-dark-theme {
+    background: $dark;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, $dark 0%, $dark 23%, $cyan 23%, $cyan 99%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, $dark 0%, $dark 23%, $cyan 23%, $cyan 99%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, $dark 0%, $dark 23%, $cyan 23%, $cyan 99%);
+}
+
+.red-dark-theme {
+    background: $dark;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, $dark 0%, $dark 23%, $red 23%, $red 99%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, $dark 0%, $dark 23%, $red 23%, $red 99%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, $dark 0%, $dark 23%, $red 23%, $red 99%);
+}
+.chatonline {
+    img {
+        margin-right: 10px;
+        float: left;
+        width: 30px;
+    }
+    li a {
+        padding: 13px 0;
+        float: left;
+        width: 100%;
+        span {
+            color: $body-color;
+            small {
+                display: block;
+                font-size: 10px;
+            }
+        }
+    }
+}
+

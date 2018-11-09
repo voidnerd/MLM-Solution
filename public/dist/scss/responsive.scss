@@ -1,0 +1,243 @@
+// Responsive
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+
+
+/*============================================================== 
+ For Desktop & above all (1650px) 
+ ============================================================== */
+
+@media(min-width:1650px) {
+    
+}
+@media(max-width:1600px) {
+    
+}
+/*============================================================== 
+ For Laptop & above all (1370px) 
+ ============================================================== */
+
+@media(max-width:1370px) {
+    
+}
+ 
+
+
+/*-- ============================================================== 
+ Small Desktop & above all (1024px) 
+ ============================================================== */
+
+@media(min-width:1024px) {
+    .page-wrapper, .footer {
+        margin-left: 220px;
+    }
+    
+}
+
+@media(max-width:1023px) {
+    .inbox-center a {
+        width: 200px;
+    }
+    
+    .d-flex{
+        display:block!important; 
+        &.no-block{
+            display:flex!important;
+        }
+    }
+}
+
+
+
+/*-- ============================================================== 
+ Ipad & above all(768px) 
+ ============================================================== */
+
+@media(min-width:768px) {
+    .navbar-header {
+        width: 220px;
+        flex-shrink: 0;
+        .navbar-brand {
+            padding-top: 0px;
+        }
+    }
+    
+    .material-icon-list-demo .icons div {
+        width: 33%;
+        padding: 15px;
+        display: inline-block;
+        line-height: 40px;
+    }
+    
+}
+
+
+
+/*-- ============================================================== 
+ Phone and below ipad(767px) 
+ ============================================================== */
+
+@media(max-width:767px) {
+    .container-fluid {
+        padding: 0px 15px 0px 15px;
+        overflow: hidden;
+    }
+    /*Header*/
+    .topbar {
+        width: 100%;
+        .top-navbar {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            -webkit-align-items: center;
+            .navbar-collapse {
+                display: flex;
+                width: 100%;
+            }
+            .navbar-nav {
+                flex-direction: row;
+                >.nav-item.show {
+                    position: static;
+                    .dropdown-menu {
+                        width: 100%;
+                        margin-top: 0px;
+                    }
+                }
+                
+                .dropdown-menu {
+                    position: absolute;
+                }
+            }
+        }
+    }
+    .mega-dropdown {
+        .dropdown-menu {
+            height: 480px;
+            overflow: auto;
+        }
+    }
+    
+    .comment-text {
+        .comment-footer {
+            .action-icons {
+                display: block;
+                padding: 10px 0;
+            }
+        }
+    }
+    .vtabs .tabs-vertical {
+        width: auto;
+    }
+    /*Footer*/
+    .material-icon-list-demo .icons div {
+        width: 100%;
+    }
+    .error-page {
+        .footer {
+            position: fixed;
+            bottom: 0px;
+            z-index: 10;
+        }
+    }
+    .error-box {
+        position: relative;
+        padding-bottom: 60px;
+    }
+    .error-body {
+        padding-top: 10%;
+        h1 {
+            font-size: 100px;
+            font-weight: 600;
+            line-height: 100px;
+        }
+    }
+    .login-register {
+        position: relative;
+        overflow: hidden;
+    }
+    .login-box {
+        width: 90%;
+    }
+    .login-sidebar {
+        padding: 10% 0;
+        .login-box {
+            position: relative;
+        }
+    }
+    /*This is for chat page*/
+    .chat-main-box .chat-left-aside {
+        left: -250px;
+        position: absolute;
+        transition: 0.5s ease-in;
+        background: $white;
+        &.open-pnl {
+            left: 0px;
+        }
+        .open-panel {
+            display: block;
+        }
+    }
+    .chat-main-box .chat-right-aside {
+        width: 100%;
+    }
+    /*Timeline*/
+    ul.timeline:before {
+        left: 40px;
+    }
+    ul.timeline>li>.timeline-panel {
+        width: calc(100% - 90px);
+    }
+    ul.timeline>li>.timeline-badge {
+        top: 16px;
+        left: 15px;
+        margin-left: 0;
+    }
+    ul.timeline>li>.timeline-panel {
+        float: right;
+    }
+    ul.timeline>li>.timeline-panel:before {
+        right: auto;
+        left: -15px;
+        border-right-width: 15px;
+        border-left-width: 0;
+    }
+    ul.timeline>li>.timeline-panel:after {
+        right: auto;
+        left: -14px;
+        border-right-width: 14px;
+        border-left-width: 0;
+    }
+    /*Contact app page*/
+    .left-aside {
+        width: 100%;
+        position: relative;
+        border: 0px;
+    }
+    .right-aside {
+        margin-left: 0px;
+    }
+    .flex-wrap {
+        flex-wrap: wrap!important;
+        -webkit-flex-wrap: wrap!important;
+    }
+    .chat-list li .chat-content {
+        width: calc(100% - 80px);
+    }
+    
+    /*Calendar*/
+    .fc-toolbar .fc-left, .fc-toolbar .fc-right, .fc-toolbar .fc-center{
+        float:none;
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        overflow: hidden;
+    }
+    .hidden-md-down{
+        display: none;
+    }
+}

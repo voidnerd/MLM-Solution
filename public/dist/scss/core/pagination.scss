@@ -1,0 +1,30 @@
+/*******************
+Pagination
+******************/
+
+.pagination-circle {
+    li.active a {
+        background: $success;
+    }
+    li a {
+        width: 40px;
+        height: 40px;
+        background: $light;
+        border: 0px;
+        text-align: center;
+        border-radius: 100%;
+        &:first-child,
+        &:last-child {
+            border-radius: 100%;
+        }
+        &:hover {
+            background: $success;
+            color: $white;
+        }
+    }
+    li.disabled a {
+        background: $light;
+        color: $border-color;
+    }
+}
+

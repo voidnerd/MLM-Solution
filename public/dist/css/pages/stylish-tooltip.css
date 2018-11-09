@@ -1,0 +1,343 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+/*Theme Colors*/
+/**
+ * Table Of Content
+ *
+ * 	1. Color system
+ *	2. Options
+ *	3. Body
+ *	4. Typography
+ *	5. Breadcrumbs
+ *	6. Cards
+ *	7. Dropdowns
+ *	8. Buttons
+ *	9. Typography
+ *	10. Progress bars
+ *	11. Tables
+ *	12. Forms
+ *	14. Component
+ */
+/*******************
+Stylish tooltip
+******************/
+.mytooltip:hover .tooltip-content2, .mytooltip:hover .tooltip-content2 i {
+  opacity: 1;
+  font-size: 18px;
+  pointer-events: auto;
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1); }
+
+.mytooltip:hover .tooltip-content4, .mytooltip:hover .tooltip-text2 {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translate3d(0, 0, 0); }
+
+.mytooltip {
+  display: inline;
+  position: relative;
+  z-index: 9999; }
+  .mytooltip:hover .tooltip-item::after {
+    pointer-events: auto; }
+  .mytooltip:hover .tooltip-content {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0); }
+  .mytooltip:hover .tooltip-content3 {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale3d(1, 1, 1); }
+  .mytooltip:hover .tooltip-item2 {
+    color: #fff;
+    transform: translate3d(0, -0.5em, 0); }
+  .mytooltip:hover .tooltip-content5 {
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: 0s; }
+  .mytooltip:hover .tooltip-text3 {
+    transition-delay: 0s;
+    transform: scale3d(1, 1, 1); }
+  .mytooltip:hover .tooltip-inner2 {
+    transition-delay: 0.3s;
+    transform: translate3d(0, 0, 0); }
+
+.tooltip-item {
+  background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 500;
+  padding: 0 10px; }
+
+.tooltip-item::after {
+  content: '';
+  position: absolute;
+  width: 360px;
+  height: 20px;
+  bottom: 100%;
+  left: 50%;
+  pointer-events: none;
+  transform: translateX(-50%); }
+
+.tooltip-content {
+  position: absolute;
+  z-index: 9999;
+  width: 360px;
+  left: 50%;
+  margin: 0 0 20px -180px;
+  bottom: 100%;
+  text-align: left;
+  font-size: 14px;
+  line-height: 30px;
+  box-shadow: -5px -5px 15px rgba(48, 54, 61, 0.2);
+  background: #2b2b2b;
+  opacity: 0;
+  cursor: default;
+  pointer-events: none; }
+  .tooltip-content img {
+    position: relative;
+    height: 140px;
+    display: block;
+    float: left;
+    margin-right: 1em; }
+
+.tooltip-effect-5 .tooltip-content {
+  width: 180px;
+  margin-left: -90px;
+  transform-origin: 50% calc(106%);
+  transform: rotate3d(0, 0, 1, 15deg);
+  transition: opacity 0.2s, transform 0.2s;
+  transition-timing-function: ease, cubic-bezier(0.17, 0.67, 0.4, 1.39); }
+
+.tooltip-effect-5 .tooltip-text {
+  padding: 1.4em; }
+
+.tooltip-content::after {
+  content: '';
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: transparent;
+  border-top-color: #2a3035;
+  border-width: 10px;
+  margin-left: -10px; }
+
+.tooltip-text {
+  font-size: 14px;
+  line-height: 24px;
+  display: block;
+  padding: 1.31em 1.21em 1.21em 0;
+  color: #fff; }
+
+.tooltip-content2 {
+  position: absolute;
+  z-index: 9999;
+  width: 80px;
+  height: 80px;
+  padding-top: 25px;
+  left: 50%;
+  margin-left: -40px;
+  bottom: 100%;
+  border-radius: 50%;
+  text-align: center;
+  background: #fb9678;
+  color: #fff;
+  opacity: 0;
+  margin-bottom: 20px;
+  cursor: default;
+  pointer-events: none; }
+  .tooltip-content2 i {
+    opacity: 0; }
+
+.tooltip-effect-6 .tooltip-content2 {
+  transform: translate3d(0, 10px, 0) rotate3d(1, 1, 1, 45deg);
+  transform-origin: 50% 100%;
+  transition: opacity 0.3s, transform 0.3s; }
+  .tooltip-effect-6 .tooltip-content2 i {
+    transform: scale3d(0, 0, 1);
+    transition: opacity 0.3s, transform 0.3s; }
+
+.tooltip-effect-6:hover .tooltip-content2 i {
+  transform: rotate3d(1, 1, 1, 0); }
+
+.tooltip-content2::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin: -7px 0 0 -15px;
+  width: 30px;
+  height: 20px;
+  background: url(../../../../assets/images/tooltip/tooltip1.svg) no-repeat center center;
+  background-size: 100%; }
+
+.tooltip-content3 {
+  position: absolute;
+  background: url(../../../../assets/images/tooltip/shape1.svg) no-repeat center bottom;
+  background-size: 100% 100%;
+  z-index: 9999;
+  width: 200px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -100px;
+  padding: 50px 30px;
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  cursor: default;
+  font-size: 14;
+  line-height: 27px;
+  pointer-events: none;
+  transform: scale3d(0.1, 0.2, 1);
+  transform-origin: 50% 120%;
+  transition: opacity 0.4s, transform 0.4s;
+  transition-timing-function: ease, cubic-bezier(0.6, 0, 0.4, 1); }
+
+.tooltip-content3::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 50%;
+  margin-left: -8px;
+  top: 100%;
+  background: #00aeef;
+  transform: translate3d(0, -60%, 0) rotate3d(0, 0, 1, 45deg); }
+
+.tooltip-item2 {
+  color: #00aeef;
+  cursor: pointer;
+  z-index: 100;
+  position: relative;
+  display: inline-block;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s; }
+
+.tooltip-content4 {
+  position: absolute;
+  z-index: 99;
+  width: 360px;
+  left: 50%;
+  margin-left: -180px;
+  bottom: -5px;
+  text-align: left;
+  background: #00aeef;
+  opacity: 0;
+  font-size: 14px;
+  line-height: 27px;
+  padding: 1.5em;
+  color: #fff;
+  border-bottom: 55px solid #2b2b2b;
+  cursor: default;
+  pointer-events: none;
+  border-radius: 5px;
+  transform: translate3d(0, -0.5em, 0);
+  transition: opacity 0.3s, transform 0.3s; }
+  .tooltip-content4 a {
+    color: #2b2b2b; }
+
+.tooltip-text2 {
+  opacity: 0;
+  transform: translate3d(0, 1.5em, 0);
+  transition: opacity 0.3s, transform 0.3s; }
+
+.tooltip-content5 {
+  position: absolute;
+  z-index: 9999;
+  width: 300px;
+  left: 50%;
+  bottom: 100%;
+  font-size: 20px;
+  line-height: 1.4;
+  text-align: center;
+  font-weight: 400;
+  color: #fff;
+  background: transparent;
+  opacity: 0;
+  margin: 0 0 20px -150px;
+  cursor: default;
+  pointer-events: none;
+  transition: opacity 0.3s 0.3s; }
+  .tooltip-content5 span {
+    display: block; }
+
+.tooltip-text3 {
+  border-bottom: 10px solid #fb9678;
+  overflow: hidden;
+  transform: scale3d(0, 1, 1);
+  transition: transform 0.3s 0.3s; }
+
+.tooltip-inner2 {
+  background: #2b2b2b;
+  padding: 40px;
+  transform: translate3d(0, 100%, 0);
+  transition: transform 0.3s; }
+
+.tooltip-content5::after {
+  content: '';
+  bottom: -20px;
+  left: 50%;
+  border: solid transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: transparent;
+  border-top-color: #fb9678;
+  border-width: 10px;
+  margin-left: -10px; }
+
+.tooltip-effect-1 .tooltip-content {
+  transform: translate3d(0, -10px, 0);
+  transition: opacity 0.3s, transform 0.3s;
+  color: #fff; }
+
+.tooltip-effect-2 .tooltip-content {
+  transform-origin: 50% calc(110%);
+  transform: perspective(1000px) rotate3d(1, 0, 0, 45deg);
+  transition: opacity 0.2s, transform 0.2s; }
+
+.tooltip-effect-3 .tooltip-content {
+  transform: translate3d(0, 10px, 0) rotate3d(1, 1, 0, 25deg);
+  transition: opacity 0.3s, transform 0.3s; }
+
+.tooltip-effect-4 .tooltip-content {
+  transform-origin: 50% 100%;
+  transform: scale3d(0.7, 0.3, 1);
+  transition: opacity 0.2s, transform 0.2s; }
+
+.tooltip.tooltip-effect-2:hover .tooltip-content {
+  transform: perspective(1000px) rotate3d(1, 0, 0, 0deg); }
+
+a.mytooltip {
+  font-weight: 500;
+  color: #fb9678; }
+
+.tooltip-effect-7 .tooltip-content2 {
+  transform: translate3d(0, 10px, 0);
+  transition: opacity 0.3s, transform 0.3s; }
+  .tooltip-effect-7 .tooltip-content2 i {
+    transform: translate3d(0, 15px, 0);
+    transition: opacity 0.3s, transform 0.3s; }
+
+.tooltip-effect-8 .tooltip-content2 {
+  transform: translate3d(0, 10px, 0) rotate3d(0, 1, 0, 90deg);
+  transform-origin: 50% 100%;
+  transition: opacity 0.3s, transform 0.3s; }
+  .tooltip-effect-8 .tooltip-content2 i {
+    transform: scale3d(0, 0, 1);
+    transition: opacity 0.3s, transform 0.3s; }
+
+.tooltip-effect-9 .tooltip-content2 {
+  transform: translate3d(0, -20px, 0);
+  transition: opacity 0.3s, transform 0.3s; }
+  .tooltip-effect-9 .tooltip-content2 i {
+    transform: translate3d(0, 20px, 0);
+    transition: opacity 0.3s, transform 0.3s; }

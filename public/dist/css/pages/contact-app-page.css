@@ -1,0 +1,86 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+/*Theme Colors*/
+/**
+ * Table Of Content
+ *
+ * 	1. Color system
+ *	2. Options
+ *	3. Body
+ *	4. Typography
+ *	5. Breadcrumbs
+ *	6. Cards
+ *	7. Dropdowns
+ *	8. Buttons
+ *	9. Typography
+ *	10. Progress bars
+ *	11. Tables
+ *	12. Forms
+ *	14. Component
+ */
+/*******************
+Contact app Page
+******************/
+/*left-aside-column*/
+.contact-page-aside {
+  position: relative; }
+
+.left-aside {
+  position: absolute;
+  border-right: 1px solid #e9ecef;
+  padding: 20px;
+  width: 250px;
+  height: 100%; }
+
+.right-aside {
+  padding: 20px;
+  margin-left: 250px; }
+
+.contact-list td {
+  vertical-align: middle;
+  padding: 25px 10px; }
+  .contact-list td img {
+    width: 30px; }
+
+.list-style-none {
+  margin: 0px;
+  padding: 0px; }
+  .list-style-none li {
+    list-style: none;
+    margin: 0px; }
+    .list-style-none li.box-label a {
+      font-weight: 500; }
+    .list-style-none li.divider {
+      margin: 10px 0;
+      height: 1px;
+      background: #e9ecef; }
+    .list-style-none li a {
+      padding: 15px 10px;
+      display: block;
+      color: #212529; }
+      .list-style-none li a:hover {
+        color: #fb9678; }
+      .list-style-none li a span {
+        float: right; }
+
+.social-profile {
+  text-align: center;
+  background: rgba(7, 10, 43, 0.8); }
+
+.profile-tab li a.nav-link,
+.customtab li a.nav-link {
+  border: 0px;
+  padding: 15px 20px;
+  color: #212529; }
+  .profile-tab li a.nav-link.active,
+  .customtab li a.nav-link.active {
+    border-bottom: 2px solid #fb9678;
+    color: #fb9678; }
+  .profile-tab li a.nav-link:hover,
+  .customtab li a.nav-link:hover {
+    color: #fb9678; }

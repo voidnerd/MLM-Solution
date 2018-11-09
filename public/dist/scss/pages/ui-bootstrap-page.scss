@@ -1,0 +1,55 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+
+@import '../variable'; 
+/*============================================================== 
+ Ui-bootstrap
+ ============================================================== */
+
+ul.list-icons {
+    margin: 0px;
+    padding: 0px;
+    li {
+        list-style: none;
+        line-height: 30px;
+        margin: 5px 0;
+        transition: 0.2s ease-in;
+        a {
+            color: $body-color;
+            &:hover {
+                color: $themecolor;
+            }
+        }
+        i {
+            font-size: 13px;
+            padding-right: 8px;
+        }
+    }
+}
+
+ul.list-inline {
+    li {
+        display: inline-block;
+        padding: 0 8px;
+    }
+}
+
+ul.two-part {
+    margin: 0px;
+    li {
+        width: 48.8%;
+    }
+}
+
+
+/*Accordion*/
+
+html body .accordion {
+    .card {
+        margin-bottom: 0px;
+    }
+}

@@ -1,0 +1,112 @@
+/*******************
+Other comon scss for all pages
+*******************/
+
+
+.calendar-events {
+  padding: 8px 10px;
+  border: 1px solid $white;
+  cursor: move;
+    &:hover {
+        border: 1px dashed $border-color;
+    }
+    i {
+      margin-right: 8px;
+    }
+}
+
+
+
+.profile-tab,
+.customtab {
+    li {
+        a.nav-link {
+            border: 0px;
+            padding: 15px 20px;
+            color: $body-color;
+            &.active {
+                border-bottom: 2px solid $themecolor;
+                color: $themecolor;
+            }
+            &:hover {
+                color: $themecolor;
+            }
+        }
+    }
+}
+
+html body {
+    .jqstooltip,
+    .flotTip {
+        width: auto!important;
+        height: auto!important;
+        background: $dark;
+        color: $white;
+        padding: 5px 10px;
+    }
+}
+
+body .jqstooltip {
+    border-color: transparent;
+    border-radius: 60px;
+}
+
+/*******************
+Notification page Jquery toaster
+******************/
+.jq-icon-info {background-color: $info; color:$white;}
+.jq-icon-success {background-color: $success; color:$white;}
+.jq-icon-error {background-color: $danger; color:$white;}
+.jq-icon-warning{ background-color:$warning; color:$white;}
+/*******************
+c3 chart global
+******************/
+
+.c3 text{
+    fill-opacity:0.5;
+}
+.no-shrink {
+    flex-shrink: 0;
+}
+.up-img{
+    background-size: cover;
+    background-position: center center;
+    min-height:340px;
+}
+.badge.badge-pill{
+    padding: $badge-pill-padding-x $badge-pill-padding-y;
+}
+/*******************
+list-inline
+******************/
+ul.list-inline{
+    li{
+        display: inline-block;
+        margin: 0 5px;
+    }
+}
+
+/*******************
+icons path
+*******************/
+@font-face {
+  font-family: 'icomoon';
+  src:url("fonts/icomoon.ttf?-rdmvgc") format("truetype");
+}
+@font-face {
+  font-family: 'simple-line-icons';
+  src: url('fonts/Simple-Line-Icons.ttf?-i3a2kk') format('truetype');
+}
+
+@font-face {
+	font-family: 'themify';
+	src:url('fonts/themify.ttf') format('truetype'),
+} 
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype');
+}
+@font-face {
+  font-family: 'Material Design Icons';
+  src: url('fonts/materialdesignicons-webfont.ttf') format('truetype');
+}

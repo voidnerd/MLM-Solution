@@ -1,0 +1,57 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+/*Theme Colors*/
+/**
+ * Table Of Content
+ *
+ * 	1. Color system
+ *	2. Options
+ *	3. Body
+ *	4. Typography
+ *	5. Breadcrumbs
+ *	6. Cards
+ *	7. Dropdowns
+ *	8. Buttons
+ *	9. Typography
+ *	10. Progress bars
+ *	11. Tables
+ *	12. Forms
+ *	14. Component
+ */
+/*******************
+Email inbox Page
+******************/
+.inbox-panel .list-group .list-group-item {
+  border: 0px;
+  border-radius: 0px;
+  border-left: 3px solid transparent; }
+  .inbox-panel .list-group .list-group-item a {
+    color: #212529; }
+  .inbox-panel .list-group .list-group-item.active, .inbox-panel .list-group .list-group-item:hover {
+    background: #e9ecef;
+    border-left: 3px solid #fb9678; }
+
+.inbox-center .unread td {
+  font-weight: 400; }
+
+.inbox-center td {
+  vertical-align: middle;
+  white-space: nowrap; }
+
+.inbox-center a {
+  color: #212529;
+  padding: 2px 0 3px 0;
+  overflow: hidden;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block; }
+
+.inbox-center .checkbox {
+  margin-top: -13px;
+  height: 20px; }

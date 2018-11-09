@@ -1,0 +1,45 @@
+/*
+Template Name: Admin Template
+Author: Niravjoshi / Wrappixel
+File: scss
+*/
+
+@import 'variable';  
+
+//Colors
+@import 'colors/default';
+@import 'colors/green'; 
+@import 'colors/megna'; 
+@import 'colors/purple'; 
+@import 'colors/red'; 
+@import 'colors/blue';
+@import 'colors/blue-dark'; 
+@import 'colors/default-dark'; 
+@import 'colors/green-dark'; 
+@import 'colors/red-dark'; 
+@import 'colors/megna-dark'; 
+@import 'colors/purple-dark';  
+
+
+// Import Bootstrap source files
+@import "../../../assets/node_modules/bootstrap/scss/bootstrap";
+
+//This is for the icons
+@import '../../../assets/icons/font-awesome/css/font-awesome.min.css';
+@import '../../../assets/icons/simple-line-icons/css/simple-line-icons.css';
+@import '../../../assets/icons/weather-icons/css/weather-icons.min.css';
+@import '../../../assets/icons/themify-icons/themify-icons.css'; 
+@import '../../../assets/icons/flag-icon-css/flag-icon.min.css';
+@import "../../../assets/icons/material-design-iconic-font/css/materialdesignicons.min.css";
+
+
+//This is the core files
+
+@import 'core/core';
+@import 'widgets/widgets';
+@import 'responsive';
+
+
+//In This scss you can write your scss
+@import 'custom'; 
+

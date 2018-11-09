@@ -1,0 +1,104 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+/*Theme Colors*/
+/**
+ * Table Of Content
+ *
+ * 	1. Color system
+ *	2. Options
+ *	3. Body
+ *	4. Typography
+ *	5. Breadcrumbs
+ *	6. Cards
+ *	7. Dropdowns
+ *	8. Buttons
+ *	9. Typography
+ *	10. Progress bars
+ *	11. Tables
+ *	12. Forms
+ *	14. Component
+ */
+/*******************
+chat application Page
+******************/
+.chat-main-box {
+  position: relative;
+  overflow: hidden; }
+  .chat-main-box .chat-left-aside {
+    position: relative;
+    width: 250px;
+    float: left;
+    z-index: 9;
+    top: 0px;
+    border-right: 1px solid #e9ecef; }
+    .chat-main-box .chat-left-aside .open-panel {
+      display: none;
+      cursor: pointer;
+      position: absolute;
+      left: -webkit-calc(100% - 1px);
+      top: 50%;
+      z-index: 100;
+      background-color: #fff;
+      -webkit-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.2);
+      box-shadow: 1px 0 3px rgba(0, 0, 0, 0.2);
+      border-radius: 0 100px 100px 0;
+      line-height: 1;
+      padding: 15px 8px 15px 4px; }
+    .chat-main-box .chat-left-aside .chat-left-inner {
+      position: relative; }
+      .chat-main-box .chat-left-aside .chat-left-inner .chatonline {
+        position: relative;
+        height: 100%; }
+      .chat-main-box .chat-left-aside .chat-left-inner .form-control {
+        height: 60px;
+        padding: 15px;
+        background-image: linear-gradient(#03a9f3, #03a9f3), linear-gradient(#e9ecef, #e9ecef); }
+      .chat-main-box .chat-left-aside .chat-left-inner .style-none {
+        padding: 0px; }
+        .chat-main-box .chat-left-aside .chat-left-inner .style-none li {
+          list-style: none;
+          overflow: hidden; }
+          .chat-main-box .chat-left-aside .chat-left-inner .style-none li a {
+            padding: 20px; }
+            .chat-main-box .chat-left-aside .chat-left-inner .style-none li a:hover, .chat-main-box .chat-left-aside .chat-left-inner .style-none li a.active {
+              background: #f8f9fa; }
+  .chat-main-box .chat-right-aside {
+    width: calc(100% - 250px);
+    float: left; }
+    .chat-main-box .chat-right-aside .chat-rbox {
+      height: auto;
+      position: relative; }
+    .chat-main-box .chat-right-aside .chat-list {
+      max-height: none;
+      height: 100%;
+      padding-top: 40px; }
+      .chat-main-box .chat-right-aside .chat-list .chat-text {
+        border-radius: 6px; }
+      .chat-main-box .chat-right-aside .chat-list li .chat-time {
+        display: block;
+        text-align: left; }
+      .chat-main-box .chat-right-aside .chat-list li.reverse .chat-time {
+        margin-left: auto;
+        text-align: right; }
+    .chat-main-box .chat-right-aside .send-chat-box {
+      position: relative; }
+      .chat-main-box .chat-right-aside .send-chat-box .form-control {
+        border: none;
+        border-top: 1px solid #e9ecef;
+        resize: none;
+        height: 80px;
+        padding-right: 180px; }
+        .chat-main-box .chat-right-aside .send-chat-box .form-control:focus {
+          border-color: #e9ecef; }
+      .chat-main-box .chat-right-aside .send-chat-box .custom-send {
+        position: absolute;
+        right: 20px;
+        bottom: 10px; }
+        .chat-main-box .chat-right-aside .send-chat-box .custom-send .cst-icon {
+          color: #212529;
+          margin-right: 10px; }

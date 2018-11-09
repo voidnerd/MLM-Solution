@@ -1,0 +1,478 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+
+@import '../variable';
+
+
+
+
+/*******************
+Table Cell
+*******************/
+
+.table-box {
+    display: table;
+    width: 100%;
+}
+
+
+
+.cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.table thead th,
+.table th {
+    font-weight: 500;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.lite-padding td {
+    padding: 5px;
+}
+
+.v-middle {
+    td,
+    th {
+        vertical-align: middle;
+    }
+}
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.table-striped tbody tr:nth-of-type(odd){
+    background: $gray-100;
+}
+/*******************
+Table td vertical middle
+*******************/
+
+.vm.table td,
+.vm.table th {
+    vertical-align: middle;
+}
+
+.no-th-brd.table th {
+    border: 0px;
+}
+
+.table.no-border {
+    tbody {
+        td {
+            border: 0px;
+        }
+    }
+}
+/*******************
+Table-Layout
+******************/
+.color-table{
+    th{
+        border: 0px;    
+    }
+}
+.color-table.primary-table thead th {
+    background-color: $primary;
+    color: $white;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background: $light;
+}
+
+.color-table.success-table thead th {
+    background-color: $success;
+    color: $white;
+}
+
+.color-table.info-table thead th {
+    background-color: $info;
+    color: $white;
+}
+
+.color-table.warning-table thead th {
+    background-color: $warning;
+    color: $white;
+}
+
+.color-table.danger-table thead th {
+    background-color: $danger;
+    color: $white;
+}
+
+.color-table.inverse-table thead th {
+    background-color: $gray-800;
+    color: $white;
+}
+
+.color-table.dark-table thead th {
+    background-color: $dark;
+    color: $white;
+}
+
+.color-table.red-table thead th {
+    background-color: $red;
+    color: $white;
+}
+
+.color-table.purple-table thead th {
+    background-color: $purple;
+    color: $white;
+}
+
+.color-table.muted-table thead th {
+    background-color: $text-muted;
+    color: $white;
+}
+
+.color-bordered-table.primary-bordered-table {
+    border: 2px solid $primary;
+    thead th {
+        background-color: $primary;
+        color: $white;
+    }
+}
+
+.color-bordered-table.success-bordered-table {
+    border: 2px solid $success;
+    thead th {
+        background-color: $success;
+        color: $white;
+    }
+}
+
+.color-bordered-table.info-bordered-table {
+    border: 2px solid $info;
+    thead th {
+        background-color: $info;
+        color: $white;
+    }
+}
+
+.color-bordered-table.warning-bordered-table {
+    border: 2px solid $warning;
+    thead th {
+        background-color: $warning;
+        color: $white;
+    }
+}
+
+.color-bordered-table.danger-bordered-table {
+    border: 2px solid $danger;
+    thead th {
+        background-color: $danger;
+        color: $white;
+    }
+}
+
+.color-bordered-table.inverse-bordered-table {
+    border: 2px solid $gray-800;
+    thead th {
+        background-color: $gray-800;
+        color: $white;
+    }
+}
+
+.color-bordered-table.dark-bordered-table {
+    border: 2px solid $dark;
+    thead th {
+        background-color: $dark;
+        color: $white;
+    }
+}
+
+.color-bordered-table.red-bordered-table {
+    border: 2px solid $red;
+    thead th {
+        background-color: $red;
+        color: $white;
+    }
+}
+
+.color-bordered-table.purple-bordered-table {
+    border: 2px solid $purple;
+    thead th {
+        background-color: $purple;
+        color: $white;
+    }
+}
+
+.color-bordered-table.muted-bordered-table {
+    border: 2px solid $text-muted;
+    thead th {
+        background-color: $text-muted;
+        color: $white;
+    }
+}
+
+
+@each $color, $value in $theme-colors {
+  .full-color-table.full-#{$color}-table {
+    @include alert-variant(theme-color-level($color, $table-bg-level), theme-color-level($color, $alert-border-level), theme-color-level($color, $alert-color-level));
+      thead th {
+          @include alert-variant(theme-color-level($color, $table-bg-level2), theme-color-level($color, $alert-border-level), theme-color-level($color, $alert-color-level));
+          color:$white;
+      }
+      tbody td {
+            border: 0;
+        }
+        tr:hover {
+            @include alert-variant(theme-color-level($color, $table-bg-level3), theme-color-level($color, $alert-border-level), theme-color-level($color, $alert-color-level));
+            color:$white;
+        }
+  }
+}
+
+
+
+
+/*******************
+Table-Data Table
+******************/
+
+.dataTables_wrapper {
+    padding-top: 10px
+}
+
+.dt-buttons {
+    display: inline-block;
+    padding-top: 5px;
+    margin-bottom: 15px;
+    .dt-button {
+        padding: 5px 15px;
+        border-radius: $border-radius;
+        background: $themecolor;
+        color: $white;
+        margin-right: 3px;
+        &:hover {
+            background: $gray-800;
+        }
+    }
+}
+
+.dataTables_info,
+.dataTables_length {
+    display: inline-block;
+}
+
+.dataTables_length {
+    margin-top: 10px;
+    select {
+        border: 0;
+        background-image: linear-gradient($themecolor, $themecolor), linear-gradient($border-color, $border-color);
+        background-size: 0 2px, 100% 1px;
+        background-repeat: no-repeat;
+        background-position: center bottom, center calc(100% - 1px);
+        background-color: transparent;
+        transition: background 0s ease-out;
+        padding-bottom: 5px;
+        &:focus {
+            outline: none;
+            background-image: linear-gradient($themecolor, $themecolor), linear-gradient($border-color, $border-color);
+            background-size: 100% 2px, 100% 1px;
+            box-shadow: none;
+            transition-duration: 0.3s;
+        }
+    }
+}
+
+.dataTables_filter {
+    float: right;
+    margin-top: 10px;
+    input {
+        border: 0;
+        background-image: linear-gradient($themecolor, $themecolor), linear-gradient($border-color, $border-color);
+        background-size: 0 2px, 100% 1px;
+        background-repeat: no-repeat;
+        background-position: center bottom, center calc(100% - 1px);
+        background-color: transparent;
+        transition: background 0s ease-out;
+        float: none;
+        box-shadow: none;
+        border-radius: 0;
+        margin-left: 10px;
+        &:focus {
+            outline: none;
+            background-image: linear-gradient($themecolor, $themecolor), linear-gradient($border-color, $border-color);
+            background-size: 100% 2px, 100% 1px;
+            box-shadow: none;
+            transition-duration: 0.3s;
+        }
+    }
+}
+
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+    background: transparent;
+}
+
+table.dataTable thead .sorting_asc:after {
+    content: "\f0de";
+    margin-left: 10px;
+    font-family: fontawesome;
+    cursor: pointer;
+}
+
+table.dataTable thead .sorting_desc:after {
+    content: "\f0dd";
+    margin-left: 10px;
+    font-family: fontawesome;
+    cursor: pointer;
+}
+
+table.dataTable thead .sorting:after {
+    content: "\f0dc";
+    margin-left: 10px;
+    font-family: fontawesome !important;
+    cursor: pointer;
+    color: rgba(50, 50, 50, .5);
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    float: right;
+    text-align: right;
+    padding-top: 0.25em
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 1.5em;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    *cursor: hand;
+    color: $body-color;
+    border: 1px solid #ddd;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: $white !important;
+    border: 1px solid $themecolor;
+    background-color: $themecolor;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    cursor: default;
+    color: $body-color;
+    border: 1px solid $border-color;
+    background: transparent;
+    box-shadow: none
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: white;
+    border: 1px solid $themecolor;
+    background-color: $themecolor;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:active {
+    outline: none;
+    background-color: $body-color;
+}
+
+.dataTables_wrapper .dataTables_paginate .ellipsis {
+    padding: 0 1em
+}
+
+/*******************
+Table- responsive
+******************/
+
+.tablesaw-bar .btn-group label {
+    color: $body-color!important;
+}
+
+/*******************
+Table- editable table
+******************/
+
+.dt-bootstrap {
+    display: block;
+}
+
+.paging_simple_numbers {
+    .pagination {
+        .paginate_button {
+            padding: 0px;
+            background: $white;
+            &:hover {
+                background: $white;
+            }
+            a {
+                padding: 3px 10px;
+                border: 0px;
+            }
+            &.active a,
+            &:hover a {
+                background: $info;
+                color: $white;
+            }
+        }
+    }
+}
+.stylish-table {
+    tbody tr{
+        border-left:3px solid transparent;
+        &:hover, &.active{
+            border-color:$themecolor;
+        }
+    }
+}
+
+/*******************
+Table-Jsgrid table
+******************/
+
+.jsgrid-pager-page a,
+.jsgrid-pager-current-page,
+.jsgrid-pager-nav-button a {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 1.5em;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: #67757c;
+    border: 1px solid #ddd;
+}
+
+.jsgrid-pager-page a:hover,
+.jsgrid-pager-nav-button a:hover {
+    background-color: $themecolor;
+    color: $white;
+}
+
+.jsgrid-pager-current-page {
+    background-color: $themecolor;
+    color: $white;
+}
+
+.jsgrid-pager-page,
+.jsgrid-pager-nav-button {
+    padding: 0;
+}
+
+.jsgrid-pager-page.jsgrid-pager-current-page {
+    padding: 0.5em 1em !important;
+}

@@ -1,0 +1,147 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+/*Theme Colors*/
+/**
+ * Table Of Content
+ *
+ * 	1. Color system
+ *	2. Options
+ *	3. Body
+ *	4. Typography
+ *	5. Breadcrumbs
+ *	6. Cards
+ *	7. Dropdowns
+ *	8. Buttons
+ *	9. Typography
+ *	10. Progress bars
+ *	11. Tables
+ *	12. Forms
+ *	14. Component
+ */
+/*******************
+FAQs Page
+******************/
+.minimal-faq .card {
+  border: 0px; }
+  .minimal-faq .card .card-header {
+    background: #fff;
+    padding: 20px 0;
+    margin-top: 10px; }
+  .minimal-faq .card .card-body {
+    padding: 15px 0px; }
+
+/*******************
+Seach listing Page
+******************/
+.search-listing {
+  padding: 0px;
+  margin: 0px; }
+  .search-listing li {
+    list-style: none;
+    padding: 15px 0;
+    border-bottom: 1px solid #e9ecef; }
+    .search-listing li h3 {
+      margin: 0px;
+      font-size: 18px; }
+      .search-listing li h3 a {
+        color: #03a9f3; }
+        .search-listing li h3 a:hover {
+          text-decoration: underline; }
+    .search-listing li a {
+      color: #00c292; }
+
+/*******************
+Gridstack Dragable portlet
+******************/
+.grid-stack-item-content {
+  background: #fff;
+  color: #6c757d;
+  text-align: center;
+  font-size: 20px; }
+
+.grid-stack > .grid-stack-item > .grid-stack-item-content {
+  border: 1px solid #e9ecef; }
+
+/*******************
+Grid page
+******************/
+.show-grid {
+  margin-bottom: 10px;
+  padding: 0 15px; }
+
+.show-grid [class^=col-] {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #e9ecef;
+  background-color: #e9ecef; }
+
+/*******************
+Date paginator page
+******************/
+.dp-selected[style] {
+  background-color: #fb9678 !important; }
+
+.datepaginator-sm .pagination li a,
+.datepaginator-lg .pagination li a,
+.datepaginator .pagination li a {
+  padding: 0 5px;
+  height: 60px;
+  border: 1px solid #e9ecef;
+  float: left;
+  position: relative; }
+
+/*******************
+Notification page Jquery toaster
+******************/
+.jq-icon-info {
+  background-color: #03a9f3;
+  color: #fff; }
+
+.jq-icon-success {
+  background-color: #00c292;
+  color: #fff; }
+
+.jq-icon-error {
+  background-color: #e46a76;
+  color: #fff; }
+
+.jq-icon-warning {
+  background-color: #fec107;
+  color: #fff; }
+
+.alert-rounded {
+  border-radius: 60px; }
+
+/*******************
+list and media
+******************/
+.list-group a.list-group-item:hover {
+  background: #e9ecef; }
+
+.list-group-item.active,
+.list-group .list-group-item.active:hover {
+  background: #fb9678;
+  border-color: #fb9678; }
+
+.list-group-item.disabled {
+  color: #6c757d;
+  background: #e9ecef; }
+
+.media {
+  border: 1px solid #e9ecef;
+  margin-bottom: 10px;
+  padding: 15px; }
+
+/*******************
+/*Documentation page
+******************/
+.plugin-details {
+  display: none; }
+
+.plugin-details-active {
+  display: block; }

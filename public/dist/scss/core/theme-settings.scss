@@ -1,0 +1,190 @@
+// Theme settings.
+/*******************
+Fixed -sidebar
+******************/
+
+.fixed-sidebar{
+    .left-sidebar, .navbar-header{
+        position: fixed;
+    }
+    .navbar-collapse{
+        margin-left: 220px;
+    }
+    &.mini-sidebar{
+        .navbar-collapse, .footer{
+            margin-left: 70px;
+        }
+        
+    }
+}
+@media(max-width:767px) {
+    .fixed-sidebar.mini-sidebar {
+        .navbar-header{
+            position: relative;
+        }
+        .navbar-collapse{
+            margin-left: 0px;
+        }
+    }
+}
+/*******************
+Fixed -Header
+******************/
+.fixed-header{
+    .topbar{
+        position: fixed;
+        width: 100%;
+    }
+    .page-wrapper{
+        padding-top: 67px;
+    }
+}
+.fixed-layout{
+    .left-sidebar, .topbar{
+        position: fixed;
+    }
+    .topbar{
+        width: 100%;
+    }
+    .page-wrapper{
+        padding-top: 67px;
+    }
+}
+
+/*******************
+Boxed
+******************/
+.boxed #main-wrapper {  
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
+    .sidebar-footer {
+        position: absolute; 
+    }
+    .topbar{
+        max-width: 1300px;
+    }
+    .footer {
+        display: none;
+    }
+}
+
+/*******************
+Single Column
+******************/
+.single-column {
+    .left-sidebar {
+        display: none;
+    }
+    .page-wrapper {
+        margin-left: 0px!important;
+    }
+}
+/*******************
+Mini sidebar
+******************/
+@media(min-width:768px) {
+.mini-sidebar {
+    .top-navbar {
+        .navbar-header {
+            width: 70px;
+            text-align: center;
+            flex-shrink: 0;
+            padding-left: 0px;
+        }
+    }
+    .page-wrapper, .footer {
+            margin-left: 70px;
+        }
+    /*Sidebar*/
+    .left-sidebar{
+            width: 70px;
+     }
+    
+    .scroll-sidebar {
+            padding-bottom: 0px;
+            position: absolute;
+            height: calc(100vh - 70px);
+            .u-dropdown{
+                display: none;
+            }
+        }
+    .sidebar-nav{
+        background: transparent;
+        #sidebarnav{
+            li{
+                position: relative;
+            }
+            
+            > li > ul {
+                position: absolute;
+                left: 70px;
+                top: 46px;
+                width: 220px;
+                padding-bottom: 10px;
+                z-index: 1001;
+                background: $sidebar-alt;
+                display: none;
+                padding-left: 1px;
+            }
+            > li:hover > ul {
+                height: auto !important;
+                overflow: auto;
+            }
+            > li > a {
+                width: 70px;
+                padding: 15px 15px 15px 25px;
+            }
+            .user-pro > a{
+                 
+                  padding-left:18px;   
+                
+            }
+            > li:hover > a {
+                width: 290px;
+                background: $sidebar-alt;
+                .hide-menu {
+                    display: inline;
+                }
+                .label {
+                    display: none;
+                }
+            }
+            > li:hover > ul, > li:hover > ul.collapse {
+                display: block;
+            }
+            > li > a.has-arrow:after, .hide-menu, .nav-small-cap, .sidebar-footer, .user-profile .profile-text, >.label {
+                display: none;
+            }
+        }
+    }
+}
+}
+@media(max-width:767px) {
+    .mini-sidebar {
+        .left-sidebar,
+        .sidebar-footer {
+            left: -220px;
+        }
+        &.show-sidebar {
+            .left-sidebar,
+            .sidebar-footer {
+                left: 0px;
+            }
+        }
+    }
+}
+/*******************
+Logo center
+******************/
+.logo-center {
+    .top-navbar {
+        .navbar-header {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+    }
+}

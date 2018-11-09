@@ -1,0 +1,92 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+/*Theme Colors*/
+/**
+ * Table Of Content
+ *
+ * 	1. Color system
+ *	2. Options
+ *	3. Body
+ *	4. Typography
+ *	5. Breadcrumbs
+ *	6. Cards
+ *	7. Dropdowns
+ *	8. Buttons
+ *	9. Typography
+ *	10. Progress bars
+ *	11. Tables
+ *	12. Forms
+ *	14. Component
+ */
+/*******************
+Table- Footable
+******************/
+#demo-show-entries {
+  border: 0;
+  background-image: linear-gradient(#fb9678, #fb9678), linear-gradient(#e9ecef, #e9ecef);
+  background-size: 0 2px, 100% 1px;
+  background-repeat: no-repeat;
+  background-position: center bottom, center calc(100% - 1px);
+  background-color: transparent;
+  transition: background 0s ease-out;
+  padding-bottom: 5px;
+  color: #212529; }
+  #demo-show-entries:focus {
+    outline: none;
+    background-image: linear-gradient(#fb9678, #fb9678), linear-gradient(#e9ecef, #e9ecef);
+    background-size: 100% 2px, 100% 1px;
+    box-shadow: none;
+    transition-duration: 0.3s; }
+
+#demo-input-search2 {
+  border: 0;
+  background-image: linear-gradient(#fb9678, #fb9678), linear-gradient(#e9ecef, #e9ecef);
+  background-size: 0 2px, 100% 1px;
+  background-repeat: no-repeat;
+  background-position: center bottom, center calc(100% - 1px);
+  background-color: transparent;
+  transition: background 0s ease-out;
+  float: none;
+  box-shadow: none;
+  border-radius: 0;
+  margin-left: 10px;
+  color: #212529; }
+  #demo-input-search2:focus {
+    outline: none;
+    background-image: linear-gradient(#fb9678, #fb9678), linear-gradient(#e9ecef, #e9ecef);
+    background-size: 100% 2px, 100% 1px;
+    box-shadow: none;
+    transition-duration: 0.3s; }
+
+.footable .pagination li a {
+  position: relative;
+  display: block;
+  padding: .5rem .75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #0275d8;
+  background-color: #fff;
+  border: 1px solid #ddd; }
+
+.footable .pagination li.active a {
+  z-index: 2;
+  color: #fff;
+  background-color: #0275d8;
+  border-color: #0275d8; }
+
+.footable .pagination li.disabled a {
+  color: #636c72;
+  pointer-events: none;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd; }
+
+.footable .pagination li:first-child a {
+  margin-left: 0;
+  border-bottom-left-radius: .25rem;
+  border-top-left-radius: .25rem; }

@@ -1,0 +1,438 @@
+
+/*******************
+Custom-select
+******************/
+
+
+/*******************
+textarea
+******************/
+
+textarea {
+    resize: none;
+}
+
+
+/*******************
+Form-control
+******************/
+
+.form-control {
+    color: $body-color;
+    min-height: 38px;
+    display: initial;
+}
+
+.form-control-sm {
+    min-height: 20px;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+    opacity: 0.7;
+}
+
+.custom-control-input:focus~.custom-control-indicator {
+    box-shadow: none;
+}
+
+.custom-control-input:checked~.custom-control-indicator {
+    background-color: $success;
+}
+
+form label {
+    font-weight: 400;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-horizontal label {
+    margin-bottom: 0px;
+}
+
+.form-control-static {
+    padding-top: 0px;
+}
+.custom-control-label::before, .custom-control-label::after{
+    top: 0.15rem;
+}
+.form-bordered .form-group {
+    border-bottom: 1px solid $border-color;
+    padding-bottom: 20px;
+}
+
+
+/*******************
+Form Dropzone
+******************/
+
+.dropzone {
+    border: 1px dashed $border-color;
+    .dz-message {
+        padding: 5% 0;
+        margin: 0px;
+    }
+}
+
+
+/*******************
+Form Pickers
+******************/
+
+.asColorPicker-dropdown {
+    max-width: 260px;
+}
+
+.asColorPicker-trigger {
+    position: absolute;
+    top: 0;
+    right: -35px;
+    height: 38px;
+    width: 37px;
+    border: 0;
+}
+
+.asColorPicker-clear {
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    text-decoration: none;
+}
+
+table th {
+    font-weight: 400;
+}
+
+.daterangepicker td.active,
+.daterangepicker td.active:hover {
+    background-color: $themecolor;
+}
+
+.datepicker table tr td.today,
+.datepicker table tr td.today.disabled,
+.datepicker table tr td.today.disabled:hover,
+.datepicker table tr td.today:hover {
+    background: $themecolor;
+    color: $white;
+}
+
+.datepicker td,
+.datepicker th {
+    padding: 5px 10px;
+}
+
+
+/*******************
+Form summernote
+******************/
+
+.note-popover,
+.note-icon-caret {
+    display: none;
+}
+
+.note-editor.note-frame {
+    border: 1px solid $border-color;
+    .panel-heading {
+        padding: 6px 10px 10px;
+        border-bottom: 1px solid $border-color;
+    }
+}
+
+.label {
+    display: inline-block;
+}
+
+
+/*============================================================== 
+Form addons page
+============================================================== */
+
+
+/*Bootstrap select*/
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100%;
+}
+
+.bootstrap-select {
+    .dropdown-menu {
+        li a {
+            display: block;
+            padding: 7px 20px;
+            clear: both;
+            font-weight: 400;
+            line-height: 1.42857143;
+            color: $body-color;
+            white-space: nowrap;
+            &:hover,
+            &:focus {
+                color: $themecolor;
+                background: $light;
+            }
+        }
+    }
+    .show>.dropdown-menu {
+        display: block;
+    }
+}
+
+.bootstrap-touchspin .input-group-btn-vertical>.btn {
+    padding: 9px 10px;
+}
+
+.select2-container--default {
+    .select2-selection--single {
+        border-color: $border-color;
+        height: 38px;
+        .select2-selection__rendered {
+            line-height: 38px;
+        }
+        .select2-selection__arrow {
+            height: 33px;
+        }
+    }
+    .select2-selection--multiple {
+        .select2-selection__choice__remove{
+            float: $rgt;
+            color:$white;
+            margin-right: 0px;
+            margin-left: 4px;
+        }
+        .select2-selection__choice{
+            background: $themecolor;
+            color:$white;
+            border-color:$themecolor;    
+        }
+    }
+}    
+
+.input-form .btn {
+  padding: 8px 12px;
+}
+
+
+/*============================================================== 
+Form Material page
+ ============================================================== */
+
+
+/*Material inputs*/
+
+.form-material .form-group {
+    overflow: hidden;
+}
+
+.form-material .form-control {
+    background-color: rgba(0, 0, 0, 0);
+    background-position: center bottom, center calc(100% - 1px);
+    background-repeat: no-repeat;
+    background-size: 0 2px, 100% 1px;
+    padding: 0;
+    transition: background 0s ease-out 0s;
+}
+
+.form-material .form-control,
+.form-material .form-control.focus,
+.form-material .form-control:focus {
+    background-image: linear-gradient($themecolor, $themecolor), linear-gradient($gray-200, $gray-200);
+    border: 0 none;
+    border-radius: 0;
+    box-shadow: none;
+    float: none;
+}
+
+.form-material .form-control.focus,
+.form-material .form-control:focus {
+    background-size: 100% 2px, 100% 1px;
+    outline: 0 none;
+    transition-duration: 0.3s;
+}
+
+.form-control-line .form-group {
+    overflow: hidden;
+}
+
+.form-control-line .form-control {
+    border: 0px;
+    border-radius: 0px;
+    padding-left: 0px;
+    border-bottom: 1px solid $gray-200;
+    &:focus {
+        border-bottom: 1px solid $themecolor;
+    }
+}
+
+
+/*******************
+Form validation error 
+******************/
+
+.error .help-block {
+    color: $red;
+}
+
+
+/*******************
+File Upload 
+******************/
+
+.fileupload {
+    overflow: hidden;
+    position: relative;
+    input.upload {
+        cursor: pointer;
+        filter: alpha(opacity=0);
+        font-size: 20px;
+        margin: 0;
+        opacity: 0;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+
+.scale-up{ 
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    display:inline-block;
+    transform-origin: right 0px;
+}
+.scale-up-left{ 
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    display:inline-block;
+    transform-origin: left 0px;
+}
+.show>.scale-up{
+  transform: scale(1);
+  transform-origin: right 0px;
+}
+.show>.scale-up-left{
+    transform: scale(1);
+  transform-origin: left 0px;
+}
+
+
+/*Radio button*/
+@keyframes ripple {
+  0% {
+    box-shadow: 0px 0px 0px 1px transparent;
+  }
+  50% {
+    box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    box-shadow: 0px 0px 0px 15px transparent;
+  }
+}
+
+/*Floating label*/
+
+/*Bootstrap Select*/
+.bootstrap-select.btn-group .dropdown-menu{
+    box-shadow: $shadow;
+}
+
+/*Form Validation*/
+.help-block ul{
+    padding: 0px;
+    margin: 0px;
+    li{
+        list-style: none;
+    }
+}
+.error .form-control{
+    border-color:$danger;
+}
+.validate .form-control{
+    border-color:$success;
+}
+
+
+/*Form Input States*/
+
+.form-control-success,
+.form-control-warning,
+.form-control-danger {
+  padding-right: 2.25rem;
+  background-repeat: no-repeat;
+  background-position: center right 0.5625rem;
+  -webkit-background-size: 1.125rem 1.125rem;
+          background-size: 1.125rem 1.125rem;
+}
+
+
+.has-success .form-control-feedback,
+.has-success .form-control-label,
+.has-success .col-form-label,
+.has-success .form-check-label,
+.has-success .custom-control {
+  color: $success;
+}
+
+.has-success .form-control {
+  border-color: $success;
+}
+
+.has-success .input-group-addon {
+  color: $success;
+  border-color: $success;
+  
+}
+
+.has-success .form-control-success {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%235cb85c' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3E%3C/svg%3E");
+}
+
+.has-warning .form-control-feedback,
+.has-warning .form-control-label,
+.has-warning .col-form-label,
+.has-warning .form-check-label,
+.has-warning .custom-control {
+  color: $warning;
+}
+
+.has-warning .form-control {
+  border-color: $warning;
+}
+
+.has-warning .input-group-addon {
+  color: $warning;
+  border-color: $warning;
+  
+}
+
+.has-warning .form-control-warning {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23f0ad4e' d='M4.4 5.324h-.8v-2.46h.8zm0 1.42h-.8V5.89h.8zM3.76.63L.04 7.075c-.115.2.016.425.26.426h7.397c.242 0 .372-.226.258-.426C6.726 4.924 5.47 2.79 4.253.63c-.113-.174-.39-.174-.494 0z'/%3E%3C/svg%3E");
+}
+
+.has-danger .form-control-feedback,
+.has-danger .form-control-label,
+.has-danger .col-form-label,
+.has-danger .form-check-label,
+.has-danger .custom-control {
+  color: $danger;
+}
+
+.has-danger .form-control {
+  border-color: $danger;
+}
+
+.has-danger .input-group-addon {
+  color: $danger;
+  border-color: $danger;
+  
+}
+
+.has-danger .form-control-danger {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23d9534f' viewBox='-2 -2 7 7'%3E%3Cpath stroke='%23d9534f' d='M0 0l3 3m0-3L0 3'/%3E%3Ccircle r='.5'/%3E%3Ccircle cx='3' r='.5'/%3E%3Ccircle cy='3' r='.5'/%3E%3Ccircle cx='3' cy='3' r='.5'/%3E%3C/svg%3E");
+}

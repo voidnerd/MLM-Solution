@@ -1,0 +1,427 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+
+@import '../variable';
+
+
+
+/*******************
+Stylish tooltip
+******************/
+
+//colors for tooltips
+$black_10: rgba(0, 0, 0, 0.1);
+$color_outer_space_20_approx: rgba(48, 54, 61, 0.2);
+$color_baltic_sea_approx: #2b2b2b;
+$color_charade_approx: #2a3035;
+$color_vivid_tangerine_approx: $themecolor;
+$color_cerulean_approx: #00aeef;
+
+//urls
+$url_0: url(../../../../assets/images/tooltip/tooltip1.svg);
+$url_1: url(../../../../assets/images/tooltip/shape1.svg);
+
+//@extend-elements
+//original selectors
+//.mytooltip:hover .tooltip-content2, .mytooltip:hover .tooltip-content2 i
+%extend_1 {
+    opacity: 1;
+    font-size: 18px;
+    pointer-events: auto; //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+}
+
+//original selectors
+//.mytooltip:hover .tooltip-content4, .mytooltip:hover .tooltip-text2
+%extend_2 {
+    pointer-events: auto;
+    opacity: 1; //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate3d(0, 0, 0);
+}
+
+
+.mytooltip {
+    display: inline;
+    position: relative;
+    z-index: 9999;
+    &:hover {
+        .tooltip-item::after {
+            pointer-events: auto;
+        }
+        .tooltip-content {
+            pointer-events: auto;
+            opacity: 1; //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+            transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+        }
+        .tooltip-content2 {
+            @extend %extend_1;
+            i {
+                @extend %extend_1;
+            }
+        }
+        .tooltip-content3 {
+            opacity: 1;
+            pointer-events: auto; //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+            transform: scale3d(1, 1, 1);
+        }
+        .tooltip-item2 {
+            color: $white; //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+            transform: translate3d(0, -0.5em, 0);
+        }
+        .tooltip-content4 {
+            @extend %extend_2;
+        }
+        .tooltip-text2 {
+            @extend %extend_2;
+        }
+        .tooltip-content5 {
+            opacity: 1;
+            pointer-events: auto; //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
+            transition-delay: 0s;
+        }
+        .tooltip-text3 {
+            //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
+            transition-delay: 0s; //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+            transform: scale3d(1, 1, 1);
+        }
+        .tooltip-inner2 {
+            //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
+            transition-delay: 0.3s; //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+            transform: translate3d(0, 0, 0);
+        }
+    }
+}
+
+.tooltip-item {
+    background: $black_10;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 500;
+    padding: 0 10px;
+}
+
+.tooltip-item::after {
+    content: '';
+    position: absolute;
+    width: 360px;
+    height: 20px;
+    bottom: 100%;
+    left: 50%;
+    pointer-events: none; //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translateX(-50%);
+}
+
+.tooltip-content {
+    position: absolute;
+    z-index: 9999;
+    width: 360px;
+    left: 50%;
+    margin: 0 0 20px -180px;
+    bottom: 100%;
+    text-align: left;
+    font-size: 14px;
+    line-height: 30px; //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: -5px -5px 15px $color_outer_space_20_approx;
+    background: $color_baltic_sea_approx;
+    opacity: 0;
+    cursor: default;
+    pointer-events: none;
+    img {
+        position: relative;
+        height: 140px;
+        display: block;
+        float: left;
+        margin-right: 1em;
+    }
+}
+
+.tooltip-effect-5 {
+    .tooltip-content {
+        width: 180px;
+        margin-left: -90px; //Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+        transform-origin: 50% calc(106%); //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotate3d(0, 0, 1, 15deg); //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+        transition: opacity 0.2s, transform 0.2s; //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+        transition-timing-function: ease, cubic-bezier(0.17, 0.67, 0.4, 1.39);
+    }
+    .tooltip-text {
+        padding: 1.4em;
+    }
+}
+
+.tooltip-content::after {
+    content: '';
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: transparent;
+    border-top-color: $color_charade_approx;
+    border-width: 10px;
+    margin-left: -10px;
+}
+
+.tooltip-text {
+    font-size: 14px;
+    line-height: 24px;
+    display: block;
+    padding: 1.31em 1.21em 1.21em 0;
+    color: $white;
+}
+
+.tooltip-content2 {
+    position: absolute;
+    z-index: 9999;
+    width: 80px;
+    height: 80px;
+    padding-top: 25px;
+    left: 50%;
+    margin-left: -40px;
+    bottom: 100%; //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 50%;
+    text-align: center;
+    background: $color_vivid_tangerine_approx;
+    color: $white;
+    opacity: 0;
+    margin-bottom: 20px;
+    cursor: default;
+    pointer-events: none;
+    i {
+        opacity: 0;
+    }
+}
+
+.tooltip-effect-6 {
+    .tooltip-content2 {
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: translate3d(0, 10px, 0) rotate3d(1, 1, 1, 45deg); //Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+        transform-origin: 50% 100%; //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+        transition: opacity 0.3s, transform 0.3s;
+        i {
+            //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+            transform: scale3d(0, 0, 1); //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+            transition: opacity 0.3s, transform 0.3s;
+        }
+    }
+    &:hover .tooltip-content2 i {
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotate3d(1, 1, 1, 0);
+    }
+}
+
+.tooltip-content2::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin: -7px 0 0 -15px;
+    width: 30px;
+    height: 20px;
+    background: $url_0 no-repeat center center;
+    background-size: 100%;
+}
+
+.tooltip-content3 {
+    position: absolute;
+    background: $url_1 no-repeat center bottom;
+    background-size: 100% 100%;
+    z-index: 9999;
+    width: 200px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -100px;
+    padding: 50px 30px;
+    text-align: center;
+    color: $white;
+    opacity: 0;
+    cursor: default;
+    font-size: 14;
+    line-height: 27px;
+    pointer-events: none; //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: scale3d(0.1, 0.2, 1); //Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+    transform-origin: 50% 120%; //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.4s, transform 0.4s; //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+    transition-timing-function: ease, cubic-bezier(0.6, 0, 0.4, 1);
+}
+
+.tooltip-content3::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 50%;
+    margin-left: -8px;
+    top: 100%;
+    background: $color_cerulean_approx; //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate3d(0, -60%, 0) rotate3d(0, 0, 1, 45deg);
+}
+
+.tooltip-item2 {
+    color: $color_cerulean_approx;
+    cursor: pointer;
+    z-index: 100;
+    position: relative;
+    display: inline-block;
+    font-weight: 500; //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.tooltip-content4 {
+    position: absolute;
+    z-index: 99;
+    width: 360px;
+    left: 50%;
+    margin-left: -180px;
+    bottom: -5px;
+    text-align: left;
+    background: $color_cerulean_approx;
+    opacity: 0;
+    font-size: 14px;
+    line-height: 27px;
+    padding: 1.5em;
+    color: $white;
+    border-bottom: 55px solid $color_baltic_sea_approx;
+    cursor: default;
+    pointer-events: none; //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 5px; //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate3d(0, -0.5em, 0); //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.3s, transform 0.3s;
+    a {
+        color: $color_baltic_sea_approx;
+    }
+}
+
+.tooltip-text2 {
+    opacity: 0; //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate3d(0, 1.5em, 0); //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.tooltip-content5 {
+    position: absolute;
+    z-index: 9999;
+    width: 300px;
+    left: 50%;
+    bottom: 100%;
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: center;
+    font-weight: 400;
+    color: $white;
+    background: transparent;
+    opacity: 0;
+    margin: 0 0 20px -150px;
+    cursor: default;
+    pointer-events: none; //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.3s 0.3s;
+    span {
+        display: block;
+    }
+}
+
+.tooltip-text3 {
+    border-bottom: 10px solid $color_vivid_tangerine_approx;
+    overflow: hidden; //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: scale3d(0, 1, 1); //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: transform 0.3s 0.3s;
+}
+
+.tooltip-inner2 {
+    background: $color_baltic_sea_approx;
+    padding: 40px; //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate3d(0, 100%, 0); //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: transform 0.3s;
+}
+
+.tooltip-content5::after {
+    content: '';
+    bottom: -20px;
+    left: 50%;
+    border: solid transparent;
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: transparent;
+    border-top-color: $color_vivid_tangerine_approx;
+    border-width: 10px;
+    margin-left: -10px;
+}
+
+.tooltip-effect-1 .tooltip-content {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate3d(0, -10px, 0); //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.3s, transform 0.3s;
+    color: $white;
+}
+
+.tooltip-effect-2 .tooltip-content {
+    //Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+    transform-origin: 50% calc(110%); //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: perspective(1000px) rotate3d(1, 0, 0, 45deg); //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.tooltip-effect-3 .tooltip-content {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate3d(0, 10px, 0) rotate3d(1, 1, 0, 25deg); //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.tooltip-effect-4 .tooltip-content {
+    //Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+    transform-origin: 50% 100%; //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: scale3d(0.7, 0.3, 1); //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.tooltip.tooltip-effect-2:hover .tooltip-content {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: perspective(1000px) rotate3d(1, 0, 0, 0deg);
+}
+
+a.mytooltip {
+    font-weight: 500;
+    color: $color_vivid_tangerine_approx;
+}
+
+.tooltip-effect-7 .tooltip-content2 {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate3d(0, 10px, 0); //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.3s, transform 0.3s;
+    i {
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: translate3d(0, 15px, 0); //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+        transition: opacity 0.3s, transform 0.3s;
+    }
+}
+
+.tooltip-effect-8 .tooltip-content2 {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate3d(0, 10px, 0) rotate3d(0, 1, 0, 90deg); //Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+    transform-origin: 50% 100%; //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.3s, transform 0.3s;
+    i {
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: scale3d(0, 0, 1); //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+        transition: opacity 0.3s, transform 0.3s;
+    }
+}
+
+.tooltip-effect-9 .tooltip-content2 {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate3d(0, -20px, 0); //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.3s, transform 0.3s;
+    i {
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: translate3d(0, 20px, 0); //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+        transition: opacity 0.3s, transform 0.3s;
+    }
+}

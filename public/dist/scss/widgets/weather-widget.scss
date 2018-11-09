@@ -1,0 +1,36 @@
+
+/*******************/
+/*Weather*/
+/*******************/
+.city-weather-days { 
+    margin: 0px;
+    li {
+        text-align: center;
+        padding: 15px 0;
+        span {
+            display: block;
+            padding: 10px 0 0;
+            color: $text-muted;
+        }
+        i {
+            display: block;
+            font-size: 20px;
+            color: $themecolor;
+        }
+        h3 {
+            font-weight: 300;
+            margin-top: 5px;
+        }
+    }
+}
+
+/*Weather small*/
+.weather-small{
+    h1{
+        line-height: 30px;
+    }
+    sup{
+        font-size:60%;
+    }
+} 
+

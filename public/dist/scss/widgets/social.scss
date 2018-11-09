@@ -1,0 +1,35 @@
+/*******************/
+/*social-widgets*/
+/*******************/
+
+.social-widget {
+    .soc-header {
+        padding: 15px;
+        text-align: center;
+        font-size: 36px;
+        color: #fff;
+        &.box-facebook {
+            background: #3b5998;
+        }
+        &.box-twitter {
+            background: #00aced;
+        }
+        &.box-google {
+            background: #f86c6b;
+        }
+        &.box-linkedin {
+            background: #4875b4;
+        }
+    }
+    .soc-content {
+        display: flex;
+        text-align: center;
+        div {
+            padding: 10px;
+            h3 {
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+

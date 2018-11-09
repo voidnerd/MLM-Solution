@@ -1,0 +1,45 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+/*Theme Colors*/
+/**
+ * Table Of Content
+ *
+ * 	1. Color system
+ *	2. Options
+ *	3. Body
+ *	4. Typography
+ *	5. Breadcrumbs
+ *	6. Cards
+ *	7. Dropdowns
+ *	8. Buttons
+ *	9. Typography
+ *	10. Progress bars
+ *	11. Tables
+ *	12. Forms
+ *	14. Component
+ */
+/*******************
+ Campaign
+*******************/
+.campaign {
+  position: relative;
+  height: 250px; }
+  .campaign .ct-series-a .ct-area {
+    fill-opacity: 0.2;
+    fill: url(#gradient); }
+  .campaign .ct-series-a .ct-line, .campaign .ct-series-a .ct-point {
+    stroke: #00c292;
+    stroke-width: 2px; }
+  .campaign .ct-series-b .ct-area {
+    fill: #03a9f3;
+    fill-opacity: 0.1; }
+  .campaign .ct-series-b .ct-line, .campaign .ct-series-b .ct-point {
+    stroke: #03a9f3;
+    stroke-width: 2px; }
+  .campaign .ct-series-a .ct-point, .campaign .ct-series-b .ct-point {
+    stroke-width: 6px; }
+
+/*******************
+ Our income
+*******************/
+.o-income .c3 line, .o-income .c3 path {
+  stroke: #e9ecef; }

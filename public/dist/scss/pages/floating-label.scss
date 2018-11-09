@@ -1,0 +1,173 @@
+/*
+Template Name: Admin Template
+Author: Wrappixel
+
+File: scss
+*/
+@import '../variable'; 
+
+
+/*******************/
+/*Floating Label*/
+/*******************/
+
+.floating-labels .form-group {
+    position: relative;
+}
+
+.floating-labels .form-control {
+    
+    padding: 10px 10px 10px 0;
+    display: block;
+    border: none;
+    font-family: $font-family-sans-serif;
+    border-radius: 0px;
+    border-bottom: 1px solid $gray-200;
+}
+
+.floating-labels select.form-control>option {
+    font-size: 14px;
+}
+
+.floating-labels .has-error .form-control {
+    border-bottom: 1px solid $red;
+}
+
+.floating-labels .has-warning .form-control {
+    border-bottom: 1px solid $yellow;
+}
+
+.floating-labels .has-success .form-control {
+    border-bottom: 1px solid $green;
+}
+
+.floating-labels .form-control:focus {
+    outline: none;
+    border: none;
+}
+
+.floating-labels label {
+    color: $body-color;
+    
+    position: absolute;
+    cursor: auto;
+    top: 5px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.floating-labels .focused label {
+    top: -20px;
+    font-size: 12px;
+    color: $gray-800;
+}
+
+.floating-labels .bar {
+    position: relative;
+    display: block;
+}
+
+.floating-labels .bar:before,
+.floating-labels .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: $themecolor;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.floating-labels .bar:before {
+    left: 50%;
+}
+
+.floating-labels .bar:after {
+    right: 50%;
+}
+
+.floating-labels .form-control:focus~.bar:before,
+.floating-labels .form-control:focus~.bar:after {
+    width: 50%;
+}
+
+.floating-labels .highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.floating-labels .input-lg~label,
+.floating-labels .input-lg {
+    font-size: 24px;
+}
+
+.floating-labels .input-sm~label,
+.floating-labels .input-sm {
+    font-size: 16px;
+}
+
+.has-warning .bar:before,
+.has-warning .bar:after {
+    background: $yellow;
+}
+
+.has-success .bar:before,
+.has-success .bar:after {
+    background: $green;
+}
+
+.has-error .bar:before,
+.has-error .bar:after {
+    background: $red;
+}
+
+.has-warning .form-control:focus~label,
+.has-warning .form-control:valid~label {
+    color: $yellow;
+}
+
+.has-success .form-control:focus~label,
+.has-success .form-control:valid~label {
+    color: $green;
+}
+
+.has-error .form-control:focus~label,
+.has-error .form-control:valid~label {
+    color: $red;
+}
+
+.has-feedback label~.t-0 {
+    top: 0;
+}
+.form-group.error input, .form-group.error select, .form-group.error textarea {
+    border: 1px solid $red;
+}
+.form-group.validate input, .form-group.validate select, .form-group.validate textarea{
+    border:1px solid $green;
+}
+.form-group.error .help-block{
+    ul{
+        padding: 0px;
+        color:$red;
+            li{
+                list-style:none;
+                }
+    }
+}
+.form-group.issue .help-block{
+    ul{
+        padding: 0px;
+        color:$yellow;
+            li{
+                list-style:none;
+                }
+    }
+}

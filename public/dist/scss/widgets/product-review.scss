@@ -1,0 +1,41 @@
+/*============================================================== 
+widget-chart-page product review
+ ============================================================== */
+
+.product-review {
+    margin: 0px;
+    padding: 25px;
+    li {
+        display: block;
+        padding: 20px 0;
+        list-style: none;
+        .font,
+        span {
+            display: inline-block;
+            margin-left: 10px;
+        }
+    }
+}
+
+.social-profile {
+    text-align: center;
+    background: rgba(7, 10, 43, 0.8);
+}
+
+.profile-tab, .customtab {
+    li {
+        a.nav-link {
+            border: 0px;
+            padding: 15px 20px;
+            color: $body-color;
+            &.active {
+                border-bottom: 2px solid $themecolor;
+                color: $themecolor;
+            }
+            &:hover {
+                color: $themecolor;
+            }
+        }
+    }
+}
+

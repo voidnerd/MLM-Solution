@@ -1,0 +1,38 @@
+/*******************/
+/*Activity widgets*/
+/*******************/
+
+.activity-box{
+    .date-devider{
+        border-top:2px solid $border-color;
+        position:relative;
+        span{
+            background:$gray-200;
+            padding:5px 15px;
+            border-radius:60px;
+            font-size:14px;
+            top:-15px;
+            position:relative;
+            margin-left:20px;
+        }
+    }
+    .activity-item{
+        display:flex;
+        margin-bottom:30px;
+        .image-list{
+            > a{
+                margin-left:-15px;
+                position:relative;
+                vertical-align:middle;
+                
+                &:first-child, &:last-child{
+                    margin-left:0px;
+                }
+                &:hover{
+                    z-index:10;
+                    img{box-shadow:0 2px 15px rgba(0, 0, 0, 0.2);}
+                }
+            }
+        }
+    }
+}
