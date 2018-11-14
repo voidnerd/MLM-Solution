@@ -236,31 +236,18 @@
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
                                 <li><a href="javascript:void(0)"><i class="ti-wallet"></i> My Balance</a></li>
-                                <li><a href="javascript:void(0)"><i class="ti-email"></i> Inbox</a></li>
-                                <li><a href="javascript:void(0)"><i class="ti-settings"></i> Account Setting</a></li>
                                 <li><a href="javascript:void(0)"><i class="fa fa-power-off"></i> Logout</a></li>
                             </ul>
                         </li>
                         <li class="nav-small-cap">--- PERSONAL</li>
-                        <li> <a class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard </span></a>
+                        <li> <a class="waves-effect waves-dark" href="/home" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard </span></a>
                            
                         </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2"></i><span class="hide-menu">Apps</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="app-calendar.html">Calendar</a></li>
-                                <li><a href="app-chat.html">Chat app</a></li>
-                                <li><a href="app-ticket.html">Support Ticket</a></li>
-                                <li><a href="app-contact.html">Contact / Employee</a></li>
-                                <li><a href="app-contact2.html">Contact Grid</a></li>
-                                <li><a href="app-contact-detail.html">Contact Detail</a></li>
-                            </ul>
+                        <li> <a class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-wallet"></i><span class="hide-menu">Wallet</span></a>
+    
                         </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-email"></i><span class="hide-menu">Inbox</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="app-email.html">Mailbox</a></li>
-                                <li><a href="app-email-detail.html">Mailbox Detail</a></li>
-                                <li><a href="app-compose.html">Compose Mail</a></li>
-                            </ul>
+                        <li> <a class="waves-effect waves-dark" href="/pending" aria-expanded="false"><i class="fa fa-clock-o"></i><span class="hide-menu">Pending</span></a>
+                           
                         </li>
                       
                         <li class="nav-small-cap">--- SUPPORT</li>
@@ -296,14 +283,27 @@
                                 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
                                @yield('breadli')
                             </ol>
-                            <button type="button" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Upgrade</button>
+                            <a type="button" href="/activationrequest" class="btn btn-success d-none d-lg-block m-l-15 text-white"><i class="fa fa-plus-circle"></i> Activate</a>
                         </div>
                     </div>
                 </div>
+                
                 <!-- ============================================================== -->
                 <!-- End Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
-               
+                @if(Session::has('error'))
+                <div class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+                        {{Session::get('error')}}
+                </div>
+
+                @elseif(Session::has('success'))
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+                    {{Session::get('success')}}
+                </div>
+                @endif
+
                 @yield('content')
                 <!-- ============================================================== -->
                 <!-- Right sidebar -->
@@ -374,7 +374,7 @@
         <!-- footer -->
         <!-- ============================================================== -->
         <footer class="footer">
-            © 2018 Eliteadmin by themedesigner.in
+            © 2018 Company May Yet Be Unknown
         </footer>
         <!-- ============================================================== -->
         <!-- End footer -->
@@ -410,6 +410,11 @@
     <!-- Chart JS -->
     <script src="dist/js/dashboard1.js"></script>
     <script src="/assets/node_modules/toast-master/js/jquery.toast.js"></script>
+     <!-- This is data table -->
+     <script src="/assets/node_modules/datatables/jquery.dataTables.min.js"></script>
+     <script>
+        $('#myTable').DataTable();
+     </script>
 </body>
 
 </html>
