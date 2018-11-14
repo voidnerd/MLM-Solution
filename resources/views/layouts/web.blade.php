@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.png">
     <title>Elite Admin Template - The Ultimate Multipurpose admin template</title>
     <!-- This page CSS -->
     <!-- chartist CSS -->
@@ -193,7 +193,7 @@
                         <!-- User Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown u-pro">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user" class=""> <span class="hidden-md-down">Mark &nbsp;<i class="fa fa-angle-down"></i></span> </a>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/assets/images/users/default.png" alt="user" class=""> <span class="hidden-md-down">{{AUth::user()->username}} &nbsp;<i class="fa fa-angle-down"></i></span> </a>
                             <div class="dropdown-menu dropdown-menu-right animated flipInY">
                                 <!-- text-->
                                 <a href="javascript:void(0)" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
@@ -232,27 +232,28 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="user-pro"> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user-img" class="img-circle"><span class="hide-menu">Mark Jeckson</span></a>
+                        <!-- <li class="user-pro"> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img src="/assets/images/users/default.png" alt="user-img" class="img-circle"><span class="hide-menu">{{Auth::user()->username}}</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
                                 <li><a href="javascript:void(0)"><i class="ti-wallet"></i> My Balance</a></li>
                                 <li><a href="javascript:void(0)"><i class="fa fa-power-off"></i> Logout</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li class="nav-small-cap">--- PERSONAL</li>
                         <li> <a class="waves-effect waves-dark" href="/home" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard </span></a>
                            
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-wallet"></i><span class="hide-menu">Wallet</span></a>
+                        <li> <a class="waves-effect waves-dark" href="/wallet" aria-expanded="false"><i class="ti-wallet"></i><span class="hide-menu">Wallet</span></a>
     
                         </li>
+                        <li class="nav-small-cap">--- ADMIN AREA</li>
                         <li> <a class="waves-effect waves-dark" href="/pending" aria-expanded="false"><i class="fa fa-clock-o"></i><span class="hide-menu">Pending</span></a>
                            
                         </li>
                       
-                        <li class="nav-small-cap">--- SUPPORT</li>
-                        <li> <a class="waves-effect waves-dark" href="pages-login.html" aria-expanded="false"><i class="fa fa-circle-o text-success"></i><span class="hide-menu">Log Out</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="pages-faq.html" aria-expanded="false"><i class="fa fa-circle-o text-info"></i><span class="hide-menu">FAQs</span></a></li>
+                        <li class="nav-small-cap">--- OTHERS</li>
+                        <li> <a class="waves-effect waves-dark" href="/logout" aria-expanded="false"><i class="fa fa-power-off text-danger"></i><span class="hide-menu">Log Out</span></a></li>
+                       
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->

@@ -1,9 +1,9 @@
 @extends('layouts.web')
 
-@section('breadtitle', "Dashboard")
+@section('breadtitle', "Pending Activation")
 
 @section('breadli')
-<li class="breadcrumb-item active">Dashboard</li>               
+<li class="breadcrumb-item active">pending</li>               
 @endsection
 
 @section('content')
@@ -20,6 +20,7 @@
                                             <tr>
                                                 <th>Name</th>
                                                 <th>Email</th>
+                                                <th>Username</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -28,6 +29,7 @@
                                             <tr>
                                                 <td>{{$user->name}}</td>
                                                 <td>{{$user->email}}</td>
+                                                <td>{{$user->username}}</td>
                                                 <td>
                                                 <button  data-toggle="modal" data-target="#daModal{{$user->id}}" class="btn btn-warning btn-sm">Activate</button>
                                                 </td>
@@ -48,8 +50,8 @@
                                                         <input type="text" class="form-control" id="recipient-name" value="{{$user->name}}"disabled>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="recipient-name" class="control-label">Email:</label>
-                                                        <input type="text" class="form-control" id="recipient-name" value="{{$user->email}}"disabled>
+                                                        <label for="recipient-name" class="control-label">Username:</label>
+                                                        <input type="text" class="form-control" name="username" value="{{$user->username}}"disabled>
                                                     </div>
                                                    
                                                 </form>
