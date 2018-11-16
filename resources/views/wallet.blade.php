@@ -16,7 +16,7 @@
                            
                                 <div class="row">
                                     <div class="col-12">
-                                        <h3 class="text-success">₦55,090,000</h3>
+                                        <h3 class="text-success">₦{{ !$wallet ? 0 : number_format($wallet->amount) }}</h3>
                                         <h6 class="card-subtitle">Balance</h6></div>
                                     <div class="col-12">
                                         <div class="progress">

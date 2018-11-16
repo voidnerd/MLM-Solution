@@ -8,12 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="_token" content="{{ csrf_token() }}">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.png">
-    <title>Elite Admin Template - The Ultimate Multipurpose admin template</title>
+    <title>E-earners | Home</title>
     <!-- This page CSS -->
-    <!-- chartist CSS -->
-    <link href="/assets/node_modules/morrisjs/morris.css" rel="stylesheet">
+    <!-- sweetalert CSS -->
+    <link href="/assets/node_modules/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
     <!--Toaster Popup message CSS -->
     <link href="/assets/node_modules/toast-master/css/jquery.toast.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -35,7 +36,7 @@
     <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
-            <p class="loader__label">Elite admin</p>
+            <p class="loader__label">E-Earners</p>
         </div>
     </div>
     <!-- ============================================================== -->
@@ -198,7 +199,7 @@
                                 <!-- text-->
                                 <a href="javascript:void(0)" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
                                 <!-- text-->
-                                <a href="javascript:void(0)" class="dropdown-item"><i class="ti-wallet"></i> My Balance</a>
+                                <a href="/wallet" class="dropdown-item"><i class="ti-wallet"></i> My Balance</a>
                                 <!-- text-->
                                 
                                 <!-- text-->
@@ -246,11 +247,19 @@
                         <li> <a class="waves-effect waves-dark" href="/wallet" aria-expanded="false"><i class="ti-wallet"></i><span class="hide-menu">Wallet</span></a>
     
                         </li>
+                        <li> <a class="waves-effect waves-dark" href="/#" aria-expanded="false"><i class="icon-people"></i><span class="hide-menu">Referrals</span></a>
+    
+                        </li>
                         <li class="nav-small-cap">--- ADMIN AREA</li>
                         <li> <a class="waves-effect waves-dark" href="/pending" aria-expanded="false"><i class="fa fa-clock-o"></i><span class="hide-menu">Pending</span></a>
                            
                         </li>
-                      
+                        <li> <a class="waves-effect waves-dark" href="/pending" aria-expanded="false"><i class="fa fa-clock-o"></i><span class="hide-menu">Transactions</span></a>
+                           
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="/pending" aria-expanded="false"><i class="fa fa-clock-o"></i><span class="hide-menu">Withdrawal Request</span></a>
+                           
+                        </li>
                         <li class="nav-small-cap">--- OTHERS</li>
                         <li> <a class="waves-effect waves-dark" href="/logout" aria-expanded="false"><i class="fa fa-power-off text-danger"></i><span class="hide-menu">Log Out</span></a></li>
                        
@@ -413,6 +422,8 @@
     <script src="/assets/node_modules/toast-master/js/jquery.toast.js"></script>
      <!-- This is data table -->
      <script src="/assets/node_modules/datatables/jquery.dataTables.min.js"></script>
+     <script src="/assets/node_modules/sweetalert/sweetalert.min.js"></script>
+    <script src="/assets/node_modules/sweetalert/jquery.sweet-alert.custom.js"></script>
      <script>
         $('#myTable').DataTable();
      </script>

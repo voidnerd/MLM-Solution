@@ -43,23 +43,25 @@
                                                 <h4 class="modal-title">Activate user</h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                             </div>
+                                            <form method="post" action="/activate-user">
                                             <div class="modal-body">
-                                                <form>
-                                                    <div class="form-group">
-                                                        <label for="recipient-name" class="control-label">Name:</label>
-                                                        <input type="text" class="form-control" id="recipient-name" value="{{$user->name}}"disabled>
-                                                    </div>
+                                                
+                                                        @csrf
                                                     <div class="form-group">
                                                         <label for="recipient-name" class="control-label">Username:</label>
-                                                        <input type="text" class="form-control" name="username" value="{{$user->username}}"disabled>
+                                                        <input type="text" class="form-control" name="username" value="{{$user->username}}" readonly>
                                                     </div>
-                                                   
-                                                </form>
+                                                    <div class="form-group">
+                                                        <label for="recipient-name" class="control-label">Referrer</label>
+                                                        <input type="text" class="form-control" name="by"id="recipient-name" value="{{$user->referrer}}" readonly>
+                                                    </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-danger waves-effect waves-light">Activate User</button>
+                                                <button type="submit" class="btn btn-danger waves-effect waves-light">Activate User</button>
+                                             
                                             </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -70,5 +72,6 @@
                             </div>
                         </div>
                        
+
 
 @endsection

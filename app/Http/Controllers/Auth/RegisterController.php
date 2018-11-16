@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
+
+use Illuminate\Support\Facades\DB;
+
 class RegisterController extends Controller
 {
     /*
@@ -65,11 +68,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $user = DB::table('users')->where('username', $data['by'])->first();
+        if(!$user) {
+            $referrer = "ndiecodes";
+        }else {
+            $referrer = $user->username;
+        }
+       
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'username' => $data['username'],
             'phone' => $data['phone'],
+            'referrer'=> $referrer,
             'password' => Hash::make($data['password']),
         ]);
     }

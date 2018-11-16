@@ -19,48 +19,6 @@ class AdminController extends Controller
 
     }
 
-    public function trainmg() {
-        $trains = Train::all();
-        // return response()->json($trains);
-        return view('trainmg')->with(['trains' => $trains]);
-    }
-    public function addtrain(Request $request) {
-        $train = new Train();
-        $train->user_id = Auth::id();
-        $train->class_key = $request->class_key != "" ? $request->class_key : "any";
-        $train->title = $request->title;
-        $train->description = $request->description;
-        $train->venue = $request->venue;
-        $train->date = $request->date;
-        $train->duration = $request->duration;
-        $train->frequency = $request->frequency;
-        $train->time = $request->time;
-        $train->max = intval($request->max) ? $request->max : "all";
-
-        $train->save();
-        $request->session()->flash('success', "Training Schedule added successfully" );
-        return back();
-    }
-    public function edittrain(Request $request, Train $train) {
-        $train->user_id = Auth::id();
-        $train->class_key = $request->class_key != "" ? $request->class_key : "any";
-        $train->title = $request->title;
-        $train->description = $request->description;
-        $train->venue = $request->venue;
-        $train->date = $request->date;
-        $train->duration = $request->duration;
-        $train->frequency = $request->frequency;
-        $train->time = $request->time;
-        $train->max = intval($request->max) ? $request->max : "all";
-        $train->save();
-        $request->session()->flash('success', "Training Schedule edited successfully" );
-        return back();
-    }
-    public function deletetrain(Request $request, Train $train) {
-        $train->delete();
-        $request->session()->flash('success', "Training Schedule deleted successfully" );
-        return back();
-    }
     public function pending()
     {
         $users = DB::table('users')
@@ -108,7 +66,7 @@ class AdminController extends Controller
         return view('payment')->with(['users' => $users]);
     }
     public function transactions(){
-
+       
         $trans = DB::table('transactions')
         ->select(DB::raw('transactions.*, users.name, users.class_key, users.username, users.phone')) 
         ->join('users', 'users.id', '=', 'transactions.user_id')->limit(200)
@@ -123,10 +81,199 @@ class AdminController extends Controller
         $transaction->paid_by = Auth::id();
         $transaction->save();
 
-        
+        if($user->id == 1) {
+            return 0;
+        }
 
         $request->session()->flash('success', 'You just confirmed that you have paid ' .$request->username );
         return back();
+    }
+    
+    //Todo Get parent
+    public function getParentId($username){
+        $user = DB::table('users')->where('username', $username)->first();
+
+        if($user->direct_downlines < 2) {
+            return $user->id;
+        }else {
+            $parent = DB::table('users')
+            ->select(DB::raw('users.*, users_tree.*'))
+            ->where('users_tree.ancestor', '=', $user->id)
+            ->where('users_tree.depth', '>', 0)
+            ->join('users_tree', 'users.id', '=', 'users_tree.descendant')
+            ->where('users.direct_downlines', '<', 2)
+            ->where('activated', '=', 'yes')
+            ->first();
+
+            return $parent->id;
+        }
+        
+    }
+    //Todo Get parent
+    public function getWhoToPay($id, $level){
+        if($level == 2){
+            $col = 'users.two';
+            $count = 4;
+        }else if($level == 3){
+            $col = 'users.three';
+            $count = 8;
+        }else if($level == 4){
+            $col = 'users.four';
+            $count = 16;
+        }else if($level == 5){
+            $col = 'users.five';
+            $count = 32;
+        }else if($level == 6){
+            $col = 'users.six';
+            $count = 64;
+        }
+
+            $parent = DB::table('users')
+            ->select(DB::raw('users.*, users_tree.*'))
+            ->where('users_tree.descendant', '=', $id)
+            ->where('users_tree.depth', '=', $level)
+            ->join('users_tree', 'users.id', '=', 'users_tree.ancestor')
+            ->where('users.level', '=', $level)
+            ->where($col, '<', $count)
+            ->first();
+
+            if(!$parent) {
+
+                $parent = DB::table('users')
+                ->select(DB::raw('users.*, users_tree.*'))
+                ->where('users_tree.descendant', '=', $id)
+                ->where('users_tree.depth', '>', $level)
+                ->join('users_tree', 'users.id', '=', 'users_tree.ancestor')
+                ->where('users.level', '=', $level)
+                ->where($col, '<', $count)
+                ->first();
+                
+                if(!$parent) {
+                    $parent = DB::table('users')->where('id', 1)->first();
+                    return $parent;        
+
+                }
+                
+                return $parent;
+
+                
+            }
+
+            return $parent;
+        
+        
+    }
+
+    public function levelAmount($level){
+        if($level == 2){
+            return 2000;
+        }else if($level == 3){
+            return 5000;
+        }else if($level == 4){
+            return 16000;
+        }else if($level == 5){
+            return 56000;
+        }else if($level == 6){
+            return 350000;
+        }
+    }
+    
+
+    public function upgrade(Request $request) {
+
+    $wallet = Wallet::where('user_id', Auth::id())->first();
+        $level1Payment = 1000;
+        $level2Payment = 2000;
+        $level3Payment = 5000;
+        $level4Payment = 16000;
+        $level5Payment = 56000;
+        $level6Payment = 350000;
+
+        $level = Auth::user()->level + 1;
+    
+
+        if($wallet->amount < $this->levelAmount($level))
+        {
+            $request->session()->flash('error', 'Insuficient funds!');
+            return redirect()->back();
+        }
+        DB::beginTransaction();
+        try{
+           
+            if($level == 2) {
+             
+                $parent = $this->getWhoToPay(Auth::id(), 2);
+
+                $type = "Level 2 Benefits";
+        
+                $this->pay($parent, $level2Payment, $type);
+        
+                DB::table('users')->where('id', $parent->id)->increment('two');
+            
+            }
+            if($level == 3) {
+                $parent = $this->getWhoToPay(Auth::id(), 3);
+
+                $type = "Level 3 Benefits";
+        
+                $this->pay($parent, $level3Payment, $type);
+        
+                DB::table('users')->where('id', $parent->id)->increment('three');
+        
+                
+            }
+            if($level == 4) {
+                $parent = $this->getWhoToPay(Auth::id(), 4);
+
+                $type = "Level 4 Benefits";
+        
+                $this->pay($parent, $level4Payment, $type);
+        
+                DB::table('users')->where('id', $parent->id)->increment('four');
+        
+            
+            }
+
+            if($level == 5) {
+                $parent = $this->getWhoToPay(Auth::id(), 5);
+
+                $type = "Level 5 Benefits";
+        
+                $this->pay($parent, $level5Payment, $type);
+        
+                DB::table('users')->where('id', $parent->id)->increment('five');
+        
+                
+            }
+
+            if($level == 6) {
+                $parent = $this->getWhoToPay(Auth::id(), 6);
+
+                $type = "Level 6 Benefits";
+        
+                $this->pay($parent, $level6Payment, $type);
+        
+                DB::table('users')->where('id', $parent->id)->increment('six');
+        
+            }
+
+        }catch (\Exception $e) {
+            // ignore everything if there is an error
+                DB::rollback();
+    
+                //return response()->json($e->getMessage());
+                $request->session()->flash('error', $e->getMessage());
+                return redirect()->back();
+    
+                // something went wrong
+        }
+
+        DB::commit();
+
+
+        $request->session()->flash('success', 'upgrade was successful!');
+        return back();
+        
     }
 
     //count
@@ -163,41 +310,25 @@ class AdminController extends Controller
     public function activateUser(Request $request)
     {
         
-        $check = DB::table('users')->where('username', $request->username)->exists();
-     
-        if($check) {
-
         $user = DB::table('users')->where('username', $request->username)->first();
+
+        //return response()->json($user);
         
         
+        $node_id = $user->id;
+
         DB::beginTransaction();
 
         try {
-         
-        //get oldest user with downlines < 3
 
-       
-        $node_id = $user->id;
-        
-       
-        //Todo: where activation equals "yes"
-        $parent = DB::table('users')->where('direct_downlines', '<', 3)
-                                    ->where('activated', '=', 'yes')
-                                    ->where('class_key', '=', $user->class_key)
-                                    ->oldest('activated_at')->first();
-
-         if(!$parent) {
+         if($node_id == 1) {
             $parent_id = 0;
          }else {
-            $parent_id =  ($parent->id != $node_id) ? $parent->id : 0;
+            $parent = DB::table('users')->where('username', $request->by)->first();
+
+            $parent_id =  $this->getParentId($parent->username);
          }
-       
-     
-       
-        //update users parent id field
-            DB::table('users')
-                ->where('id', $node_id)
-                ->update(['parent_id' => $parent_id]);
+
     
         $query = "
                 INSERT INTO users_tree (ancestor,descendant,depth)
@@ -205,122 +336,36 @@ class AdminController extends Controller
                 FROM users_tree
                 WHERE descendant = {$parent_id}
                 UNION ALL SELECT {$node_id}, {$node_id}, 0";
-        
+
         //connect parent to user in tree
         $tree = DB::statement($query);
-        
-        if($user->class_key === "CT10") {
-            $amountPaid = 10000;
-        }else if($user->class_key === "CT20") {
-            $amountPaid = 20000;
-        }
 
-        $refBonus =  (5 / 100) * $amountPaid;
-        $level1Payment = (10 / 100) * $amountPaid;
-        $level2Payment = (50 / 100) * $amountPaid;
-        $level3Payment = (150 / 100) * $amountPaid;
-        $level4Payment = (300 / 100) * $amountPaid;
-        $level5Payment = (500 / 100) * $amountPaid;
+         //update users parent id field
+         DB::table('users')
+         ->where('id', $node_id)
+         ->update(['parent_id' => $parent_id]);
 
+        DB::table('users')->where('id', $node_id)->increment('level');
 
-        if($user->referred_by != null) {
+        $level1Payment = 1000;
+        $level2Payment = 2000;
+        $level3Payment = 5000;
+        $level4Payment = 16000;
+        $level5Payment = 56000;
+        $level6Payment = 350000;
 
-            $referrer = DB::table('users')->where('username', $user->referred_by)
-            ->where('activated', '=', 'yes')->first();
-            //pay referrer 5%
-            $type = "Referral Bonus";
-            if($referrer) {
-                $this->pay($referrer, $refBonus, $type);
-            }
-            
-            
-        }
-        
-              //increment downline count
+        //increment downline count
         if($parent_id != 0) {
+
             DB::table('users')->where('id', $parent_id)->increment('direct_downlines');
-            $parent1 =  DB::table('users')->where('id', $parent_id)->first();
 
-            //pay First Level
-            if($parent1->direct_downlines == 3) {
+            $realParent =  DB::table('users')->where('id', $parent_id)->first();
 
-                $type = "Level1";
-                DB::table('users')->where('id', $parent1->id)->increment('level');
-                
-                $this->pay($parent1, $level1Payment, $type);
-              
+            $type = "Level 1 Benefits";
 
-            }
+            $this->pay($realParent, $level1Payment, $type);
 
-            //Pay Second Level
-            if($parent1->parent_id != 0) {
-
-                //check if eligible and pay 2nd commision
-                $parent2 =  DB::table('users')->where('id', $parent1->parent_id) ->first();
-
-                if($this->countDownlines($parent2->id, 2) ===  9) {
-                    //pay the 50%
-
-                    $type = "Level2";
-
-                    DB::table('users')->where('id', $parent2->id)->increment('level');
-                
-                    $this->pay($parent2, $level2Payment, $type);
-                }
-
-                //Pay Level 3
-                if($parent2->parent_id != 0) {
-                    //check if eligible and pay 2nd commision
-                    $parent3 =  DB::table('users')->where('id', $parent2->parent_id) ->first();
-    
-                    if($this->countDownlines($parent3->id, 3) ===  27) {
-                        //pay the 150%
-
-                        $type = "Level3";
-                        DB::table('users')->where('id', $parent3->id)->increment('level');
-                
-                        $this->pay($parent3, $level3Payment, $type);
-                    }
-
-                    //Pay Level 4
-                    if($parent3->parent_id != 0) {
-                        //check if eligible and pay 2nd commision
-                        $parent4 =  DB::table('users')->where('id', $parent3->parent_id) ->first();
-        
-                        if($this->countDownlines($parent4->id, 4) ===  81) {
-                            //pay the 300%
-
-                            $type = "Level4";
-                            DB::table('users')->where('id', $parent4->id)->increment('level');
-                
-                            $this->pay($parent4, $level4Payment, $type);
-                        }
-
-
-                        //pay level 5
-                        if($parent4->parent_id != 0) {
-                            //check if eligible and pay 2nd commision
-                            $parent5 =  DB::table('users')->where('id', $parent4->parent_id) ->first();
-            
-                            if($this->countDownlines($parent5->id, 5) ===  243) {
-                                //pay the 500%
-
-                                $type = "Level5";
-                                DB::table('users')->where('id', $parent5->id)->increment('level');
-                
-                                $this->pay($parent5, $level5Payment, $type);
-                            }
-            
-                        }
-        
-                    }
-    
-                }
-            }
-          
         }//end if
-
-
     
        DB::table('users')
             ->where('id', $node_id)
@@ -328,7 +373,6 @@ class AdminController extends Controller
              'activated_by' => Auth::id(), 'activated_at' => DB::raw('now()')
             ]);
         
-
         } catch (\Exception $e) {
         // ignore everything if there is an error
             DB::rollback();
@@ -346,11 +390,6 @@ class AdminController extends Controller
 
         $request->session()->flash('success', $user->username. ' activation was successful!');
         return back();
-
-        }else {
-            $request->session()->flash('error', 'Something went wrong, probably wrong username input!!!');
-            return redirect()->back();
-        }
 
 
     }

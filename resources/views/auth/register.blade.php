@@ -106,6 +106,11 @@
                                 <input class="form-control" name="password_confirmation" type="password" required="" placeholder="Confirm Password">
                             </div>
                         </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <input class="form-control" name="by" type="text" placeholder="Referrer (Optional)">
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <div class="col-md-12">
                                 <div class="custom-control custom-checkbox">

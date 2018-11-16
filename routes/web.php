@@ -79,11 +79,6 @@ Route::post('/send-payment-request', 'WalletController@sendPaymentRequest');
 
 Route::get('/pending', 'AdminController@pending');
 
-Route::get('/trainmg', 'AdminController@trainmg')->middleware('role:admin:staff');
-Route::post('/addtrain', 'AdminController@addtrain')->middleware('role:admin:staff');
-Route::post('/edittrain/{train}', 'AdminController@edittrain')->middleware('role:admin:staff');
-
-Route::get('/deletetrain/{train}', 'AdminController@deletetrain')->middleware('role:admin');
 
 Route::get('/staff', 'AdminController@staff')->middleware('role:admin');
 
@@ -93,6 +88,9 @@ Route::get('/payment', 'AdminController@payment')->middleware('role:admin:staff'
 
 Route::post('/payment/{transaction}', 'AdminController@paymentDone')->middleware('role:admin');
 
-Route::post('/activate-user', 'AdminController@activateUser')->middleware('role:admin');
+Route::post('/activate-user', 'AdminController@activateUser');
+//->middleware('role:admin');
 
 Route::get('/transactions', 'AdminController@transactions')->middleware('role:admin:staff');
+
+Route::post('/upgrade', 'AdminController@upgrade');
