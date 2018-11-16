@@ -69,11 +69,18 @@
                                                 <th>Type</th>
                                                 <th>Amount</th>
                                                 <th>Status</th>
-                                                <th>Data</th>
+                                                <th>Date</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                     
+                                        @foreach($trans as $tran)
+                                            <tr>
+                                                <td>{{$tran->type}}</td>
+                                                <td>{{$tran->amount}}</td>
+                                                <td>{{$tran->status}}</td>
+                                                <td>{{$tran->created_at}}</td>
+                                            </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>

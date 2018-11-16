@@ -21,7 +21,7 @@
                                     <tbody>
                                         <tr class="table-primary">
                                             <td>Level:</td>
-                                            <td>1</td>
+                                            <td>{{Auth::user()->level}}</td>
                                         </tr>
                                         <tr class="table-success">
                                             <td>Total Benefits:</td>
