@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src chrome:" />
+    <title>Server Not Found</title>
+    <link rel="stylesheet" href="chrome://browser/skin/aboutNetError.css" type="text/css" media="all" />
+    <!-- If the location of the favicon is changed here, the FAVICON_ERRORPAGE_URL symbol in
+         toolkit/components/places/src/nsFaviconService.h should be updated. -->
+    <link rel="icon" type="image/png" id="favicon" href="chrome://global/skin/icons/warning-16.png" />
+  </head>
+
+  <body dir="ltr" class="illustrated dnsNotFound neterror">
+    <!-- ERROR ITEM CONTAINER (removed during loading to avoid bug 39098) -->
+    
+
+    <!-- PAGE CONTAINER (for styling purposes only) -->
+    <div id="errorPageContainer" class="container">
+      <div id="text-container">
+        <!-- Error Title -->
+        <div class="title">
+          <h1 class="title-text">Hmm. We’re having trouble finding that site.</h1>
+        </div>
+
+        <!-- LONG CONTENT (the section most likely to require scrolling) -->
+        <div id="errorLongContent">
+
+          <!-- Short Description -->
+          <div id="errorShortDesc">
+            <p id="errorShortDescText">We can’t connect to the server at primedsoft.slack.com.</p>
+          </div>
+
+          <div id="errorShortDesc2">
+              <p id="errorShortDescText2"></p>
+          </div>
+
+          <p id="badStsCertExplanation" hidden="true">This site uses HTTP
+Strict Transport Security (HSTS) to specify that Firefox may only connect
+to it securely. As a result, it is not possible to add an exception for this
+certificate.</p>
+
+          <div id="wrongSystemTimePanel">
+            <p> Firefox did not connect to <span id="wrongSystemTime_URL"></span> because your computer’s clock appears to show the wrong time and this is preventing a secure connection.</p> <p>Your computer is set to <span id="wrongSystemTime_systemDate"></span>, when it should be <span id="wrongSystemTime_actualDate"></span>. To fix this problem, change your date and time settings to match the correct time.</p>
+          </div>
+
+          <div id="wrongSystemTimeWithoutReferencePanel">
+            <p>Firefox did not connect to <span id="wrongSystemTimeWithoutReference_URL"></span> because your computer’s clock appears to show the wrong time and this is preventing a secure connection.</p> <p>Your computer is set to <span id="wrongSystemTimeWithoutReference_systemDate"></span>. To fix this problem, change your date and time settings to match the correct time.</p>
+          </div>
+
+          <!-- Long Description (Note: See netError.dtd for used XHTML tags) -->
+          <div id="errorLongDesc">
+<strong xmlns="http://www.w3.org/1999/xhtml">If that address is correct, here are three other things you can try:</strong>
+<ul xmlns="http://www.w3.org/1999/xhtml">
+  <li>Try again later.</li>
+  <li>Check your network connection.</li>
+  <li>If you are connected but behind a firewall, check that Firefox has permission to access the Web.</li>
+</ul>
+</div>
+
+          <div id="learnMoreContainer">
+            <p><a href="https://support.mozilla.org/kb/what-does-your-connection-is-not-secure-mean" id="learnMoreLink" target="new">Learn more…</a></p>
+          </div>
+        </div>
+
+        <!-- UI for option to report certificate errors to Mozilla. Removed on
+             init for other error types .-->
+        <div id="certificateErrorReporting">
+          <p class="toggle-container-with-text">
+            <input type="checkbox" id="automaticallyReportInFuture" role="checkbox" />
+            <label for="automaticallyReportInFuture" id="automaticallyReportInFuture">Report errors like this to help Mozilla identify and block malicious sites</label>
+          </p>
+        </div>
+
+        <div id="prefChangeContainer" class="button-container">
+          <p>It looks like your network security settings might be causing this. Do you want the default settings to be restored?</p>
+          <button id="prefResetButton" class="primary" autocomplete="off">Restore default settings</button>
+        </div>
+
+        <div id="certErrorAndCaptivePortalButtonContainer" class="button-container">
+          <button id="returnButton" class="primary" autocomplete="off">Go Back</button>
+          <button id="openPortalLoginPageButton" class="primary" autocomplete="off">Open Network Login Page</button>
+          <button id="advancedButton" autocomplete="off">Advanced</button>
+          <button id="moreInformationButton" autocomplete="off">More Information</button>
+        </div>
+      </div>
+
+      <div id="netErrorButtonContainer" class="button-container"><button id="errorTryAgain" class="primary" autocomplete="off" autofocus="true">Try Again</button>
+        
+      </div>
+
+      <div id="advancedPanelContainer">
+        <div id="badCertAdvancedPanel" class="advanced-panel">
+          <p id="badCertTechnicalInfo"></p>
+          <div id="advancedPanelButtonContainer" class="button-container">
+            <button id="advancedPanelErrorTryAgain" class="primary" autocomplete="off">Try Again</button>
+          </div>
+          <div class="exceptionDialogButtonContainer">
+            <button id="exceptionDialogButton">Add Exception…</button>
+          </div>
+        </div>
+
+        <div id="certificateErrorDebugInformation">
+          <button id="copyToClipboard">Copy text to clipboard</button>
+          <div id="certificateErrorText"></div>
+          <button id="copyToClipboard">Copy text to clipboard</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="application/javascript" src="chrome://browser/content/aboutNetError.js"></script>
+</html>

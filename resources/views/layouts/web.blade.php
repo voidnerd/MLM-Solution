@@ -247,7 +247,7 @@
                         <li> <a class="waves-effect waves-dark" href="/wallet" aria-expanded="false"><i class="ti-wallet"></i><span class="hide-menu">Wallet</span></a>
     
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="/#" aria-expanded="false"><i class="icon-people"></i><span class="hide-menu">Referrals</span></a>
+                        <li> <a class="waves-effect waves-dark" href="/matrix" aria-expanded="false"><i class="icon-people"></i><span class="hide-menu">Referrals</span></a>
     
                         </li>
                         <li class="nav-small-cap">--- ADMIN AREA</li>
