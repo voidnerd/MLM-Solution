@@ -91,6 +91,6 @@ Route::post('/payment/{transaction}', 'AdminController@paymentDone')->middleware
 Route::post('/activate-user', 'AdminController@activateUser');
 //->middleware('role:admin');
 
-Route::get('/transactions', 'AdminController@transactions')->middleware('role:admin:staff');
+Route::get('/transactions', 'AdminController@transactions');
 
 Route::post('/upgrade', 'AdminController@upgrade');

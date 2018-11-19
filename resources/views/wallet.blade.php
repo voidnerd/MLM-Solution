@@ -28,7 +28,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-md-6">
+                    <div class="col-lg-4 col-md-4">
                         <div class="card">
                             <div class="card-body">
                             <h6 class="card-subtitle">Minimum Withdrawal: ₦1000</h6>
@@ -47,9 +47,34 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary"> Withdraw</button>
+                                        <button class="btn btn-outline-danger"> Withdraw</button>
                                     </div>
                                     </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="col-lg-4 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                            <a href="javascript:void(0)" id="sa-params"  class="btn btn-outline-success float-right mb-2">Add Account</a>
+                            <div class="clearfix"></div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h6 class="text-dark">Acount Name:</h6>
+                                        <h6 class="text-info">Ndifreke Friday</h6>
+                                        <h6 class="text-dark">Account Number:</h6>
+                                        <h5 class="text-info">3593795977</h5>
+                                        <h6 class="text-dark">Bank Name:</h6>
+                                        <h6 class="text-info">GTB</h6>
+
+                                        </div>
+                                    <div class="col-12">
+                                        <div class="progress">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 100%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

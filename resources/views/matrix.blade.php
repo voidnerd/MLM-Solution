@@ -7,79 +7,217 @@
 @endsection
 
 @section('content')
-<style>
-ul, #myUL {
-  list-style-type: none;
-}
-
-#myUL {
-  margin: 0;
-  padding: 0;
-}
-
-.caret {
-  cursor: pointer;
-  -webkit-user-select: none; /* Safari 3.1+ */
-  -moz-user-select: none; /* Firefox 2+ */
-  -ms-user-select: none; /* IE 10+ */
-  user-select: none;
-}
-
-.caret::before {
-  content: "\25B6";
-  color: black;
-  display: inline-block;
-  margin-right: 6px;
-}
-
-.caret-down::before {
-  -ms-transform: rotate(90deg); /* IE 9 */
-  -webkit-transform: rotate(90deg); /* Safari */'
-  transform: rotate(90deg);  
-}
-
-.nested {
-  display: none;
-}
-
-.active {
-  display: block;
-}
-</style>
-
-<ul id="myUL">
-  <li><span class="caret">Beverages</span>
-    <ul class="nested">
-      <li>Water</li>
-      <li>Coffee</li>
-      <li><span class="caret">Tea</span>
-        <ul class="nested">
-          <li>Black Tea</li>
-          <li>White Tea</li>
-          <li><span class="caret">Green Tea</span>
-            <ul class="nested">
-              <li>Sencha</li>
-              <li>Gyokuro</li>
-              <li>Matcha</li>
-              <li>Pi Lo Chun</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul> 
-
-<script>
-var toggler = document.getElementsByClassName("caret");
-var i;
-
-for (i = 0; i < toggler.length; i++) {
-  toggler[i].addEventListener("click", function() {
-    this.parentElement.querySelector(".nested").classList.toggle("active");
-    this.classList.toggle("caret-down");
-  });
-}
-</script>
          
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Level One Referrals</h4>
+                              
+                                <div class="table-responsive">
+                                    <table id="one" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Username</th>
+                                                <th>level</th>
+                                                <th>Joined</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach ($ones as $one)
+                                            <tr>
+                                                <td>{{$one->name}}</td>
+                                                <td>{{$one->username}}</td>
+                                                <td>{{$one->level}}</td>
+                                                <td>{{date("m/d/y g:i A", strtotime($one->created_at))}}</td>
+                                            </tr>
+
+                          
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+  
+  
+  <!-- level two -->
+
+  @if($twos->count())
+         
+         <div class="card">
+             <div class="card-body">
+                 <h4 class="card-title">Level Two Referrals</h4>
+               
+                 <div class="table-responsive">
+                     <table id="two" class="table table-bordered table-striped">
+                         <thead>
+                             <tr>
+                                 <th>Name</th>
+                                 <th>Username</th>
+                                 <th>level</th>
+                                 <th>Joined</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                         @foreach ($twos as $two)
+                             <tr>
+                                 <td>{{$two->name}}</td>
+                                 <td>{{$two->username}}</td>
+                                 <td>{{$two->level}}</td>
+                                 <td>{{date("m/d/y g:i A", strtotime($two->created_at))}}</td>
+                             </tr>
+
+           
+                         @endforeach
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+         </div>
+@endif
+
+<!-- level three -->
+
+@if($threes->count())
+         
+         <div class="card">
+             <div class="card-body">
+                 <h4 class="card-title">Level Three Referrals</h4>
+               
+                 <div class="table-responsive">
+                     <table id="three" class="table table-bordered table-striped">
+                         <thead>
+                             <tr>
+                                 <th>Name</th>
+                                 <th>Username</th>
+                                 <th>level</th>
+                                 <th>Joined</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                         @foreach ($threes as $three)
+                             <tr>
+                                 <td>{{$three->name}}</td>
+                                 <td>{{$three->username}}</td>
+                                 <td>{{$three->level}}</td>
+                                 <td>{{date("m/d/y g:i A", strtotime($three->created_at))}}</td>
+                             </tr>
+
+           
+                         @endforeach
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+         </div>
+@endif
+
+<!-- level four -->
+
+
+@if($fours->count())
+         
+         <div class="card">
+             <div class="card-body">
+                 <h4 class="card-title">Level Four Referrals</h4>
+               
+                 <div class="table-responsive">
+                     <table id="three" class="table table-bordered table-striped">
+                         <thead>
+                             <tr>
+                                 <th>Name</th>
+                                 <th>Username</th>
+                                 <th>level</th>
+                                 <th>Joined</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                         @foreach ($fours as $four)
+                             <tr>
+                                 <td>{{$four->name}}</td>
+                                 <td>{{$four->username}}</td>
+                                 <td>{{$four->level}}</td>
+                                 <td>{{date("m/d/y g:i A", strtotime($four->created_at))}}</td>
+                             </tr>
+
+           
+                         @endforeach
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+         </div>
+@endif
+
+
+
+@if($fives->count())
+         
+         <div class="card">
+             <div class="card-body">
+                 <h4 class="card-title">Level Five Referrals</h4>
+               
+                 <div class="table-responsive">
+                     <table id="three" class="table table-bordered table-striped">
+                         <thead>
+                             <tr>
+                                 <th>Name</th>
+                                 <th>Username</th>
+                                 <th>level</th>
+                                 <th>Joined</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                         @foreach ($fives as $five)
+                             <tr>
+                                 <td>{{$five->name}}</td>
+                                 <td>{{$five->username}}</td>
+                                 <td>{{$five->level}}</td>
+                                 <td>{{date("m/d/y g:i A", strtotime($five->created_at))}}</td>
+                             </tr>
+
+           
+                         @endforeach
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+         </div>
+@endif
+
+
+
+@if($sixs->count())
+         
+         <div class="card">
+             <div class="card-body">
+                 <h4 class="card-title">Level Six Referrals</h4>
+               
+                 <div class="table-responsive">
+                     <table id="three" class="table table-bordered table-striped">
+                         <thead>
+                             <tr>
+                                 <th>Name</th>
+                                 <th>Username</th>
+                                 <th>level</th>
+                                 <th>Joined</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                         @foreach ($sixs as $six)
+                             <tr>
+                                 <td>{{$six->name}}</td>
+                                 <td>{{$six->username}}</td>
+                                 <td>{{$six->level}}</td>
+                                 <td>{{date("m/d/y g:i A", strtotime($six->created_at))}}</td>
+                             </tr>
+
+           
+                         @endforeach
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+         </div>
+@endif
 @endsection

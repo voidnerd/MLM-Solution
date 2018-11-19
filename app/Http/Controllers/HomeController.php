@@ -135,13 +135,16 @@ class HomeController extends Controller
           $level_four = $this->getDownlines(4);
   
           $level_five = $this->getDownlines(5);
+
+          $level_six = $this->getDownlines(6);
   
           return view('matrix')->with([
-              'level_one' => $level_one,
-              'level_two' => $level_two,
-              'level_three' => $level_three,
-              'level_four' => $level_four,
-              'level_five' => $level_five
+              'ones' => $level_one,
+              'twos' => $level_two,
+              'threes' => $level_three,
+              'fours' => $level_four,
+              'fives' => $level_five,
+              'sixs' => $level_six,
               ]);
       }
   

@@ -59,7 +59,6 @@ class AdminController extends Controller
        ->join('users', 'users.id', '=', 'transactions.user_id')
        ->join('wallets', 'wallets.user_id', '=', 'transactions.user_id')
        ->leftJoin('user_accounts', 'user_accounts.user_id', '=', 'transactions.user_id')
-       ->where('user_accounts.default', '=', '1')
         ->get();
             
         //return response()->json($users);
@@ -68,8 +67,8 @@ class AdminController extends Controller
     public function transactions(){
        
         $trans = DB::table('transactions')
-        ->select(DB::raw('transactions.*, users.name, users.class_key, users.username, users.phone')) 
-        ->join('users', 'users.id', '=', 'transactions.user_id')->limit(200)
+        ->select(DB::raw('transactions.*, users.name, users.username, users.phone')) 
+        ->join('users', 'users.id', '=', 'transactions.user_id')->limit(1000)
          ->get();
              
          //return response()->json($users);

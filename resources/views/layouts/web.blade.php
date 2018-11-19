@@ -254,10 +254,11 @@
                         <li> <a class="waves-effect waves-dark" href="/pending" aria-expanded="false"><i class="fa fa-clock-o"></i><span class="hide-menu">Pending</span></a>
                            
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="/pending" aria-expanded="false"><i class="fa fa-clock-o"></i><span class="hide-menu">Transactions</span></a>
+                       
+                        <li> <a class="waves-effect waves-dark" href="/payment" aria-expanded="false"><i class="fa fa-rouble"></i><span class="hide-menu">Withdrawal Request</span></a>
                            
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="/pending" aria-expanded="false"><i class="fa fa-clock-o"></i><span class="hide-menu">Withdrawal Request</span></a>
+                        <li> <a class="waves-effect waves-dark" href="/transactions" aria-expanded="false"><i class="fa fa-sort-amount-asc"></i><span class="hide-menu">Transactions</span></a>
                            
                         </li>
                         <li class="nav-small-cap">--- OTHERS</li>
@@ -426,6 +427,13 @@
     <script src="/assets/node_modules/sweetalert/jquery.sweet-alert.custom.js"></script>
      <script>
         $('#myTable').DataTable();
+        $('#one').DataTable();
+        $('#two').DataTable();
+        $('#three').DataTable();
+        $('#four').DataTable();
+        $('#five').DataTable();
+        $('#six').DataTable();
+        
      </script>
 </body>
 
