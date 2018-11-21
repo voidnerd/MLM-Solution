@@ -13,7 +13,7 @@
                             <div class="card-header bg-light">
                                 <h3 class="m-b-0 text-dark">User Summary</h3></div>
                             <div class="card-body">
-                                @if(!Auth::user()->level < 1)
+                                @if(Auth::user()->level < 1)
                                 <a type="button" href="/activationrequest" class="btn btn-outline-danger"><i class="fa fa-plus-circle"></i> Activate Your Account</a>
                                 @else
                                 <a href="javascript:void(0)" id="sa-params"  class="btn btn-outline-success">Upgrade to next Level</a>

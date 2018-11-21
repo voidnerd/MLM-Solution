@@ -71,6 +71,7 @@ class UserAccountController extends Controller
 
         $account = $this->create($data);
 
+        $request->session()->flash('success', 'Bank Details added successfully');
         return redirect()->back();
     }
 

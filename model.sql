@@ -74,16 +74,6 @@ CREATE TABLE `app_accounts` (
 	`updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
-CREATE TABLE `generated_codes` (
-	 `id` int(10) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
-     `user_id` int(1),
-     `code` VARCHAR(150),
-     `used` tinyint default 0,
-	`created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-	`updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 CREATE TABLE `wallets` (
 	 `id` int(10) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	 `user_id` int(1) not null,

@@ -67,7 +67,7 @@ class AdminController extends Controller
     public function transactions(){
        
         $trans = DB::table('transactions')
-        ->select(DB::raw('transactions.*, users.name, users.username, users.phone')) 
+        ->select(DB::raw('transactions.*, users.name, users.username,users.level, users.phone')) 
         ->join('users', 'users.id', '=', 'transactions.user_id')->limit(1000)
          ->get();
              

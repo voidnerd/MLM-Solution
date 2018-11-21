@@ -53,11 +53,7 @@ Route::post('/profile/{user}', 'HomeController@update');
 Route::get('/training', 'HomeController@training');
 
 
-Route::get('/user-accounts', 'UserAccountController@index');
-
 Route::post('/user-accounts', 'UserAccountController@store');
-
-Route::get('/user-accounts/{userAccount}', 'UserAccountController@default');
 
 Route::post('/user-accounts/{userAccount}', 'UserAccountController@update');
 

@@ -147,12 +147,7 @@ class HomeController extends Controller
               'sixs' => $level_six,
               ]);
       }
-  
-      public function userAccount()
-      {
-          return view('user_accounts');
-      }
-  
+      
       public function cradoAccount()
       {
           return view('crado_accounts');

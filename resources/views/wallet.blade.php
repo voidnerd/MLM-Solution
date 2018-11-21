@@ -40,7 +40,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text bg-light">₦</span>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="Amount">
+                                            <input type="text" class="form-control" name="amount" placeholder="Amount">
                                             <div class="input-group-append">
                                                 <span class="input-group-text bg-light">.00</span>
                                             </div>
@@ -58,16 +58,20 @@
                      <div class="col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-body">
-                            <a href="javascript:void(0)" id="sa-params"  class="btn btn-outline-success float-right mb-2">Add Account</a>
+                            @if(!$account)
+                            <a href="javascript:void(0)"  data-toggle="modal" data-target="#daModal" class="btn btn-outline-success float-right mb-2">Add Account</a>
+                            @else
+                            <a href="javascript:void(0)"  data-toggle="modal" data-target="#daModal1" class="btn btn-outline-info float-right mb-2">Edit Account</a>
+                            @endif
                             <div class="clearfix"></div>
                                 <div class="row">
                                     <div class="col-12">
                                         <h6 class="text-dark">Acount Name:</h6>
-                                        <h6 class="text-info">Ndifreke Friday</h6>
+                                        <h6 class="text-info">{{ $account ? $account->account_name : "Nil"}}</h6>
                                         <h6 class="text-dark">Account Number:</h6>
-                                        <h5 class="text-info">3593795977</h5>
+                                        <h5 class="text-info">{{$account ? $account->account_no : "Nil"}}</h5>
                                         <h6 class="text-dark">Bank Name:</h6>
-                                        <h6 class="text-info">GTB</h6>
+                                        <h6 class="text-info">{{$account ? $account->bank_name : "Nil"}}</h6>
 
                                         </div>
                                     <div class="col-12">
@@ -82,6 +86,79 @@
 
 
         </div>
+
+        <!-- modal to edit accounts -->
+        <div id="daModal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Edit Bank Details</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            </div>
+                                            <form method="post" action="/user-accounts/{{$account ? $account->id : ''}}">
+                                            <div class="modal-body">
+                                                
+                                                        @csrf
+                                                  
+                                                    <div class="form-group">
+                                                        <label for="recipient-name" class="control-label">Account Name:</label>
+                                                        <input type="text" class="form-control" name="account_name" value="{{$account ? $account->account_name : ''}}">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="recipient-name" class="control-label">Account Number:</label>
+                                                        <input type="text" class="form-control" name="account_no" value="{{$account ? $account->account_no : ''}}">
+                                                    </div>
+
+                                                      <div class="form-group">
+                                                        <label for="recipient-name" class="control-label">Bank Name:</label>
+                                                        <input type="text" class="form-control" name="bank_name" value="{{$account ? $account->bank_name :''}}">
+                                                    </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-success waves-effect waves-light">Submit</button>
+                                             
+                                            </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+        <!-- modal to add account -->
+        <div id="daModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Add Bank Details</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            </div>
+                                            <form method="post" action="/user-accounts">
+                                            <div class="modal-body">
+                                                
+                                                        @csrf
+                                                   
+                                                    <div class="form-group">
+                                                        <label for="recipient-name" class="control-label">Account Name:</label>
+                                                        <input type="text" class="form-control" name="account_name"id="recipient-name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="recipient-name" class="control-label">Account Number:</label>
+                                                        <input type="text" class="form-control" name="account_no"id="recipient-name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="recipient-name" class="control-label">Bank Name:</label>
+                                                        <input type="text" class="form-control" name="bank_name">
+                                                    </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-success waves-effect waves-light">Submit</button>
+                                             
+                                            </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
 
           <div class="card mt-5">
                             <div class="card-body">

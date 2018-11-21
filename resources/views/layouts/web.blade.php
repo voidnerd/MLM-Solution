@@ -261,6 +261,9 @@
                         <li> <a class="waves-effect waves-dark" href="/transactions" aria-expanded="false"><i class="fa fa-sort-amount-asc"></i><span class="hide-menu">Transactions</span></a>
                            
                         </li>
+                        <li> <a class="waves-effect waves-dark" href="/" aria-expanded="false"><i class="fa fa-bank"></i><span class="hide-menu">Company Accounts</span></a>
+                           
+                           </li>
                         <li class="nav-small-cap">--- OTHERS</li>
                         <li> <a class="waves-effect waves-dark" href="/logout" aria-expanded="false"><i class="fa fa-power-off text-danger"></i><span class="hide-menu">Log Out</span></a></li>
                        
@@ -294,7 +297,7 @@
                                 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
                                @yield('breadli')
                             </ol>
-                            <a type="button" href="/activationrequest" class="btn btn-success d-none d-lg-block m-l-15 text-white"><i class="fa fa-plus-circle"></i> Activate</a>
+                            
                         </div>
                     </div>
                 </div>

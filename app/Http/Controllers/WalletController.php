@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Transaction;
 use App\Wallet;
+use App\UserAccount;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,8 +27,13 @@ class WalletController extends Controller
         $wallet = Wallet::where('user_id', Auth::id())->first();
 
         $transaction = Transaction::where('user_id', Auth::id())->latest()->get();
+
+        $account = UserAccount::where('user_id', Auth::id())->first();
+
+
        
-        return view('wallet')->with(['wallet'=> $wallet, 'trans' => $transaction]);
+        return view('wallet')->with(['wallet'=> $wallet,
+         'trans' => $transaction, 'account' => $account]);
     }
 
     public function sendPaymentRequest(Request $request){
@@ -36,6 +42,7 @@ class WalletController extends Controller
             $request->session()->flash('error', 'Please add  User Account!');
                 return redirect()->back();
         }
+        
         if($wallet = Wallet::where('user_id',  Auth::id())->first()) {
             if($wallet->amount < $request->amount) {
                 $request->session()->flash('error', 'Insufficient Funds!');
@@ -53,7 +60,7 @@ class WalletController extends Controller
                 $wallet->amount = $wallet->amount - $amount;
                 $wallet->save();
 
-                $type = "payment";
+                $type = "Withdrawal";
                 Transaction::create(['user_id' => Auth::id(),
                 'amount' => $amount, 'type'=> $type, 'status' => 'pending']);
 
