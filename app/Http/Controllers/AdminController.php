@@ -21,14 +21,27 @@ class AdminController extends Controller
 
     public function pending()
     {
-        $users = DB::table('users')
+        $data['users'] = DB::table('users')
                 ->where('activated', '=', 'pending')
                 ->get();
-
-                // return response()->json($users);
-        return view('pending')->with(['users'=> $users, 'success' => false]);
+        $data['allusers'] = User::all()->count();
+   
+        $data['activated'] = User::where('activated', 'yes')->count();
+               
+        return view('pending')->with($data);
     }
+    public function checkUser(Request $request) 
+    {
+        $username = $request->input('username');
 
+        $user = DB::table('users')->where('username', $username)->first();
+
+        if(empty($user)) {
+            return response()->json(['message' => 'Not Found'], 404);
+        }
+        return response()->json($user, 200);
+
+    }
     public function staff()
     {
         $users = DB::table('users')
@@ -49,6 +62,43 @@ class AdminController extends Controller
             return redirect()->back();
         }
         return back();
+    }
+    public function fund(Request $request) 
+    {
+        $user = DB::table('users')->where('username', $request->username)->first();
+
+        if($wallet = Wallet::where('user_id',  $user->id)->first()) {
+            $amount =  $wallet->amount + intval($request->amount);
+            $wallet->amount = $amount;
+            $wallet->save();
+            $type = "Funded";
+            
+            Transaction::create(['user_id' => $user->id,
+            'amount' => intval($request->amount), 'type'=> $type, 'status' => 'successful']);
+
+            $request->session()->flash('success', 'You just funded ' .$request->username . '\'s Wallet' ); 
+
+            return back();
+        }else {
+
+        $amount =  intval($request->amount);
+        $type = "Funded";
+
+        Wallet::create(['user_id' =>  $user->id, 'amount' => $amount]);
+        
+        Transaction::create(['user_id' => $user->id,
+            'amount' => $amount, 'type'=> $type, 'status' => 'successful']);
+
+        $request->session()->flash('success', 'You just funded ' .$request->username . '\'s Wallet' ); 
+
+        return back();
+        }
+
+        $request->session()->flash('success', 'Opps! Something went wrong!' ); 
+
+        return back();
+
+        
     }
 
     public function payment()
@@ -79,10 +129,6 @@ class AdminController extends Controller
         $transaction->status = 'successful';
         $transaction->paid_by = Auth::id();
         $transaction->save();
-
-        if($user->id == 1) {
-            return 0;
-        }
 
         $request->session()->flash('success', 'You just confirmed that you have paid ' .$request->username );
         return back();
@@ -130,21 +176,24 @@ class AdminController extends Controller
             $parent = DB::table('users')
             ->select(DB::raw('users.*, users_tree.*'))
             ->where('users_tree.descendant', '=', $id)
-            ->where('users_tree.depth', '=', $level)
+            ->where('users_tree.depth', '=', ($level-1))
             ->join('users_tree', 'users.id', '=', 'users_tree.ancestor')
-            ->where('users.level', '=', $level)
+            ->where('users.level', '>=', $level)
             ->where($col, '<', $count)
             ->first();
+
+            
 
             if(!$parent) {
 
                 $parent = DB::table('users')
                 ->select(DB::raw('users.*, users_tree.*'))
                 ->where('users_tree.descendant', '=', $id)
-                ->where('users_tree.depth', '>', $level)
+                ->where('users_tree.depth', '>', ($level-1))
                 ->join('users_tree', 'users.id', '=', 'users_tree.ancestor')
-                ->where('users.level', '=', $level)
+                ->where('users.level', '>=', $level)
                 ->where($col, '<', $count)
+                ->latest('activated_at')
                 ->first();
                 
                 if(!$parent) {
@@ -202,6 +251,7 @@ class AdminController extends Controller
             if($level == 2) {
              
                 $parent = $this->getWhoToPay(Auth::id(), 2);
+                // return response()->json($parent);
 
                 $type = "Level 2 Benefits";
         
@@ -287,7 +337,7 @@ class AdminController extends Controller
             // ignore everything if there is an error
                 DB::rollback();
     
-                //return response()->json($e->getMessage());
+               
                 $request->session()->flash('error', $e->getMessage());
                 return redirect()->back();
     
@@ -403,7 +453,13 @@ class AdminController extends Controller
             $this->pay($realParent, $level1Payment, $type);
 
         }//end if
-    
+
+        $ghost =  DB::table('users')->where('id', 1)->first();
+
+        $type = "Registration Fee";
+
+        $this->pay($ghost, 500, $type);
+
        DB::table('users')
             ->where('id', $node_id)
             ->update(['activated' => 'yes',

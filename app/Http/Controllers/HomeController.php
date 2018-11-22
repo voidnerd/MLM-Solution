@@ -82,7 +82,7 @@ class HomeController extends Controller
           $user->state = $request->state;
           $user->country = $request->country;
           $user->save();
-  
+          $request->session()->flash('success', "Success!! Profile updated!" );
           return back();
       }
   
@@ -99,18 +99,26 @@ class HomeController extends Controller
       }
       public function index()
       {
-        //   $data['upline'] = User::find(Auth::user()->parent_id);
-        //   $data['allusers'] = User::all()->count();
+          $data['upline'] = User::find(Auth::user()->parent_id);
+          $data['allusers'] = User::all()->count();
         //   $data['pending'] = User::where('activated', 'pending')->count();
-        //   $data['activated'] = User::where('activated', 'yes')->count();
+          $data['activated'] = User::where('activated', 'yes')->count();
         //   $data['notActivated'] = User::where('activated', 'no')->count();
-        //   $data['transpaid'] = Transaction::where('type', 'payment')->count();
-        //   $data['trans'] = Transaction::where('type', '!=', 'payment')->count();
+          $data['transOut'] = Transaction::where('type', 'Withdrawal')
+                                ->where('user_id', '=', Auth::id())
+                                ->where('status', 'successful')->sum('amount');
+
+          $data['transIn'] = Transaction::where('type', 'like', '%Benefits')
+                            ->where('user_id', '=', Auth::id())
+                            ->sum('amount');
+        $data['upgrade'] = Transaction::where('type', 'like', '%Upgrade')
+                            ->where('user_id', '=', Auth::id())
+                            ->sum('amount');
         //   $data['referrals'] = User::where('referred_by', Auth::user()->username)->count();
         //   $data['accs'] = CradoAccount::all();
-          //return response()->json($upline);
           
-          return view('home2');
+          
+          return view('home2')->with($data);
       }
   
       public function getDownlines($level) {
@@ -146,11 +154,6 @@ class HomeController extends Controller
               'fives' => $level_five,
               'sixs' => $level_six,
               ]);
-      }
-      
-      public function cradoAccount()
-      {
-          return view('crado_accounts');
       }
   
       public function activationRequest(Request $request) {

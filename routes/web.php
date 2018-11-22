@@ -58,13 +58,13 @@ Route::post('/user-accounts', 'UserAccountController@store');
 Route::post('/user-accounts/{userAccount}', 'UserAccountController@update');
 
 
-Route::get('/crado-accounts', 'CradoAccountController@index')->middleware('role:admin:staff');;
+Route::get('/app-accounts', 'AppAccountController@index');
 
-Route::post('/crado-accounts', 'CradoAccountController@store')->middleware('role:admin');;
+Route::post('/app-accounts', 'AppAccountController@store');
 
-Route::get('/crado-accounts/{cradoAccount}', 'CradoAccountController@destroy')->middleware('role:admin');;
+Route::get('/app-accounts/{appAccount}', 'AppAccountController@destroy');
 
-Route::post('/crado-accounts/{cradoAccount}', 'CradoAccountController@update')->middleware('role:admin');;
+Route::post('/app-accounts/{appAccount}', 'AppAccountController@update');
 
 
 Route::get('/wallet', 'WalletController@index');
@@ -76,13 +76,13 @@ Route::post('/send-payment-request', 'WalletController@sendPaymentRequest');
 Route::get('/pending', 'AdminController@pending');
 
 
-Route::get('/staff', 'AdminController@staff')->middleware('role:admin');
+// Route::get('/staff', 'AdminController@staff')->middleware('role:admin');
 
-Route::post('/staff', 'AdminController@makeStaff')->middleware('role:admin');
+// Route::post('/staff', 'AdminController@makeStaff')->middleware('role:admin');
 
-Route::get('/payment', 'AdminController@payment')->middleware('role:admin:staff');
+Route::get('/payment', 'AdminController@payment');
 
-Route::post('/payment/{transaction}', 'AdminController@paymentDone')->middleware('role:admin');
+Route::post('/payment/{transaction}', 'AdminController@paymentDone');
 
 Route::post('/activate-user', 'AdminController@activateUser');
 //->middleware('role:admin');
@@ -90,3 +90,7 @@ Route::post('/activate-user', 'AdminController@activateUser');
 Route::get('/transactions', 'AdminController@transactions');
 
 Route::post('/upgrade', 'AdminController@upgrade');
+
+Route::post('/fund', 'AdminController@fund');
+
+Route::get('/checker', 'AdminController@checkUser');

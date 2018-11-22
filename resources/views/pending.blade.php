@@ -13,7 +13,8 @@
                 <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Pending Users</h4>
-                                <h6 class="card-subtitle">Users under probation</h6>
+                                <h6 class="card-subtitle">Total Users: {{$allusers}} </h6>
+                                <h6 class="card-subtitle">Activated:  {{$activated}} </h6>
                                 <div class="table-responsive m-t-40">
                                     <table id="myTable" class="table table-bordered table-striped">
                                         <thead>
@@ -21,6 +22,7 @@
                                                 <th>Name</th>
                                                 <th>Email</th>
                                                 <th>Username</th>
+                                                <th>Joined</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -30,6 +32,7 @@
                                                 <td>{{$user->name}}</td>
                                                 <td>{{$user->email}}</td>
                                                 <td>{{$user->username}}</td>
+                                                <td>{{$user->created_at}}</td>
                                                 <td>
                                                 <button  data-toggle="modal" data-target="#daModal{{$user->id}}" class="btn btn-warning btn-sm">Activate</button>
                                                 </td>

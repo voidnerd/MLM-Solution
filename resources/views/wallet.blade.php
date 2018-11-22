@@ -86,7 +86,80 @@
 
 
         </div>
+    <div class="row" >
+    <div class="col-lg-4 col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                            <h6 class="card-subtitle">Fund Other Users Wallet</h6>
+                                <div class="row">
+                                    <div class="col-12">
+                                    <form method="post" action="/fund">
+                                    @csrf
+                                    <div class="input-group mb-3">
+                                            <div class="form-group">
+    
+                                                    <input id="fuser" type="text" class="form-control" name="username" placeholder="Username">
+                                                    <p class="text-info" id="fdetails"> </p>
+                                                   
+                                            </div>
 
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text bg-light">₦</span>
+                                            </div>
+                                            <input type="text" class="form-control" name="amount" placeholder="Amount">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text bg-light">.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-outline-success"> Fund</button>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+    </div>
+        <script>
+
+     
+        var element = document.getElementById("fuser");
+        var details = document.getElementById("fdetails");
+        var url = '/checker?username=' + element.value;
+        element.addEventListener("blur", function() { 
+            console.log("oaky");
+            var url = '/checker?username=' + element.value;
+            var xhr = new XMLHttpRequest();
+            console.log(url)
+            // xhr.open('GET', url);
+            xhr.onload = function () {
+
+            // Process our return data
+            if (xhr.status != 200) {
+                // What do when the request is successful
+                
+                details.innerHTML = "Not Found";
+
+            } else if(xhr.status == 200){
+                
+                console.log(xhr);
+                var res = JSON.parse(xhr.response);
+                details.innerHTML = res.name + "| <span> " + res.email + "</span>";
+            }
+        
+            };
+
+            xhr.open('GET', '/checker?username=' + element.value);
+            xhr.send();
+
+
+        });
+       
+
+
+        </script>
         <!-- modal to edit accounts -->
         <div id="daModal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                     <div class="modal-dialog">
