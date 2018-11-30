@@ -86,6 +86,8 @@
 
 
         </div>
+
+        @if(Auth::user()->role == 'admin')
     <div class="row" >
     <div class="col-lg-4 col-md-4">
                         <div class="card">
@@ -146,7 +148,7 @@
                 
                 console.log(xhr);
                 var res = JSON.parse(xhr.response);
-                details.innerHTML = res.name + "| <span> " + res.email + "</span>";
+                details.innerHTML = res.name + ", <span> " + res.email + "</span>";
             }
         
             };
@@ -160,6 +162,7 @@
 
 
         </script>
+        @endif
         <!-- modal to edit accounts -->
         <div id="daModal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                     <div class="modal-dialog">

@@ -11,7 +11,7 @@
     <meta name="_token" content="{{ csrf_token() }}">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.png">
-    <title>E-earners | Home</title>
+    <title>E-earners</title>
     <!-- This page CSS -->
     <!-- sweetalert CSS -->
     <link href="/assets/node_modules/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
@@ -51,7 +51,7 @@
                 <!-- Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="/home">
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
@@ -189,9 +189,16 @@
                         <li> <a class="waves-effect waves-dark" href="/wallet" aria-expanded="false"><i class="ti-wallet"></i><span class="hide-menu">Wallet</span></a>
     
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="/matrix" aria-expanded="false"><i class="icon-people"></i><span class="hide-menu">Referrals</span></a>
-    
+                        <li> <a class=" has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="icon-people"></i><span class="hide-menu">Referrals</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="/matrix">My Referrals</a></li>
+                                <li><a href="/not-activated">Pending Activation</a></li>
+                    
+                            </ul>
                         </li>
+                        
+                        @if(Auth::user()->role == 'admin')
+
                         <li class="nav-small-cap">--- ADMIN AREA</li>
                         <li> <a class="waves-effect waves-dark" href="/pending" aria-expanded="false"><i class="fa fa-clock-o"></i><span class="hide-menu">Pending</span></a>
                            
@@ -206,6 +213,7 @@
                         <li> <a class="waves-effect waves-dark" href="/app-accounts" aria-expanded="false"><i class="fa fa-bank"></i><span class="hide-menu">Company Accounts</span></a>
                            
                            </li>
+                        @endif
                         <li class="nav-small-cap">--- OTHERS</li>
                         <li> <a class="waves-effect waves-dark" href="/logout" aria-expanded="false"><i class="fa fa-power-off text-danger"></i><span class="hide-menu">Log Out</span></a></li>
                        

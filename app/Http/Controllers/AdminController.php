@@ -230,7 +230,7 @@ class AdminController extends Controller
     public function upgrade(Request $request) {
 
     $wallet = Wallet::where('user_id', Auth::id())->first();
-        $level1Payment = 1000;
+        $level1Payment = 1500;
         $level2Payment = 2000;
         $level3Payment = 5000;
         $level4Payment = 16000;
@@ -434,7 +434,7 @@ class AdminController extends Controller
 
         DB::table('users')->where('id', $node_id)->increment('level');
 
-        $level1Payment = 1000;
+        $level1Payment = 1500;
         $level2Payment = 2000;
         $level3Payment = 5000;
         $level4Payment = 16000;

@@ -31,6 +31,10 @@
                                             <td>{{Auth::user()->level}}</td>
                                         </tr>
                                         <tr >
+                                            <td>Referral Link:</td>
+                                            <td><a class="text-info" href="http://127.0.0.1:8000/register?ref={{Auth::user()->username}}">http://127.0.0.1:8000/register?ref={{Auth::user()->username}}</a></td>
+                                        </tr>
+                                        <tr >
                                             <td>Total Benefits:</td>
                                             <td class="text-success">₦{{number_format($transIn)}}</td>
                                         </tr>

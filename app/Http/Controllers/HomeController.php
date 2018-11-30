@@ -120,6 +120,16 @@ class HomeController extends Controller
           
           return view('home2')->with($data);
       }
+      public function notActivated() 
+      {
+        $data['users'] =User::where('activated', 'pending')
+                        ->where('referrer', '=', Auth::user()->username)
+                        ->get();
+
+        // return response()->json($data['users']);
+
+        return view('not_activated')->with($data);
+      }
   
       public function getDownlines($level) {
           $theLevel = DB::table('users')
@@ -158,15 +168,17 @@ class HomeController extends Controller
   
       public function activationRequest(Request $request) {
   
-          $user = DB::table('users')->where('id', Auth::id())->exists();
-  
-          if($user) {
+            if(Auth::user()->activated != 'no') {
+                $request->session()->flash('error', 'Already activated!');
+                return redirect()->back();
+            }
+
               DB::table('users')
               ->where('id', Auth::id())
               ->update(['activated' => 'pending']);
+
               $request->session()->flash('success', 'We are reviewing your request!');
               return redirect()->back();
-          }
-          return back();
+        
       }
 }

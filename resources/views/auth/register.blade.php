@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>Elite Admin Template - The Ultimate Multipurpose admin template</title>
+    <title>Register || E-earners</title>
     
     <!-- page css -->
     <link href="dist/css/pages/login-register-lock.css" rel="stylesheet">
@@ -108,7 +108,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-xs-12">
-                                <input class="form-control" name="by" type="text" placeholder="Referrer (Optional)">
+                                <input class="form-control" name="by" value="{{$ref}}"type="text" placeholder="Referrer (Optional)">
                             </div>
                         </div>
                         <div class="form-group row">

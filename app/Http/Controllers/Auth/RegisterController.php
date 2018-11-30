@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
 
@@ -83,5 +83,13 @@ class RegisterController extends Controller
             'referrer'=> $referrer,
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function showRegistrationForm(Request $request)
+    {
+     
+        $data['ref'] = $request->ref ? $request->ref : "";
+        
+        return view('auth.register')->with($data);
     }
 }
