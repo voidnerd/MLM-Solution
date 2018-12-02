@@ -1,0 +1,31 @@
+/*-------------------------------------------
+  -- Block
+-------------------------------------------*/
+.ts-block {
+  padding-bottom: 80px;
+  padding-bottom: 100px ?if media (min-width: 992px) and (max-width: 1199px);
+  padding-bottom: 130px ?if media (min-width: 1200px);
+  padding-top: 80px;
+  padding-top: 100px ?if media (min-width: 992px) and (max-width: 1199px);
+  padding-top: 130px ?if media (min-width: 1200px);
+
+  position: relative;
+
+  /*
+  &:after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg'  width='103.987' height='105.599'%3E%3cpath fill='var(--color-primary-svg)' d='M101.017 45.961c-10.338 22.34-33.156 61.239-62.326 59.586-31.984-1.803-44.52-48.772-36.182-73.996 15.682-47.439 120.287-40.376 98.508 14.41-10.998 23.766 1.923-4.836 0 0z'/%3E%3c/svg%3E");
+  }
+  */
+}
+
+.ts-block-inside {
+  padding: 20px;
+  padding: 40px ?if media (min-width: 576px) and (max-width: 991px);
+  padding: 60px ?if media (min-width: 992px);
+
+  position: relative;
+}
+
+section {
+  position: relative;
+}

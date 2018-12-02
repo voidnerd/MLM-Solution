@@ -1,0 +1,41 @@
+/*-------------------------------------------
+  -- Select
+-------------------------------------------*/
+select.form-control {
+  box-shadow: var(--bs-md);
+  border-radius: var(--br-md);
+  cursor: pointer;
+  height: 45px !important;
+  margin-top: -2px;
+  padding: 8px;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+
+  &:focus, &:hover {
+    box-shadow: var(--bs-lg);
+  }
+}
+select::-ms-expand {
+  display: none;
+}
+
+.select-wrapper {
+  position: relative;
+  &:before {
+    position: absolute;
+    display: inline-block;
+    font-weight: 900;
+    text-rendering: auto;
+    top: 0;
+    margin: auto;
+    bottom: 0;
+    right: 15px;
+    height: 30px;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome\ 5 Free";
+    content: "\f0dd";
+  }
+}

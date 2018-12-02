@@ -1,0 +1,40 @@
+/*-------------------------------------------
+  -- Utilities
+-------------------------------------------*/
+.ts-element {
+  position: relative;
+}
+
+/* Social Icons */
+.ts-social-icons {
+  font-size: 120%;
+  a {
+    padding: 2px 4px;
+    color: var(--color-grey);
+  }
+}
+
+/* Overlay */
+.ts-has-overlay {
+  position: relative;
+  &:after {
+    background-color: #000;
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+/* Flip x */
+.ts-flip-x {
+  transform: scaleY(-1);
+}
+/* Flip Y */
+.ts-flip-y {
+  transform: scaleX(-1);
+}

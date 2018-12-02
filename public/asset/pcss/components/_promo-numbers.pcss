@@ -1,0 +1,36 @@
+/*-------------------------------------------
+  -- Promo Numbers
+-------------------------------------------*/
+.ts-promo-numbers {
+  h2 {
+    font-size: 36px ?if media (max-width: 575px);
+    font-size: 38px ?if media (min-width: 576px) and (max-width: 767px);
+    font-size: 40px ?if media (min-width: 768px) and (max-width: 991px);
+    font-size: 44px ?if media (min-width: 992px) and (max-width: 1199px);
+    font-size: 48px ?if media (min-width: 1200px);
+    font-weight: normal;
+  }
+  h3 {
+    font-weight: normal;
+  }
+}
+
+.ts-promo-number {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  position: relative;
+  .ts-promo-number-divider {
+    &:after {
+      content: "";
+      bottom: 0;
+      border: 2px solid var(--color-primary);
+      border-radius: var(--br-circle);
+      height: 10px;
+      margin: auto;
+      position: absolute;
+      right: -5px;
+      top: 0;
+      width: 10px;
+    }
+  }
+}

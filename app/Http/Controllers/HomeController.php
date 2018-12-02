@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Transaction;
 use App\Train;
-use App\CradoAccount;
+use App\AppAccount;
 use App\Mail\SendMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
@@ -115,7 +115,7 @@ class HomeController extends Controller
                             ->where('user_id', '=', Auth::id())
                             ->sum('amount');
         //   $data['referrals'] = User::where('referred_by', Auth::user()->username)->count();
-        //   $data['accs'] = CradoAccount::all();
+          $data['accs'] = AppAccount::all();
           
           
           return view('home2')->with($data);

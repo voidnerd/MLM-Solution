@@ -1,0 +1,75 @@
+/*-------------------------------------------
+  -- Styling - Colors, Font Size, Font Family
+-------------------------------------------*/
+
+:root {
+  --color-white: #fff;
+  --color-primary: #3a79f9;
+  --color-black: #191919;
+  --color-grey: #9e9e9e;
+  --color-grey-light: rgba(0,0,0,.1);
+}
+
+body {
+  color: var(--color-black);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 80%;
+  font-size: 85% ?if media (min-width: 576px) and (max-width: 767px);
+  font-size: 90% ?if media (min-width: 768px) and (max-width: 991px);
+  font-size: 95% ?if media (min-width: 992px) and (max-width: 1199px);
+  font-size: 100% ?if media (min-width: 1200px);
+}
+
+h1, .ts-h1 {
+  font-weight: 500;
+  font-size: 40px;
+  font-size: 40px ?if media (min-width: 576px) and (max-width: 767px);
+  font-size: 48px ?if media (min-width: 768px) and (max-width: 991px);
+  font-size: 50px ?if media (min-width: 992px) and (max-width: 1199px);
+  font-size: 56px ?if media (min-width: 1200px);
+  margin-bottom: 20px ?if media (max-width: 575px);
+  margin-bottom: 30px ?if media (min-width: 576px) and (max-width: 991px);
+  margin-bottom: 40px ?if media (min-width: 992px);
+}
+
+h2, .ts-h2 {
+  font-weight: 500;
+  font-size: 24px;
+  font-size: 26px ?if media (min-width: 576px) and (max-width: 767px);
+  font-size: 30px ?if media (min-width: 768px) and (max-width: 991px);
+  font-size: 32px ?if media (min-width: 992px) and (max-width: 1199px);
+  font-size: 36px ?if media (min-width: 1200px);
+}
+
+h3, .ts-h3 {
+  font-weight: 600;
+  font-size: 20px;
+  font-size: 20px ?if media (min-width: 576px) and (max-width: 767px);
+  font-size: 22px ?if media (min-width: 768px) and (max-width: 991px);
+  font-size: 22px ?if media (min-width: 992px) and (max-width: 1199px);
+  font-size: 26px ?if media (min-width: 1200px);
+  margin-bottom: 25px;
+}
+
+h4, .ts-h4 {
+  font-weight: 500;
+  font-size: 18px ?if media (max-width: 767px);
+  font-size: 20px ?if media (min-width: 768px);
+  margin-bottom: 30px;
+}
+
+h5, .ts-h5 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+h6, .ts-h6 {
+  font-size: 15px;
+}

@@ -1,0 +1,41 @@
+.ts-item {
+  height: 100%;
+  padding-bottom: 30px;
+}
+
+.ts-item-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.ts-item-header {
+  margin-bottom: 25px;
+  position: relative;
+  .icon {
+    position: relative;
+    display: inline-block;
+    .step {
+      background-color: var(--color-primary);
+      top: 0;
+      box-shadow: var(--bs-md);
+      border-radius: var(--br-circle);
+      color: var(--color-white);
+      font-weight: 600;
+      line-height: 30px;
+      right: 0;
+      height: 30px;
+      position: absolute;
+      text-align: center;
+      width: 30px;
+    }
+  }
+}
+
+.ts-item-body {
+  flex: 1 1 auto;
+}
+
+.ts-item-footer {
+
+}

@@ -1,0 +1,50 @@
+/*-------------------------------------------
+  -- Borders
+-------------------------------------------*/
+:root {
+  /* Border radius */
+  --br-sm: 2px;
+  --br-md: 4px;
+  --br-lg: 8px;
+  --br-xl: 12px;
+  --br-rounded: 100px;
+  --br-circle: 50%;
+
+  /* Border bottom */
+  --bb-light: 1px solid rgba( var(--color-black), .08 );
+  --bb-white: 1px solid rgba( var(--color-white), .8 );
+}
+
+.ts-border-radius__sm {
+  border-radius: var(--br-sm);
+  overflow: hidden;
+}
+.ts-border-radius__md {
+  border-radius: var(--br-md);
+  overflow: hidden;
+}
+.ts-border-radius__lg {
+  border-radius: var(--br-lg);
+  overflow: hidden;
+}
+.ts-border-radius__xl {
+  border-radius: var(--br-xl);
+  overflow: hidden;
+}
+.ts-border-radius__pill {
+  border-radius: var(--br-rounded) !important;
+  overflow: hidden;
+}
+
+.ts-border-radius__round-shape {
+  border-radius: 3000px;
+  overflow: hidden;
+}
+
+.ts-border-none {
+  border: none;
+}
+
+.ts-border-bottom {
+  border-bottom: 1px solid var(--color-grey-light);
+}

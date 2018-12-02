@@ -1,0 +1,28 @@
+.ts-gallery {
+  position: relative;
+  .ts-gallery__image {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    display: block;
+    height: 28rem;
+    overflow: hidden;
+    &:hover {
+      .ts-img-into-bg {
+        opacity: .3;
+        transform: scale(1.1);
+      }
+    }
+  }
+  .ts-gallery__caption {
+    padding: 48px;
+    bottom: 0;
+    left: 0;
+    position:absolute;
+    z-index: 2;
+  }
+  .ts-img-into-bg {
+    opacity: .6;
+    transition: 1s cubic-bezier(.23,.05,.17,1.02);
+    transform: scale(1.03);
+  }
+}

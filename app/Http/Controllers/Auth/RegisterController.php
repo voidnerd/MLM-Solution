@@ -87,8 +87,14 @@ class RegisterController extends Controller
 
     public function showRegistrationForm(Request $request)
     {
+        $user = DB::table('users')->where('username', $request->ref)->first();
+        if(!$user) {
+            $data['ref'] = "";
+        }else {
+            $data['ref'] = $user->username;
+        }
      
-        $data['ref'] = $request->ref ? $request->ref : "";
+
         
         return view('auth.register')->with($data);
     }

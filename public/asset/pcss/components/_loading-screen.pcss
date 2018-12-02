@@ -1,0 +1,43 @@
+/*-------------------------------------------
+  -- Loading Screen
+-------------------------------------------*/
+body {
+  &.has-loading-screen {
+    &:before {
+      background-color: #000;
+      content: "";
+      height: 100%;
+      right: 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 9999;
+      transition: 1.5s ease;
+      opacity: 1;
+    }
+    &:after {
+      content: url("../../assets/img/loading.svg");
+      height: 40px;
+      width: 40px;
+      position: fixed;
+      margin: auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 1;
+      transform: scale(1);
+      transition: 1.5s ease;
+      top: 0;
+      z-index: 10000;
+    }
+    &.loading-done {
+      &:before {
+        width: 0;
+      }
+      &:after {
+        transform: scale(0);
+        opacity: 0;
+      }
+    }
+  }
+}

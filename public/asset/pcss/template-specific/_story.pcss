@@ -1,0 +1,33 @@
+.ts-story {
+  &:hover {
+    color: var(--color-white);
+    p {
+      color: var(--color-white);
+    }
+    .ts-background {
+      background-color: #000 !important;
+    }
+    .ts-background-image {
+      opacity: .4 !important;
+    }
+  }
+  margin-bottom: 32px;
+  padding: 224px 32px 32px 32px;
+  position: relative;
+
+  .ts-background, .ts-background-image {
+    transition: var(--tr);
+  }
+
+  figure {
+    background-color: var(--color-white);
+    color: rgba( var(--color-black), .2 );
+    font-weight: 500;
+    position: absolute;
+    top: -6px;
+    left: 48px;
+    padding: 16px;
+    transform: rotate(-90deg);
+    transform-origin: bottom;
+  }
+}
