@@ -99,7 +99,7 @@
                                     @endif
                                 @endif
 
-                                <a href="javascript:void(0)" id="sa-params"  class="btn btn-outline-info" data-toggle="modal"
+                                <a href="javascript:void(0)" class="btn btn-outline-info" data-toggle="modal"
                           data-target="#iconModal">How to?</a>
                                 <table class="table mt-3">
                                     
