@@ -1,5 +1,7 @@
 @extends('layouts.web')
 
+@section('title', "Dashboard || e-earners")
+
 @section('breadtitle', "Dashboard")
 
 @section('breadli')
@@ -110,7 +112,7 @@
                                         </tr>
                                         <tr >
                                             <td>Referral Link:</td>
-                                            <td><a class="text-info" href="http://127.0.0.1:8000/register?ref={{Auth::user()->username}}">http://127.0.0.1:8000/register?ref={{Auth::user()->username}}</a></td>
+                                            <td><a class="text-info" href="http://e-earners.com/register?ref={{Auth::user()->username}}">http://e-earners.com/register?ref={{Auth::user()->username}}</a></td>
                                         </tr>
                                         <tr >
                                             <td>Total Benefits:</td>

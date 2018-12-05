@@ -1,5 +1,7 @@
 @extends('layouts.web')
 
+@section('title', "Profile || e-earners")
+
 @section('breadtitle', "Profile")
 
 @section('breadli')

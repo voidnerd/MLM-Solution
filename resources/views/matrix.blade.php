@@ -1,5 +1,7 @@
 @extends('layouts.web')
 
+@section('title', "Referrals || e-earners")
+
 @section('breadtitle', "My Referrals")
 
 @section('breadli')

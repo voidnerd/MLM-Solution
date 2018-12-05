@@ -214,7 +214,7 @@ class AdminController extends Controller
 
     public function levelAmount($level){
         if($level == 2){
-            return 2000;
+            return 2500;
         }else if($level == 3){
             return 5000;
         }else if($level == 4){
@@ -231,7 +231,7 @@ class AdminController extends Controller
 
     $wallet = Wallet::where('user_id', Auth::id())->first();
         $level1Payment = 1500;
-        $level2Payment = 2000;
+        $level2Payment = 2500;
         $level3Payment = 5000;
         $level4Payment = 16000;
         $level5Payment = 56000;
@@ -435,7 +435,7 @@ class AdminController extends Controller
         DB::table('users')->where('id', $node_id)->increment('level');
 
         $level1Payment = 1500;
-        $level2Payment = 2000;
+        $level2Payment = 2500;
         $level3Payment = 5000;
         $level4Payment = 16000;
         $level5Payment = 56000;

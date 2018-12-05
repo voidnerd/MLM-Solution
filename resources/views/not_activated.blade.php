@@ -1,5 +1,7 @@
 @extends('layouts.web')
 
+@section('title', "referrals not activated || e-earners")
+
 @section('breadtitle', "Pending Activation")
 
 @section('breadli')

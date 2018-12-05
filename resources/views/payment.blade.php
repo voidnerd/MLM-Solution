@@ -1,4 +1,6 @@
-@extends('layouts.web')
+@extends('layouts.web')\
+
+@section('title', "Payment || e-earners")
 
 @section('breadtitle', "Withdrawal Request")
 

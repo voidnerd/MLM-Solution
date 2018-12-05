@@ -1,5 +1,7 @@
 @extends('layouts.web')
 
+@section('title', "App accounts || e-earners")
+
 @section('breadtitle', "Company Accounts")
 
 @section('breadli')

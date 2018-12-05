@@ -3,7 +3,12 @@
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="author" content="ThemeStarz">
+	<meta name="author" content="e-earners">
+    <meta name=keywords content="Make money online, how to make money online, multi level marketing, MLM, earn money, online marketing, community, NGO, double your money" />
+     <meta name=description content="e-earners: The leading community to brings people with similar vision together for a common goal; make money."/>
+
+       <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.png">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600">
     <link rel="stylesheet" href="asset/bootstrap/css/bootstrap.min.css" type="text/css">
@@ -11,7 +16,7 @@
     <link rel="stylesheet" href="asset/css/magnific-popup.css">
     <link rel="stylesheet" href="asset/css/owl.carousel.min.css">
     <link rel="stylesheet" href="asset/css/style.css">
-	<title>e-earners || Home</title>
+	<title>e-earners</title>
 
 </head>
 <body data-spy="scroll" data-target=".navbar">
@@ -25,7 +30,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top ts-separate-bg-element" data-bg-color="#141a3a">
                 <div class="container">
                     <a class="navbar-brand" href="#page-top">
-                        <img src="asset/img/logo-w.png" alt="">
+                        <img src="/assets/images/logo-light-icon.png" alt="e-earners"> <span>earners</span>
                     </a>
                     <!--end navbar-brand-->
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -573,15 +578,15 @@
                         <td scope="row">LEVEL 1: (Activation). Pay ₦2000</td>
                       </tr>
                       <tr>
-                        <td scope="row">Get 2(downlines) x ₦1,500 = ₦3,000 – ₦2,000 (move to 2) = ₦1,000 profit</td>
+                        <td scope="row">Get 2(downlines) x ₦1,500 = ₦3,000 – ₦2,500 (move to 2) = ₦500 profit</td>
                       
                       </tr>
                       <tr>
-                        <td scope="row">LEVEL 2: (Upgrade). Pay ₦2,000</td>
+                        <td scope="row">LEVEL 2: (Upgrade). Pay ₦2,500</td>
                         
                       </tr>
                       <tr>
-                        <td scope="row">Get 4(downlines) x ₦2,000 = ₦8,000 – ₦5,000 (move to 3) = ₦3,000 profit</td>
+                        <td scope="row">Get 4(downlines) x ₦2,500 = ₦10,000 – ₦5,000 (move to 3) = ₦5,000 profit</td>
                         
                       </tr>
                       <tr>
