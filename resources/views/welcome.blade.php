@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="asset/css/style.css">
 	<title>e-earners</title>
 
+
+
 </head>
 <body data-spy="scroll" data-target=".navbar">
     <div class="ts-page-wrapper" id="page-top">
@@ -63,9 +65,9 @@
             <div class="container align-self-center align-items-center">
                 <div class="row">
                     <div class="col-md-7">
-                        <h1 data-animate="ts-fadeInUp">Achieve your Dreams With Us</h1>
+                        <h1 data-animate="ts-fadeInUp">Earn over 22 Million Naira</h1>
                         <div data-animate="ts-fadeInUp" data-delay=".1s">
-                            <p class="w-75 text-white mb-5 ts-opacity__50">The greatest miracles are done by people coming together and working towards a singular goals</p>
+                            <p class="w-75 text-white mb-5 ts-opacity__50">Whether you think you can, or you think you can't – you're right.</p>
                         </div>
                         <a href="#how-it-works" class="btn btn-primary btn-lg ts-scroll mr-4" data-animate="ts-fadeInUp" data-delay=".2s">
                             Learn More
@@ -208,26 +210,26 @@
                                 </div>
                                 <!--end ts-title-->
                                 <p>
-                                    Vivamus fermentum magna non faucibus dignissim. Sed a venenatis mi, vel tempus neque.
-                                    Fusce pharetra, diam in hendrerit facilisis, enim diam cursus augue.
+                                    e-earners is a disruptive MLM eye opener organization. We are passionate about helping young individuals network, communicate and sponsor their dreams.
+                                    For years cooperations have been using Multi Level Marketers to fund their  project, well not anymore, you work for yourself now.
                                 </p>
                                 <div class="list-group list-group-flush mb-5">
                                     <a href="#collapseOne" class="list-group-item list-group-item-action border-top-0 pl-0 font-weight-bold bg-transparent" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseOne">Our Mission</a>
                                     <div class="collapse" id="collapseOne">
                                         <p class="pt-3 small">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                            To extend people's reach by providing them with the neccessary network to fuel their dreams.
                                         </p>
                                     </div>
                                     <a href="#collapseTwo" class="list-group-item list-group-item-action pl-0 font-weight-bold bg-transparent" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseTwo">Our Vision</a>
                                     <div class="collapse" id="collapseTwo">
                                         <p class="pt-3 small">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                            Our Vision is to create as much positive impact in as many lives as possible.
                                         </p>
                                     </div>
-                                    <a href="#collapseThree" class="list-group-item list-group-item-action pl-0 font-weight-bold bg-transparent" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseThree">Our Goal</a>
+                                    <a href="#collapseThree" class="list-group-item list-group-item-action pl-0 font-weight-bold bg-transparent" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseThree">Core Values</a>
                                     <div class="collapse" id="collapseThree">
                                         <p class="pt-3 small">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                        Integrity, Transparency, Commitment, Honesty, Motivation, Discipline, Service to others & Team Work.
                                         </p>
                                     </div>
                                 </div>
@@ -260,32 +262,32 @@
                         <div class="row">
                             <div class="col-sm-6 col-md-3">
                                 <div class="ts-promo-number">
-                                    <h2 class="ts-opacity__50">140+</h2>
-                                    <h5 class="mb-0">Happy Clients</h5>
+                                    <h2 class="ts-opacity__50">50+</h2>
+                                    <h5 class="mb-0">Members</h5>
                                 </div>
                                 <!--end ts-promo-number-->
                             </div>
                             <!--end col-sm-3-->
                             <div class="col-sm-6 col-md-3">
                                 <div class="ts-promo-number">
-                                    <h2 class="ts-opacity__50">280+</h2>
-                                    <h5 class="mb-0">Cases Done</h5>
+                                    <h2 class="ts-opacity__50">6</h2>
+                                    <h5 class="mb-0">Levels</h5>
                                 </div>
                                 <!--end ts-promo-number-->
                             </div>
                             <!--end col-sm-3-->
                             <div class="col-sm-6 col-md-3">
                                 <div class="ts-promo-number">
-                                    <h2 class="ts-opacity__50">24+</h2>
-                                    <h5 class="mb-0">Years Experience</h5>
+                                    <h2 class="ts-opacity__50">10+</h2>
+                                    <h5 class="mb-0">Success Stories</h5>
                                 </div>
                                 <!--end ts-promo-number-->
                             </div>
                             <!--end col-sm-3-->
                             <div class="col-sm-6 col-md-3">
                                 <div class="ts-promo-number">
-                                    <h2 class="ts-opacity__50">18</h2>
-                                    <h5 class="mb-0">Branches Worldwide</h5>
+                                    <h2 class="ts-opacity__50">3+</h2>
+                                    <h5 class="mb-0">Partners Nationwide</h5>
                                 </div>
                                 <!--end ts-promo-number-->
                             </div>
@@ -329,11 +331,10 @@
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
                                     <figure class="ts-circle__xs ts-shadow__sm mr-3" data-bg-image="asset/img/person-sm-01.jpg"></figure>
-                                    <h5>Edward Montanez</h5>
+                                    <h5>Kingsley Oti</h5>
                                 </div>
                                 <p class="mb-0">
-                                    Morbi et nisl a sapien malesuada scelerisque. Suspendisse tempor turpis mattis nibh
-                                    posuere. Aenean sagittis nisl. Sapien urna, sagittis a magna in, malesuada.
+                                    I don't like MLM systems much, but their strategy is brilliant plus its an eye opener, and you earn alot.
                                 </p>
                             </div>
                             <!--end card-body-->
@@ -343,11 +344,10 @@
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
                                     <figure class="ts-circle__xs ts-shadow__sm mr-3" data-bg-image="asset/img/person-sm-02.jpg"></figure>
-                                    <h5>Anita Matthews</h5>
+                                    <h5>Ezekiel Charlie</h5>
                                 </div>
                                 <p class="mb-0">
-                                    Suspendisse tempor turpis mattis nibh posuere, in iaculis sem efficitur. Ut sapien
-                                    urna, sagittis a magna in, malesuada ornare massa. Pellentesque id ligula est.
+                                    Well I thank the team behind this, my future seems really bright now, I am already earning alot from this.
                                 </p>
                             </div>
                             <!--end card-body-->
@@ -357,10 +357,10 @@
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
                                     <figure class="ts-circle__xs ts-shadow__sm mr-3" data-bg-image="asset/img/person-sm-03.jpg"></figure>
-                                    <h5>Lisa Haley</h5>
+                                    <h5>Temi Ajayi</h5>
                                 </div>
                                 <p class="mb-0">
-                                    Ut sapien urna, sagittis a magna in, malesuada ornare massa. Pellentesque id ligula est.
+                                    this is the system I have been waiting for, it is just write.
                                 </p>
                             </div>
                             <!--end card-body-->
@@ -370,75 +370,22 @@
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
                                     <figure class="ts-circle__xs ts-shadow__sm mr-3" data-bg-image="asset/img/person-sm-04.jpg"></figure>
-                                    <h5>Levi Masters</h5>
+                                    <h5>Queen Gregory</h5>
                                 </div>
                                 <p class="mb-0">
-                                    Phasellus in iaculis ante. Fusce odio justo, pulvinar sit amet nisl sed, lacinia laoreet
-                                    augue. Integer eu ultrices lacus, at laoreet nunc.  Pellentesque id
+                                    I like the motivation behind the community and the money that comes with it of course.
                                 </p>
                             </div>
                             <!--end card-body-->
                         </div>
                         <!--end card-->
 
-                        <div class="card" data-animate="ts-fadeInUp" data-delay=".5s">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <figure class="ts-circle__xs ts-shadow__sm mr-3" data-bg-image="asset/img/person-sm-05.jpg"></figure>
-                                    <h5>Tierra F. Lane</h5>
-                                </div>
-                                <p class="mb-0">
-                                    Morbi et nisl a sapien malesuada scelerisque. Suspendisse tempor turpis mattis nibh
-                                    posuere. Aenean sagittis nisl.
-                                </p>
-                            </div>
-                            <!--end card-body-->
-                        </div>
                         <!--end card-->
-                        <div class="card" data-animate="ts-fadeInUp" data-delay=".6s">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <figure class="ts-circle__xs ts-shadow__sm mr-3" data-bg-image="asset/img/person-sm-06.jpg"></figure>
-                                    <h5>Harold Williamson</h5>
-                                </div>
-                                <p class="mb-0">
-                                    Fusce tincidunt turpis a dui pulvinar venenatis. Sed elementum sollicitudin euismod.
-                                    Phasellus elementum nunc ac quam gravida interdum. Ut vitae ex est. Suspendisse ut
-                                    congue arcu. Cras sit amet condimentum arcu. Ut tortor odio, elementum quis tellus
-                                    vel, finibus semper turpis. Nunc eget dui leo.
-                                </p>
-                            </div>
-                            <!--end card-body-->
-                        </div>
+                      
                         <!--end card-->
-                        <div class="card" data-animate="ts-fadeInUp" data-delay=".7s">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <figure class="ts-circle__xs ts-shadow__sm mr-3" data-bg-image="asset/img/person-sm-07.jpg"></figure>
-                                    <h5>Anna Huynh</h5>
-                                </div>
-                                <p class="mb-0">
-                                    Sed elementum sollicitudin euismod.
-                                    Phasellus elementum nunc ac quam gravida interdum. Ut vitae ex est. Suspendisse ut
-                                    congue arcu. Cras sit amet condimentum arcu.
-                                </p>
-                            </div>
-                            <!--end card-body-->
-                        </div>
+                  
                         <!--end card-->
-                        <div class="card" data-animate="ts-fadeInUp" data-delay=".8s">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <figure class="ts-circle__xs ts-shadow__sm mr-3" data-bg-image="asset/img/person-sm-08.jpg"></figure>
-                                    <h5>Billy Ware</h5>
-                                </div>
-                                <p class="mb-0">
-                                    Phasellus in iaculis ante. Fusce odio justo, pulvinar sit amet nisl sed, lacinia laoreet
-                                    augue. Integer eu ultrices lacus, at laoreet nunc.  Pellentesque id
-                                </p>
-                            </div>
-                            <!--end card-body-->
-                        </div>
+                   
                         <!--end card-->
                     </div>
                     <!--end card-columns-->
@@ -458,7 +405,7 @@
                         <h2 class="mb-0">This is the opportunity of a lifetime!</h2>
                     </div>
                     <!--end ts-title-->
-                    <a href="/register" class="btn btn-primary">Join Now!</a>
+                    <a href="/register" class="btn btn-primary mb-4">Join Now!</a>
                 </div>
             </section>
             <!--END BUY NOW *****************************************************************************************-->
@@ -471,7 +418,7 @@
         <!--*********************************************************************************************************-->
         <footer id="ts-footer">
 
-            <div class="map ts-height__400px" id="map"></div>
+            <!-- <div class="map ts-height__400px" id="map"></div> -->
 
             <section id="contact" class="ts-separate-bg-element" data-bg-image="asset/img/bg-hand-mobile.jpg" data-bg-image-opacity=".1" data-bg-color="#12264f">
                 <div class="container">
@@ -481,32 +428,35 @@
                                 <h3>Contact Us</h3>
                                 <address>
                                     <figure>
-                                        2590 Rocky Road
-                                        Philadelphia, PA 19108
+                                        Port Harcourt, Nigeria.
                                     </figure>
                                     <br>
                                     <figure>
                                         <div class="font-weight-bold">Email:</div>
-                                        <a href="#">office@example.com</a>
+                                        <a href="#">info@e-earners.com</a>
                                     </figure>
                                     <figure>
                                         <div class="font-weight-bold">Phone:</div>
-                                        +1 215-606-0391
+                                        +234-81-5302-9323
                                     </figure>
-                                    <div class="font-weight-bold">Twitter:</div>
-                                    @fin.win
+                                    <!-- <div class="font-weight-bold">Twitter:</div>
+                                    @e-earners -->
                                 </address>
                                 <!--end address-->
                             </div>
                             <!--end col-md-4-->
                             <div class="col-md-8">
                                 <h3>Contact Form</h3>
-                                <form id="form-contact" method="post" class="clearfix ts-form ts-form-email ts-inputs__transparent" data-php-path="asset/php/email.php">
+                                <form id="form-contact" method="post" action="/contactmail">
+                                    
+                                    @csrf
                                     <div class="row">
+                                    
                                         <div class="col-md-6 col-sm-6">
                                             <div class="form-group">
+                                            
                                                 <label for="form-contact-name">Your Name *</label>
-                                                <input type="text" class="form-control" id="form-contact-name" name="name" placeholder="Your Name" required>
+                                                <input type="text" class="form-control text-dark" id="form-contact-name" name="name" placeholder="Your Name" required>
                                             </div>
                                             <!--end form-group -->
                                         </div>
@@ -514,7 +464,7 @@
                                         <div class="col-md-6 col-sm-6">
                                             <div class="form-group">
                                                 <label for="form-contact-email">Your Email *</label>
-                                                <input type="email" class="form-control" id="form-contact-email" name="email" placeholder="Your Email" required>
+                                                <input type="email" class="form-control text-dark" id="form-contact-email" name="email" placeholder="Your Email" required>
                                             </div>
                                             <!--end form-group -->
                                         </div>
@@ -525,7 +475,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="form-contact-message">Your Message *</label>
-                                                <textarea class="form-control" id="form-contact-message" rows="5" name="message" placeholder="Your Message" required></textarea>
+                                                <textarea class="form-control text-dark" id="form-contact-message" rows="5" name="message" placeholder="Your Message" required></textarea>
                                             </div>
                                             <!--end form-group -->
                                         </div>
@@ -556,6 +506,19 @@
 
     </div>
     <!--end page-->
+
+ \
+                            @if(Session::has('error'))
+                            <script>
+                                alert("{{Session::get('error')}}")
+                            </script>
+                            
+                            @endif
+                            @if(Session::has('success'))
+                            <script>
+                                alert("{{Session::get('success')}}")
+                            </script>
+                            @endif
 
 
     <div class="modal fade text-left" id="info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel11"
@@ -643,7 +606,7 @@
 	<script src="asset/js/popper.min.js"></script>
 	<script src="asset/bootstrap/js/bootstrap.min.js"></script>
     <script src="asset/js/imagesloaded.pkgd.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyBEDfNcQRmKQEyulDN8nGWjLYPm8s4YB58"></script>
+    <!-- <script src="http://maps.google.com/maps/api/js?key=AIzaSyBEDfNcQRmKQEyulDN8nGWjLYPm8s4YB58"></script> -->
 	<script src="asset/js/isInViewport.jquery.js"></script>
 	<script src="asset/js/jquery.magnific-popup.min.js"></script>
 	<script src="asset/js/owl.carousel.min.js"></script>
@@ -651,6 +614,35 @@
 	<script src="asset/js/jquery.validate.min.js"></script>
 	<script src="asset/js/jquery-validate.bootstrap-tooltip.min.js"></script>
     <script src="asset/js/custom.js"></script>
+
+        <!-- Start of Async Drift Code -->
+<!-- <script>
+"use strict";
+
+!function() {
+  var t = window.driftt = window.drift = window.driftt || [];
+  if (!t.init) {
+    if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+    t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+    t.factory = function(e) {
+      return function() {
+        var n = Array.prototype.slice.call(arguments);
+        return n.unshift(e), t.push(n), t;
+      };
+    }, t.methods.forEach(function(e) {
+      t[e] = t.factory(e);
+    }), t.load = function(t) {
+      var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+      o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+      var i = document.getElementsByTagName("script")[0];
+      i.parentNode.insertBefore(o, i);
+    };
+  }
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('ew9f6crybanb');
+</script> -->
+<!-- End of Async Drift Code -->
 
 </body>
 </html>

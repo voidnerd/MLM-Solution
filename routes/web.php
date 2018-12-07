@@ -70,7 +70,7 @@ Route::post('/app-accounts/{appAccount}', 'AppAccountController@update')->middle
 
 Route::get('/wallet', 'WalletController@index');
 
-Route::post('/send-payment-request', 'WalletController@sendPaymentRequest')->middleware('role:admin');
+Route::post('/send-payment-request', 'WalletController@sendPaymentRequest');
 
 
 
@@ -90,7 +90,7 @@ Route::post('/activate-user', 'AdminController@activateUser')->middleware('role:
 
 Route::get('/transactions', 'AdminController@transactions')->middleware('role:admin');
 
-Route::post('/upgrade', 'AdminController@upgrade')->middleware('role:admin');
+Route::post('/upgrade', 'AdminController@upgrade');
 
 Route::post('/fund', 'AdminController@fund')->middleware('role:admin');
 

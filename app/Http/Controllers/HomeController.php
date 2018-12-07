@@ -39,22 +39,21 @@ class HomeController extends Controller
         
         try{
   
-           $d = new SendMail();
+            $d = new SendMail();
           $d->name = $request->name;
           $d->email = $request->email;
-          $d->phone = $request->phone;
-          $d->subject = $request->subject;
+          $d->subject = "Contact Email From  ". $request->name;
           $d->message = $request->message;
       
   
-         Mail::to('info@cradoconcept.com')->send($d);
+         Mail::to('info@e-earners.com')->send($d);
   
-         $request->session()->flash('success', "Success!! We will be in touch!" );
+         $request->session()->flash('success', "Success!! We will be in touch!");
           
-          return redirect()->back();
+          return back();
         }catch(\Exception $e) {
   
-            $request->session()->flash('error', "Failed!! Please try again!");
+            $request->session()->flash('error', "Failed!! Please try again!". $e->getMessage());
   
             return back();
         }

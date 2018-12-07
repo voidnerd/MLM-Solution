@@ -114,8 +114,8 @@
                         <div class="form-group row">
                             <div class="col-md-12">
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    <label class="custom-control-label" for="customCheck1">I agree to all <a href="javascript:void(0)">Terms</a></label> 
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1" required>
+                                    <label class="custom-control-label" for="customCheck1">I agree to all <a href="https://drive.google.com/file/d/1bD_AARFbnGH-uExB3YTIzQuto2PUQuSU/view?usp=sharing">Terms</a></label> 
                                 </div> 
                             </div>
                         </div>

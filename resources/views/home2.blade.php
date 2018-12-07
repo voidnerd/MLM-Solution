@@ -164,7 +164,78 @@
                             </div>
                         </div>
                     </div>
-                </div>      
+                </div>  
+
+                <div class="row">
+                    <div class="col-sm-6">
+                    <div class="card border-success mt-2">
+                            <div class="card-header bg-info">
+                                <h3 class="m-b-0 text-white">How it works</h3></div>
+                            <div class="card-body">
+
+                            <h5> <b>HERE IS A STRATEGY THAT WILL ENABLE YOU TO REACH YOUR GOALS</b></h5>
+                             
+                            <table class="table table-striped">
+                 
+                 <tbody>
+                   <tr>
+                     <td scope="row">LEVEL 1: (Activation). Pay ₦2000</td>
+                   </tr>
+                   <tr>
+                     <td scope="row">Get 2(downlines) x ₦1,500 = ₦3,000 – ₦2,500 (move to 2) = ₦500 profit</td>
+                   
+                   </tr>
+                   <tr>
+                     <td scope="row">LEVEL 2: (Upgrade). Pay ₦2,500</td>
+                     
+                   </tr>
+                   <tr>
+                     <td scope="row">Get 4(downlines) x ₦2,500 = ₦10,000 – ₦5,000 (move to 3) = ₦5,000 profit</td>
+                     
+                   </tr>
+                   <tr>
+                     <td scope="row">LEVEL 3: (Upgrade). Pay ₦5,000</td>
+                     
+                   </tr>
+                   <tr>
+                     <td scope="row">Get 8(downlines) x ₦5,000 = ₦40,000 – ₦16,000 (move to 4) = ₦24,000 profit</td>
+                     
+                   </tr>
+                   <tr>
+                     <td scope="row">LEVEL 4: (Upgrade). Pay ₦16,000</td>
+                     
+                   </tr>
+                   <tr>
+                     <td scope="row">Get 16(downlines) x ₦16,000 = ₦256,000 – ₦56,000 (move to 5) = ₦200,000 profit</td>
+                     
+                   </tr>
+                   <tr>
+                     <td scope="row">LEVEL 5: (Upgrade). Pay ₦56,000</td>
+                     
+                   </tr>
+                   <tr>
+                     <td scope="row">Get 32(downlines) x ₦56,000 = ₦1,792,000 – ₦350,000 (move to 5) = ₦1,442,000 profit</td>
+                     
+                   </tr>
+                   <tr>
+                     <td scope="row">LEVEL 6: (Upgrade). Pay ₦350,000</td>
+                     
+                   </tr>
+                   <tr>
+                     <td scope="row">Get 64(downlines) x ₦56,000 = ₦22,400,000 (all yours)
+                         <p>No More upgrades</p>
+                     </td>
+                     
+                   </tr>
+                 </tbody>
+               </table>
+                            </div>
+                        </div>  
+                    
+                    </div>
+                </div> 
+                
+                  
 
 
                 <!-- modal -->
