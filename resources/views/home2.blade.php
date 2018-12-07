@@ -108,7 +108,7 @@
                                     <tbody>
                                         <tr >
                                             <td>Level:</td>
-                                            <td>{{Auth::user()->level}}</td>
+                                            <td class="{{Auth::user()->level == 0 ? 'text-danger' : ''}}">{{Auth::user()->level == 0 ? "Not activated" : Auth::user()->level}}</td>
                                         </tr>
                                         <tr >
                                             <td>Referral Link:</td>
