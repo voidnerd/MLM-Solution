@@ -21,12 +21,23 @@ class AdminController extends Controller
 
     public function pending()
     {
+        DB::table('users')
+        ->where('activated', '=', 'no')
+        ->where('created_at', '<', DB::raw('NOW() - INTERVAL 3 DAY'))
+        ->delete();
+
+        DB::table('users')
+        ->where('activated', '=', 'pending')
+        ->where('created_at', '<', DB::raw('NOW() - INTERVAL 5 DAY'))
+        ->delete();
+
         $data['users'] = DB::table('users')
                 ->where('activated', '=', 'pending')
                 ->get();
         $data['allusers'] = User::all()->count();
    
         $data['activated'] = User::where('activated', 'yes')->count();
+
                
         return view('pending')->with($data);
     }

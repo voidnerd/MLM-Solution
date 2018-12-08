@@ -210,8 +210,8 @@
                                 </div>
                                 <!--end ts-title-->
                                 <p>
-                                    e-earners is a disruptive MLM eye opener organization. We are passionate about helping young individuals network, communicate and sponsor their dreams.
-                                    For years cooperations have been using Multi Level Marketers to fund their  project, well not anymore, you work for yourself now.
+                                    e-earners is a disruptive Multi Level Marketing eye opener organization. We are passionate about helping young individuals network, communicate and sponsor their dreams.
+                                    
                                 </p>
                                 <div class="list-group list-group-flush mb-5">
                                     <a href="#collapseOne" class="list-group-item list-group-item-action border-top-0 pl-0 font-weight-bold bg-transparent" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseOne">Our Mission</a>

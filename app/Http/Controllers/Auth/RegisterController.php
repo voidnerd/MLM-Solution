@@ -68,9 +68,12 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = DB::table('users')->where('username', $data['by'])->first();
+        $user = DB::table('users')
+        ->where('username', $data['by'])
+        ->where('activated', '=', 'yes')
+        ->first();
         if(!$user) {
-            $referrer = "ndiecodes";
+            $referrer = "admin";
         }else {
             $referrer = $user->username;
         }
@@ -87,9 +90,13 @@ class RegisterController extends Controller
 
     public function showRegistrationForm(Request $request)
     {
-        $user = DB::table('users')->where('username', $request->ref)->first();
+        $user = DB::table('users')
+        ->where('username', $request->ref)
+        ->where('activated', '=', 'yes')
+        ->first();
+
         if(!$user) {
-            $data['ref'] = "";
+            $data['ref'] = "admin";
         }else {
             $data['ref'] = $user->username;
         }

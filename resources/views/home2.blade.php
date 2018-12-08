@@ -9,8 +9,19 @@
 @endsection
 
 @section('content')
-
-
+@if(Auth::user()->level < 1)
+     <div class="alert alert-success"> Activate your account with ₦2,000 to earn ₦3,000 ; accounts not activated in deleted in 2days. Click <b>"How To?"</b> bellow. </div>
+@elseif(Auth::user()->level == 1)
+<div class="alert alert-success"> Upgrade to Level 2 with ₦2,500 to earn ₦10,000. Check wallet balance to see if you have enough to upgrade!</div>
+@elseif(Auth::user()->level == 2)
+<div class="alert alert-success"> Upgrade to Level 3 with ₦5,000 to earn ₦40,000. Check wallet balance to see if you have enough to upgrade!</div>
+@elseif(Auth::user()->level == 3)
+<div class="alert alert-success"> Upgrade to Level 4 with ₦16,000 to earn ₦256,000. Check wallet balance to see if you have enough to upgrade!</div>
+@elseif(Auth::user()->level == 4)
+<div class="alert alert-success"> Upgrade to Level 5 with ₦56,000 to earn ₦1,792,000. Check wallet balance to see if you have enough to upgrade!</div>
+@elseif(Auth::user()->level == 5)
+<div class="alert alert-success"> Upgrade to Level 6 with ₦350,000 to earn ₦22,400,000. Check wallet balance to see if you have enough to upgrade!</div>
+@endif
                     <div class="modal fade text-left" id="iconModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2"
                           aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -110,10 +121,12 @@
                                             <td>Level:</td>
                                             <td class="{{Auth::user()->level == 0 ? 'text-danger' : ''}}">{{Auth::user()->level == 0 ? "Not activated" : Auth::user()->level}}</td>
                                         </tr>
+                                        @if(Auth::user()->level > 0)
                                         <tr >
                                             <td>Referral Link:</td>
                                             <td><a class="text-info" href="http://e-earners.com/register?ref={{Auth::user()->username}}">http://e-earners.com/register?ref={{Auth::user()->username}}</a></td>
                                         </tr>
+                                        @endif
                                         <tr >
                                             <td>Total Benefits:</td>
                                             <td class="text-success">₦{{number_format($transIn)}}</td>
