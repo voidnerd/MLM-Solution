@@ -262,8 +262,8 @@
                         <div class="row">
                             <div class="col-sm-6 col-md-3">
                                 <div class="ts-promo-number">
-                                    <h2 class="ts-opacity__50">50+</h2>
-                                    <h5 class="mb-0">Members</h5>
+                                    <h2 class="ts-opacity__50">10+</h2>
+                                    <h5 class="mb-0">Years Vision</h5>
                                 </div>
                                 <!--end ts-promo-number-->
                             </div>
