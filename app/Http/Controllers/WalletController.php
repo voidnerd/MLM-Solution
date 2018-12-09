@@ -26,7 +26,7 @@ class WalletController extends Controller
     {
         $wallet = Wallet::where('user_id', Auth::id())->first();
 
-        $transaction = Transaction::where('user_id', Auth::id())->latest()->get();
+        $transaction = Transaction::where('user_id', Auth::id())->latest()->limit(50)->get();
 
         $account = UserAccount::where('user_id', Auth::id())->first();
 

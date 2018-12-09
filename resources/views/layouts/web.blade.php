@@ -93,7 +93,7 @@
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="ti-email"></i>
-                                <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                                <div class="notify"> <span class="heartbi"></span> <span class="poin"></span> </div>
                             </a>
                             <!-- <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown">
                                 <ul>
@@ -125,7 +125,7 @@
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="icon-note"></i>
-                                <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                                <div class="notify"> <span class="heartbi"></span> <span class="poin"></span> </div>
                             </a>
                             
                         </li>
@@ -254,13 +254,13 @@
                 <!-- End Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
                 @if(Session::has('error'))
-                <div class="alert alert-danger">
+                <div  class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
                         {{Session::get('error')}}
                 </div>
 
                 @elseif(Session::has('success'))
-                <div class="alert alert-success">
+                <div id="dismis" class="alert alert-success">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
                     {{Session::get('success')}}
                 </div>
@@ -310,7 +310,7 @@
         <!-- footer -->
         <!-- ============================================================== -->
         <footer class="footer">
-            © 2018 Company May Yet Be Unknown
+            © 2018 e-earners, All Rights Reserved.
         </footer>
         <!-- ============================================================== -->
         <!-- End footer -->
@@ -353,8 +353,11 @@
         $('#four').DataTable();
         $('#five').DataTable();
         $('#six').DataTable();
+
+         $('#dismis').delay(3000).fadeOut('slow');
         
      </script>
+
 </body>
 
 </html>

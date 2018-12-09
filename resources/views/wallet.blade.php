@@ -243,7 +243,7 @@
                                 <h4 class="card-title">Transactions</h4>
                                 <!-- <h6 class="card-subtitle">Users under probation</h6> -->
                                 <div class="table-responsive ">
-                                    <table id="myTable" class="table table-bordered table-striped">
+                                    <table id="myTabl" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
                                                 <th>Type</th>

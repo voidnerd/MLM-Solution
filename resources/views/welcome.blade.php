@@ -541,7 +541,7 @@
                         <td scope="row">LEVEL 1: (Activation). Pay ₦2000</td>
                       </tr>
                       <tr>
-                        <td scope="row">Get 2(downlines) x ₦1,500 = ₦3,000 – ₦2,500 (move to 2) = ₦500 profit</td>
+                        <td scope="row">Get 2 (downlines) x ₦1,500 = ₦3,000 – ₦2,500 (move to 2) = ₦500 profit</td>
                       
                       </tr>
                       <tr>
@@ -549,7 +549,7 @@
                         
                       </tr>
                       <tr>
-                        <td scope="row">Get 4(downlines) x ₦2,500 = ₦10,000 – ₦5,000 (move to 3) = ₦5,000 profit</td>
+                        <td scope="row"> 4 ( level 2 downlines) x ₦2,500 = ₦10,000 – ₦5,000 (move to 3) = ₦5,000 profit</td>
                         
                       </tr>
                       <tr>
@@ -557,7 +557,7 @@
                         
                       </tr>
                       <tr>
-                        <td scope="row">Get 8(downlines) x ₦5,000 = ₦40,000 – ₦16,000 (move to 4) = ₦24,000 profit</td>
+                        <td scope="row">8 (level 3 downlines) x ₦5,000 = ₦40,000 – ₦16,000 (move to 4) = ₦24,000 profit</td>
                         
                       </tr>
                       <tr>
@@ -565,7 +565,7 @@
                         
                       </tr>
                       <tr>
-                        <td scope="row">Get 16(downlines) x ₦16,000 = ₦256,000 – ₦56,000 (move to 5) = ₦200,000 profit</td>
+                        <td scope="row">16 (level 4 downlines) x ₦16,000 = ₦256,000 – ₦56,000 (move to 5) = ₦200,000 profit</td>
                         
                       </tr>
                       <tr>
@@ -573,7 +573,7 @@
                         
                       </tr>
                       <tr>
-                        <td scope="row">Get 32(downlines) x ₦56,000 = ₦1,792,000 – ₦350,000 (move to 5) = ₦1,442,000 profit</td>
+                        <td scope="row">32 ( level 5 downlines) x ₦56,000 = ₦1,792,000 – ₦350,000 (move to 5) = ₦1,442,000 profit</td>
                         
                       </tr>
                       <tr>
@@ -581,7 +581,7 @@
                         
                       </tr>
                       <tr>
-                        <td scope="row">Get 64(downlines) x ₦56,000 = ₦22,400,000 (all yours)
+                        <td scope="row">64 (level 6 downlines) x ₦56,000 = ₦22,400,000 (all yours)
                             <p>No More upgrades</p>
                         </td>
                         

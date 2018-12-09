@@ -34,6 +34,7 @@ class AdminController extends Controller
         $data['users'] = DB::table('users')
                 ->where('activated', '=', 'pending')
                 ->get();
+
         $data['allusers'] = User::all()->count();
    
         $data['activated'] = User::where('activated', 'yes')->count();
@@ -358,7 +359,7 @@ class AdminController extends Controller
         DB::commit();
 
 
-        $request->session()->flash('success', 'upgrade was successful!');
+        $request->session()->flash('success', 'upgrade level '. $level . ' was successful!');
         return back();
         
     }
