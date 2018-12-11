@@ -8,7 +8,7 @@
      <meta name=description content="e-earners: The leading community to brings people with similar vision together for a common goal; make money."/>
 
        <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.png">
+    <link rel="shortcut icon" type="image/png" sizes="16x16" href="{{asset('assets/images/favicon.png')}}">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600">
     <link rel="stylesheet" href="asset/bootstrap/css/bootstrap.min.css" type="text/css">
@@ -582,7 +582,19 @@
                       </tr>
                       <tr>
                         <td scope="row">64 (level 6 downlines) x ₦56,000 = ₦22,400,000 (all yours)
-                            <p>No More upgrades</p>
+                            <p>No more upgrades</p>
+                        </td>
+                        
+                      </tr>
+                      <tr>
+                        <td scope="row">Bonus
+                            
+                        </td>
+                        
+                      </tr>
+                      <tr>
+                        <td scope="row">₦100 referral bonus for each person who registers through your referral link.
+                            
                         </td>
                         
                       </tr>

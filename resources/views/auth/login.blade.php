@@ -33,7 +33,7 @@
     <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
-            <p class="loader__label">Elite admin</p>
+            <p class="loader__label">e-earners</p>
         </div>
     </div>
     <!-- ============================================================== -->
@@ -64,6 +64,19 @@
                                     </span>
                                 @endif
                         </div>
+                        <!-- @captcha
+
+                         <div class="form-group">
+                            <div class="col-xs-12">
+                                
+                                <input class="form-control" type="text" id="captcha" name="captcha" required="" placeholder="enter captcha code"> </div>
+                                @if ($errors->has('captcha'))
+                                    <span class="text-danger" role="alert">
+                                        <strong>{{ $errors->first('captcha') }}</strong>
+                                    </span>
+                                @endif
+                        </div> -->
+                 
                         <div class="form-group row">
                             <div class="col-md-12">
                                 <div class="custom-control custom-checkbox">

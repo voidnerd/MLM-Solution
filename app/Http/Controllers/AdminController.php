@@ -425,6 +425,10 @@ class AdminController extends Controller
          }else {
             $parent = DB::table('users')->where('username', $request->by)->first();
 
+            $type = "Referral Bonus";
+
+            $this->pay($parent, 100, $type);
+
             $parent_id =  $this->getParentId($parent->username);
          }
 
@@ -470,7 +474,7 @@ class AdminController extends Controller
 
         $type = "Registration Fee";
 
-        $this->pay($ghost, 500, $type);
+        $this->pay($ghost, 400, $type);
 
        DB::table('users')
             ->where('id', $node_id)

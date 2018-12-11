@@ -30,7 +30,7 @@
                                                 <td>{{$one->name}}</td>
                                                 <td>{{$one->username}}</td>
                                                 <td>{{$one->level}}</td>
-                                                <td>{{date("m/d/y g:i A", strtotime($one->created_at))}}</td>
+                                                <td>{{date("d-M-Y", strtotime($one->created_at))}}</td>
                                             </tr>
 
                           
@@ -66,7 +66,7 @@
                                  <td>{{$two->name}}</td>
                                  <td>{{$two->username}}</td>
                                  <td>{{$two->level}}</td>
-                                 <td>{{date("m/d/y g:i A", strtotime($two->created_at))}}</td>
+                                 <td>{{date("d-M-Y", strtotime($two->created_at))}}</td>
                              </tr>
 
            
@@ -102,7 +102,7 @@
                                  <td>{{$three->name}}</td>
                                  <td>{{$three->username}}</td>
                                  <td>{{$three->level}}</td>
-                                 <td>{{date("m/d/y g:i A", strtotime($three->created_at))}}</td>
+                                 <td>{{date("d-M-Y", strtotime($three->created_at))}}</td>
                              </tr>
 
            
@@ -139,7 +139,7 @@
                                  <td>{{$four->name}}</td>
                                  <td>{{$four->username}}</td>
                                  <td>{{$four->level}}</td>
-                                 <td>{{date("m/d/y g:i A", strtotime($four->created_at))}}</td>
+                                 <td>{{date("d-M-Y", strtotime($four->created_at))}}</td>
                              </tr>
 
            
@@ -175,7 +175,7 @@
                                  <td>{{$five->name}}</td>
                                  <td>{{$five->username}}</td>
                                  <td>{{$five->level}}</td>
-                                 <td>{{date("m/d/y g:i A", strtotime($five->created_at))}}</td>
+                                 <td>{{date("d-M-Y", strtotime($five->created_at))}}</td>
                              </tr>
 
            
@@ -211,7 +211,7 @@
                                  <td>{{$six->name}}</td>
                                  <td>{{$six->username}}</td>
                                  <td>{{$six->level}}</td>
-                                 <td>{{date("m/d/y g:i A", strtotime($six->created_at))}}</td>
+                                 <td>{{date("d-M-Y", strtotime($six->created_at))}}</td>
                              </tr>
 
            

@@ -94,9 +94,8 @@ class RegisterController extends Controller
         ->where('username', $request->ref)
         ->where('activated', '=', 'yes')
         ->first();
-
         if(!$user) {
-            $data['ref'] = "admin";
+            $data['ref'] = "";
         }else {
             $data['ref'] = $user->username;
         }

@@ -163,7 +163,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Igoshev\Captcha\Providers\CaptchaServiceProvider::class,
         /*
          * Application Service Providers...
          */

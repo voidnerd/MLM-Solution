@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
+   
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
     <title>Register || E-earners</title>
     
@@ -33,7 +34,7 @@
     <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
-            <p class="loader__label">Elite admin</p>
+            <p class="loader__label">e-earners</p>
         </div>
     </div>
     <!-- ============================================================== -->

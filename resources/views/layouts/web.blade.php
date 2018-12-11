@@ -10,7 +10,8 @@
     <meta name="author" content="">
     <meta name="_token" content="{{ csrf_token() }}">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.png">
+  
+    <link rel="shortcut icon" type="image/png" sizes="16x16" href="{{asset('assets/images/favicon.png')}}">
     <title>@yield('title')</title>
     <!-- This page CSS -->
     <!-- sweetalert CSS -->

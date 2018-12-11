@@ -139,7 +139,10 @@
                                             <td>Total Withdrawal:</td>
                                             <td class="text-danger">₦{{number_format($transOut)}}</td>
                                         </tr>
-                                       
+                                        <tr >
+                                            <td>Joined:</td>
+                                            <td class="text-dark">{{date_format(date_create(Auth::user()->created_at),"d-M-Y")}}</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -237,6 +240,18 @@
                       <tr>
                         <td scope="row">64 (level 6 downlines) x ₦56,000 = ₦22,400,000 (all yours)
                            <p> <em>No More upgrades</em></p>
+                        </td>
+                        
+                      </tr>
+                      <tr>
+                        <td scope="row">Bonus
+                            
+                        </td>
+                        
+                      </tr>
+                      <tr>
+                        <td scope="row">₦100 referral bonus for each person who registers through your referral link.
+                            
                         </td>
                         
                       </tr>
