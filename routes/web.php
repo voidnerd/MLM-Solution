@@ -87,3 +87,5 @@ Route::post('/upgrade', 'AdminController@upgrade');
 Route::post('/fund', 'AdminController@fund')->middleware('role:admin');
 
 Route::get('/checker', 'AdminController@checkUser');
+
+Route::get('/verify/{reference}', 'AdminController@verify');

@@ -30,6 +30,22 @@ class HomeController extends Controller
         $this->middleware('auth')->except('mail');
     }
 
+    public function levelAmount($level){
+        if($level == 1){
+            return 3000;
+        }else if($level == 2){
+            return 2500;
+        }else if($level == 3){
+            return 5000;
+        }else if($level == 4){
+            return 16000;
+        }else if($level == 5){
+            return 56000;
+        }else if($level == 6){
+            return 350000;
+        }
+    }
+
     /**
      * Show the application dashboard.
      *
@@ -115,6 +131,9 @@ class HomeController extends Controller
                             ->sum('amount');
         //   $data['referrals'] = User::where('referred_by', Auth::user()->username)->count();
           $data['accs'] = AppAccount::all();
+
+            $levelTo = Auth::user()->level + 1;
+          $data['pay_amount'] = $this->levelAmount($levelTo);
           
           
           return view('home2')->with($data);

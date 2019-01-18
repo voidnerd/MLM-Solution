@@ -241,7 +241,7 @@ class AdminController extends Controller
 
     public function upgrade(Request $request) {
 
-    $wallet = Wallet::where('user_id', Auth::id())->first();
+      $wallet = Wallet::where('user_id', Auth::id())->first();
         $level1Payment = 1500;
         $level2Payment = 2500;
         $level3Payment = 5000;
@@ -364,6 +364,131 @@ class AdminController extends Controller
         
     }
 
+    public function upgradeOnlinePayment( $paid_amount) {
+
+          $level1Payment = 1500;
+          $level2Payment = 2500;
+          $level3Payment = 5000;
+          $level4Payment = 16000;
+          $level5Payment = 56000;
+          $level6Payment = 350000;
+  
+          $level = Auth::user()->level + 1;
+      
+        
+          if($paid_amount < $this->levelAmount($level))
+          {
+            return response()->json([
+                'message' => 'Insuficient fund',
+                'success' => false
+            ]);
+          }
+
+          DB::beginTransaction();
+          try{
+             
+              if($level == 2) {
+               
+                  $parent = $this->getWhoToPay(Auth::id(), 2);
+                  // return response()->json($parent);
+  
+                  $type = "Level 2 Benefits";
+          
+                  $this->pay($parent, $level2Payment, $type);
+  
+                  $type = "Level 2 Upgrade";
+                  
+          
+                  DB::table('users')->where('id', $parent->id)->increment('two');
+                  
+                  DB::table('users')->where('id', Auth::id())->increment('level');
+              
+              }
+              if($level == 3) {
+                  $parent = $this->getWhoToPay(Auth::id(), 3);
+  
+                  $type = "Level 3 Benefits";
+          
+                  $this->pay($parent, $level3Payment, $type);
+  
+                  $type = "Level 3 Upgrade";
+                  
+          
+                  DB::table('users')->where('id', $parent->id)->increment('three');
+                  
+                  DB::table('users')->where('id', Auth::id())->increment('level');
+                  
+              }
+              if($level == 4) {
+                  $parent = $this->getWhoToPay(Auth::id(), 4);
+  
+                  $type = "Level 4 Benefits";
+          
+                  $this->pay($parent, $level4Payment, $type);
+  
+                  $type = "Level 4 Upgrade";
+                  
+          
+                  DB::table('users')->where('id', $parent->id)->increment('four');
+  
+                  DB::table('users')->where('id', Auth::id())->increment('level');
+              
+              }
+  
+              if($level == 5) {
+                  $parent = $this->getWhoToPay(Auth::id(), 5);
+  
+                  $type = "Level 5 Benefits";
+          
+                  $this->pay($parent, $level5Payment, $type);
+  
+                  $type = "Level 5 Upgrade";
+                  
+          
+                  DB::table('users')->where('id', $parent->id)->increment('five');
+  
+                  DB::table('users')->where('id', Auth::id())->increment('level');
+                  
+              }
+  
+              if($level == 6) {
+                  $parent = $this->getWhoToPay(Auth::id(), 6);
+  
+                  $type = "Level 6 Benefits";
+          
+                  $this->pay($parent, $level6Payment, $type);
+  
+                  $type = "Level 6 Upgrade";
+          
+                  DB::table('users')->where('id', $parent->id)->increment('six');
+  
+                  DB::table('users')->where('id', Auth::id())->increment('level');
+          
+              }
+  
+          }catch (\Exception $e) {
+              // ignore everything if there is an error
+                  DB::rollback();
+
+                  return response()->json([
+                    'message' => $e->getMessage(),
+                    'success' => false
+                ], 422);
+      
+                  // something went wrong
+          }
+  
+          DB::commit();
+  
+  
+          return response()->json([
+            'message' => 'Upgrade was successful!',
+            'success' => true
+          ], 200);
+          
+      }
+  
+
     //count
     public function countDownlines($parent_id, $level) {
         $count = DB::table('users')
@@ -405,7 +530,7 @@ class AdminController extends Controller
             'amount' => $amount, 'type'=> $type, 'status' => 'successful']);
         }
     }
-    //this function also adds users to tree
+    //this function also adds users to tree //old
     public function activateUser(Request $request)
     {
         
@@ -500,6 +625,156 @@ class AdminController extends Controller
         $request->session()->flash('success', $user->username. ' activation was successful!');
         return back();
 
+
+    }
+
+    public function onlinePaymentActivate( $paid_amount)
+    {
+
+        if($paid_amount < 3000)
+        {
+            return response()->json([
+                'message' => 'Insuficient fund',
+                'success' => false
+            ], 401);
+        }
+        
+      
+
+        $user = DB::table('users')->where('id', Auth::id())->first();
+
+        //return response()->json($user);
+        
+        
+        $node_id = $user->id;
+
+        DB::beginTransaction();
+
+        try {
+
+         if($node_id == 1) {
+            $parent_id = 0;
+         }else {
+            $parent = DB::table('users')->where('username', $user->referrer)->first();
+
+            $type = "Referral Bonus";
+
+            $this->pay($parent, 1000, $type);
+
+            $parent_id =  $this->getParentId($parent->username);
+         }
+
+    
+        $query = "
+                INSERT INTO users_tree (ancestor,descendant,depth)
+                SELECT ancestor, {$node_id}, depth+1
+                FROM users_tree
+                WHERE descendant = {$parent_id}
+                UNION ALL SELECT {$node_id}, {$node_id}, 0";
+
+        //connect parent to user in tree
+        $tree = DB::statement($query);
+
+         //update users parent id field
+         DB::table('users')
+         ->where('id', $node_id)
+         ->update(['parent_id' => $parent_id]);
+
+        DB::table('users')->where('id', $node_id)->increment('level');
+
+        $level1Payment = 1500;
+        $level2Payment = 2500;
+        $level3Payment = 5000;
+        $level4Payment = 16000;
+        $level5Payment = 56000;
+        $level6Payment = 350000;
+
+        //increment downline count
+        if($parent_id != 0) {
+
+            DB::table('users')->where('id', $parent_id)->increment('direct_downlines');
+
+            $realParent =  DB::table('users')->where('id', $parent_id)->first();
+
+            $type = "Level 1 Benefits";
+
+            $this->pay($realParent, $level1Payment, $type);
+
+        }//end if
+
+        $ghost =  DB::table('users')->where('id', 1)->first();
+
+        $type = "Registration Fee";
+
+        $this->pay($ghost, 500, $type);
+
+       DB::table('users')
+            ->where('id', $node_id)
+            ->update(['activated' => 'yes',
+             'activated_by' => Auth::id(), 'activated_at' => DB::raw('now()')
+            ]);
+        
+        } catch (\Exception $e) {
+        // ignore everything if there is an error
+            DB::rollback();
+
+            //return response()->json($e->getMessage());
+            return response()->json([
+                'message' => $e->getMessage(),
+                'success' => false
+            ], 422);
+            // something went wrong
+        }
+        
+        //everything is good: hit the database with changes
+        DB::commit();
+
+        return response()->json([
+            'message' => 'Your account activation was successful!',
+            'success' => true
+        ], 200);
+
+
+    }
+
+
+    public function verify($reference, Request $request) {
+
+        $result = array();
+        //The parameter after verify/ is the transaction reference to be verified
+        $url = 'https://api.paystack.co/transaction/verify/'. $reference;
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt(
+        $ch, CURLOPT_HTTPHEADER, [
+            'Authorization: Bearer sk_test_c9b44ee493092fee7bbb5b4319c483de8a3ed299']
+        );
+        $request = curl_exec($ch);
+        if(curl_error($ch)){
+        echo 'error:' . curl_error($ch);
+        }
+        curl_close($ch);
+
+        if ($request) {
+        $result = json_decode($request, true);
+        }
+
+        if (array_key_exists('data', $result) && array_key_exists('status', $result['data']) && ($result['data']['status'] === 'success')) {
+
+            $paid_amount = $result['data']['amount'] / 100;
+            // return response()->json($result['data']);
+            if(Auth::user()->level < 1) {
+                // return response()->json($result['data']);
+               return $this->onlinePaymentActivate($paid_amount);
+            }else {
+                return $this->upgradeOnlinePayment($paid_amount);
+            }
+           
+        }else{
+        echo "Transaction was unsuccessful";
+        }
 
     }
 

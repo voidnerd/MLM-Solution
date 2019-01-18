@@ -65,7 +65,7 @@
             <div class="container align-self-center align-items-center">
                 <div class="row">
                     <div class="col-md-7">
-                        <h1 data-animate="ts-fadeInUp">Earn over 22 Million Naira</h1>
+                        <h1 data-animate="ts-fadeInUp">Network, earn and fuel your dreams</h1>
                         <div data-animate="ts-fadeInUp" data-delay=".1s">
                             <p class="w-75 text-white mb-5 ts-opacity__50">Whether you think you can, or you think you can't – you're right.</p>
                         </div>
@@ -409,6 +409,7 @@
                 </div>
             </section>
             <!--END BUY NOW *****************************************************************************************-->
+            <link rel="shortcut icon" type="image/png" sizes="16x16" href="{{asset('assets/images/favicon.png')}}">
 
         </main>
         <!--end #content-->
@@ -507,7 +508,7 @@
     </div>
     <!--end page-->
 
- \
+ 
                             @if(Session::has('error'))
                             <script>
                                 alert("{{Session::get('error')}}")

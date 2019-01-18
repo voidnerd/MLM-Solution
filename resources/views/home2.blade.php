@@ -100,9 +100,9 @@
                             <div class="card-header bg-light">
                                 <h3 class="m-b-0 text-dark">User Summary</h3></div>
                             <div class="card-body">
+                            <script src="https://js.paystack.co/v1/inline.js"></script>
                                 @if(Auth::user()->level < 1)
-                                <a type="button" href="javascript:void(0)" class="btn btn-outline-danger"  data-toggle="modal"
-                          data-target="#modal"><i class="fa fa-plus-circle"></i> Activate Your Account</a>
+                                <a onclick="payWithPaystack()" href="javascript:void(0)" class="btn btn-outline-info" ><i class="fa fa-plus-circle"></i> Activate Your Account</a>
                                 @else
                                     @if(Auth::user()->level < 6)
                                     <a href="javascript:void(0)" id="sa-params"  class="btn btn-outline-success">Upgrade to next Level</a>
@@ -112,8 +112,8 @@
                                     @endif
                                 @endif
 
-                                <a href="javascript:void(0)" class="btn btn-outline-info" data-toggle="modal"
-                          data-target="#iconModal">How to?</a>
+                                <!-- <a href="javascript:void(0)" class="btn btn-outline-info" data-toggle="modal"
+                          data-target="#iconModal">How to?</a> -->
                                 <table class="table mt-3">
                                     
                                     <tbody>
@@ -297,4 +297,54 @@
                                         </div>
                                     </div>
                                 </div>
+
+
+                                <script>
+  function payWithPaystack(){
+    var handler = PaystackPop.setup({
+      key: 'pk_test_1b89f8cc88f7f1888ffd57f4656b629d842fa74b',
+      email: '{{Auth::user()->email}}',
+      amount: {{$pay_amount * 100}},
+      currency: "NGN",
+      ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+      
+      // label: "Optional string that replaces customer email"
+      metadata: {
+         custom_fields: [
+            {
+                display_name: "Mobile Number",
+                variable_name: "mobile_number",
+                value: "{{Auth::user()->phone}}"
+            },
+            {
+                display_name: "Username",
+                variable_name: "username",
+                value: "{{Auth::user()->username}}"
+            }
+         ]
+      },
+      callback: function(response){
+        //   alert('success. transaction ref is ' + response.reference);
+          $.ajax({
+                url: '/verify/'+ response.reference ,
+                method: 'GET'
+            }).done(function(data) {
+                
+                    location.reload();
+                
+            }).fail(function(err) {
+
+                swal("Opps!", err.message, "error");
+              
+            })
+            
+      },
+      onClose: function(){
+        //   alert('window closed');
+
+      }
+    });
+    handler.openIframe();
+  }
+</script>
 @endsection
