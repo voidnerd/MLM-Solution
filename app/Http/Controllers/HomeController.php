@@ -115,6 +115,7 @@ class HomeController extends Controller
       public function index()
       {
           $data['upline'] = User::find(Auth::user()->parent_id);
+
           $data['allusers'] = User::all()->count();
         //   $data['pending'] = User::where('activated', 'pending')->count();
           $data['activated'] = User::where('activated', 'yes')->count();
@@ -126,11 +127,15 @@ class HomeController extends Controller
           $data['transIn'] = Transaction::where('type', 'like', '%Benefits')
                             ->where('user_id', '=', Auth::id())
                             ->sum('amount');
-        $data['upgrade'] = Transaction::where('type', 'like', '%Upgrade')
-                            ->where('user_id', '=', Auth::id())
-                            ->sum('amount');
+        // $data['upgrade'] = Transaction::where('type', 'like', '%Upgrade')
+        //                     ->where('user_id', '=', Auth::id())
+        //                     ->sum('amount');
         //   $data['referrals'] = User::where('referred_by', Auth::user()->username)->count();
-          $data['accs'] = AppAccount::all();
+          $data['accs'] = AppAccount::all();  // $data['upgrade'] = Transaction::where('type', 'like', '%Upgrade')
+        //                     ->where('user_id', '=', Auth::id())
+        //                     ->sum('amount');
+
+          $data['paystack_key'] = env('PAYSTACK_PUBLIC_KEY');
 
             $levelTo = Auth::user()->level + 1;
           $data['pay_amount'] = $this->levelAmount($levelTo);
@@ -140,7 +145,7 @@ class HomeController extends Controller
       }
       public function notActivated() 
       {
-        $data['users'] =User::where('activated', 'pending')
+        $data['users'] =User::where('activated', 'no')
                         ->where('referrer', '=', Auth::user()->username)
                         ->get();
 

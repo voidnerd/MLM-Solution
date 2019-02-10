@@ -10,7 +10,7 @@
 
 @section('content')
 @if(Auth::user()->level < 1)
-     <div class="alert alert-success"> Activate your account with ₦2,000 to earn ₦3,000 ; accounts not activated is deleted in 2days. Click <b>"How To?"</b> bellow. </div>
+     <div class="alert alert-success"> Activate your account with ₦3,000 to earn ₦5000(plus referral bonus) ; accounts not activated is deleted in 2days. Click <b>"How To?"</b> bellow. </div>
 @elseif(Auth::user()->level == 1)
 <div class="alert alert-success"> Upgrade to Level 2 with ₦2,500 to earn ₦10,000. Check wallet balance to see if you have enough to upgrade!</div>
 @elseif(Auth::user()->level == 2)
@@ -22,46 +22,6 @@
 @elseif(Auth::user()->level == 5)
 <div class="alert alert-success"> Upgrade to Level 6 with ₦350,000 to earn ₦22,400,000. Check wallet balance to see if you have enough to upgrade!</div>
 @endif
-                    <div class="modal fade text-left" id="iconModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2"
-                          aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h4 class="modal-title" id="myModalLabel2"><i class="la la-road2"></i> How to make payments</h4>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div>
-                                <div class="modal-body">
-                                  <h5><i class="icon-arrow-right"></i> Step 1:<b> Make Payment</b></h5>
-                                @foreach($accs as $acc)
-                                  <p>Account Name: <b>{{$acc->account_name}} </b>
-                                  </p>
-                                  <p>Account Name: <b>{{$acc->account_no}} </b>
-                                  </p>
-                                  <p>Account Name: <b>{{$acc->bank_name}} </b>
-                                  </p>
-                                  <hr>
-                                  @endforeach
-                                  <h5><i class="icon-arrow-right"></i> Step 2: <b> Send Text</b></h5>
-                                  <p>Send a quick text messages or whatsapp message to 08153039323 containing your:
-                                  <b>" Name, username, amount and reason "</b>.
-                                  
-                                  </p>
-                                  <p> Add <b>"Reason: Activation" </b> if payment is for account activation.</p>
-                                  <p> Add <b>"Reason: Funding" </b> if payment is for funds to upgrade.[you can fund your wallet if you don't have enough wallet balance to upgrade to next level]</p>
-
-                                  <div class="alert alert-success" role="alert">
-                                    <span class="text-bold-600">Well done!</span> 
-                                  </div>
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">Close</button>
-                                
-                                </div>
-                              </div>
-                            </div>
-                        </div>
 
 
 
@@ -70,27 +30,44 @@
                             <div class="modal-dialog" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h4 class="modal-title" id="myModalLabel2"><i class="la la-road2"></i> How to make payments</h4>
+                                  <h5 class="modal-title" id="myModalLabel2"><i class="la la-road2"></i> Upgrade to next Level (₦{{number_format($pay_amount)}})</h5>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
                                 </div>
+                                <form id="registerForm" method="post" >
                                 <div class="modal-body">
+
+                                   
                               
-                                  <h5><i class="icon-arrow-right"></i> <b  class="text-danger">Important!!</b></h5>
+                                  <h5><i class="icon-arrow-right"></i> <b  class="text-danger">Select Prefered Upgrade method!!</b></h5>
+                                  <div class="input-group">
+                                                        <ul class="list-group col-sm-12">
+                                                            <li class="list-group-item p-3" >
+                                                                <input type="radio"  class="check " id="flat-radio-1" name="payment_method" checked data-radio="iradio_flat-red" value="wallet" >
+                                                                <label for="flat-radio-1">Upgrade with Wallet Balance - <em><b>₦{{number_format($pay_amount)}}</b></em></label>
+                                                            </li>
+                                                            <li class="list-group-item p-3">
+                                                                <input type="radio" class="check " id="flat-radio-2" name="payment_method" data-radio="iradio_flat-red" value="paystack">
+                                                                <label for="flat-radio-2">Upgrade with Credit Card  </label>
+                                                                <img src="/assets/images/paystack-ii.png" alt="PAYSTACK" class="img-fluid">
+                                                            </li>
+                                                           
+                                                        </ul>
+                                                    </div>
                                  
-                                  <div class="alert alert-danger" role="alert">
-                                  <i class="icon-info"></i>
-                                    <span class="text-bold-600">Please make sure you have made payment before proceeding!</span> 
-                                  </div>
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">Close</button>
-                                  <a type="button" href="/activationrequest" class="btn btn-outline-success" >Send Activation Request</a>
+                                  <button type="submit" class="btn btn-outline-info waves-effect waves-light">Make Payment</button>
+                                             
                                 </div>
+                             </form>
                               </div>
                             </div>
                         </div>
+
+
 
 
 
@@ -100,12 +77,13 @@
                             <div class="card-header bg-light">
                                 <h3 class="m-b-0 text-dark">User Summary</h3></div>
                             <div class="card-body">
+                           
                             <script src="https://js.paystack.co/v1/inline.js"></script>
                                 @if(Auth::user()->level < 1)
-                                <a onclick="payWithPaystack()" href="javascript:void(0)" class="btn btn-outline-info" ><i class="fa fa-plus-circle"></i> Activate Your Account</a>
+                                <a onclick="payWithPaystack()" id="buttonText" href="javascript:void(0)" class="btn btn-outline-info" ></i> Activate Your Account</a>
                                 @else
                                     @if(Auth::user()->level < 6)
-                                    <a href="javascript:void(0)" id="sa-params"  class="btn btn-outline-success">Upgrade to next Level</a>
+                                    <a href="javascript:void(0)" id="buttonText" data-toggle="modal" data-target="#modal" class="btn btn-outline-success">Upgrade to next level</a>
                                     <!-- <a href="javascript:void(0)" class="btn btn-info mt-2 ml-2">Edit Profile</a> -->
                                     @else
                                     <div class="alert alert-success"> You did it! </div>
@@ -121,20 +99,12 @@
                                             <td>Level:</td>
                                             <td class="{{Auth::user()->level == 0 ? 'text-danger' : ''}}">{{Auth::user()->level == 0 ? "Not activated" : Auth::user()->level}}</td>
                                         </tr>
-                                        @if(Auth::user()->level > 0)
-                                        <tr >
-                                            <td>Referral Link:</td>
-                                            <td><a class="text-info" href="http://e-earners.com/register?ref={{Auth::user()->username}}">http://e-earners.com/register?ref={{Auth::user()->username}}</a></td>
-                                        </tr>
-                                        @endif
+                                       
                                         <tr >
                                             <td>Total Benefits:</td>
                                             <td class="text-success">₦{{number_format($transIn)}}</td>
                                         </tr>
-                                        <tr >
-                                            <td>Total on upgrades:</td>
-                                            <td class="text-success">₦{{number_format($upgrade)}}</td>
-                                        </tr>
+                                      
                                         <tr >
                                             <td>Total Withdrawal:</td>
                                             <td class="text-danger">₦{{number_format($transOut)}}</td>
@@ -143,6 +113,12 @@
                                             <td>Joined:</td>
                                             <td class="text-dark">{{date_format(date_create(Auth::user()->created_at),"d-M-Y")}}</td>
                                         </tr>
+                                        @if(Auth::user()->level > 0)
+                                        <tr >
+                                            <td>Referral Link:</td>
+                                            <td><a class="text-info" href="http://e-earners.com/register?ref={{Auth::user()->username}}">http://e-earners.com/register?ref={{Auth::user()->username}}</a></td>
+                                        </tr>
+                                        @endif
                                     </tbody>
                                 </table>
                             </div>
@@ -250,7 +226,7 @@
                         
                       </tr>
                       <tr>
-                        <td scope="row">₦100 referral bonus for each person who registers through your referral link.
+                        <td scope="row">₦1000 referral bonus for each person who registers through your referral link.
                             
                         </td>
                         
@@ -302,7 +278,7 @@
                                 <script>
   function payWithPaystack(){
     var handler = PaystackPop.setup({
-      key: 'pk_test_1b89f8cc88f7f1888ffd57f4656b629d842fa74b',
+      key: '{{$paystack_key}}',
       email: '{{Auth::user()->email}}',
       amount: {{$pay_amount * 100}},
       currency: "NGN",
@@ -325,11 +301,14 @@
       },
       callback: function(response){
         //   alert('success. transaction ref is ' + response.reference);
+         
+         document.getElementById("buttonText").innerHTML = '<h3>Processing... <i class="fa fa-spinner fa-spin fa-1x fa-fw" aria-hidden="true"></i></h3>';
+
           $.ajax({
                 url: '/verify/'+ response.reference ,
                 method: 'GET'
             }).done(function(data) {
-                
+                    
                     location.reload();
                 
             }).fail(function(err) {

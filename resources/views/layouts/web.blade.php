@@ -16,6 +16,8 @@
     <!-- This page CSS -->
     <!-- sweetalert CSS -->
     <link href="/assets/node_modules/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+    <link href="/assets/node_modules/icheck/skins/all.css" rel="stylesheet">
+    <link href="dist/css/pages/form-ihceck.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="dist/css/style.min.css" rel="stylesheet">
@@ -335,6 +337,8 @@
     <script src="dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="dist/js/custom.min.js"></script>
+
+     <script src="dist/js/main.js"></script>
     <!-- ============================================================== -->
     <!-- This page plugins -->
     <!-- ============================================================== -->
@@ -345,7 +349,8 @@
      <!-- This is data table -->
      <script src="/assets/node_modules/datatables/jquery.dataTables.min.js"></script>
      <script src="/assets/node_modules/sweetalert/sweetalert.min.js"></script>
-    <script src="/assets/node_modules/sweetalert/jquery.sweet-alert.custom.js"></script>
+     <script src="/assets/node_modules/icheck/icheck.min.js"></script>
+    <script src="/assets/node_modules/icheck/icheck.init.js"></script>
      <script>
         $('#myTable').DataTable();
         $('#one').DataTable();

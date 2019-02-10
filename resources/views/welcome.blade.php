@@ -594,7 +594,7 @@
                         
                       </tr>
                       <tr>
-                        <td scope="row">₦100 referral bonus for each person who registers through your referral link.
+                        <td scope="row">₦1000 referral bonus for each person who registers through your referral link.
                             
                         </td>
                         
