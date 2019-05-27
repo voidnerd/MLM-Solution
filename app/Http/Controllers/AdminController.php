@@ -231,15 +231,15 @@ class AdminController extends Controller
 
     public function levelAmount($level){
         if($level == 2){
-            return 2500;
+            return $this->level2Payment;
         }else if($level == 3){
-            return 5000;
+            return $this->level3Payment;
         }else if($level == 4){
-            return 16000;
+            return $this->level4Payment;
         }else if($level == 5){
-            return 56000;
+            return $this->level5Payment;
         }else if($level == 6){
-            return 350000;
+            return $this->level6Payment;
         }
     }
     
@@ -247,13 +247,7 @@ class AdminController extends Controller
     public function upgrade(Request $request) {
 
       $wallet = Wallet::where('user_id', Auth::id())->first();
-        $level1Payment = 1500;
-        $level2Payment = 2500;
-        $level3Payment = 5000;
-        $level4Payment = 16000;
-        $level5Payment = 56000;
-        $level6Payment = 350000;
-
+     
         $level = Auth::user()->level + 1;
     
 
@@ -272,11 +266,11 @@ class AdminController extends Controller
 
                 $type = "Level 2 Benefits";
         
-                $this->pay($parent, $level2Payment, $type);
+                $this->pay($parent, $this->level2Payment, $type);
 
                 $type = "Level 2 Upgrade Fee";
                 
-                $this->unpay(Auth::id(), $level2Payment, $type);
+                $this->unpay(Auth::id(), $this->level2Payment, $type);
         
                 DB::table('users')->where('id', $parent->id)->increment('two');
                 
@@ -288,11 +282,11 @@ class AdminController extends Controller
 
                 $type = "Level 3 Benefits";
         
-                $this->pay($parent, $level3Payment, $type);
+                $this->pay($parent, $this->level3Payment, $type);
 
                 $type = "Level 3 Upgrade Fee";
                 
-                $this->unpay(Auth::id(), $level3Payment, $type);
+                $this->unpay(Auth::id(), $this->level3Payment, $type);
         
                 DB::table('users')->where('id', $parent->id)->increment('three');
                 
@@ -304,11 +298,11 @@ class AdminController extends Controller
 
                 $type = "Level 4 Benefits";
         
-                $this->pay($parent, $level4Payment, $type);
+                $this->pay($parent, $this->level4Payment, $type);
 
                 $type = "Level 4 Upgrade Fee";
                 
-                $this->unpay(Auth::id(), $level4Payment, $type);
+                $this->unpay(Auth::id(), $this->level4Payment, $type);
         
                 DB::table('users')->where('id', $parent->id)->increment('four');
 
@@ -321,11 +315,11 @@ class AdminController extends Controller
 
                 $type = "Level 5 Benefits";
         
-                $this->pay($parent, $level5Payment, $type);
+                $this->pay($parent, $this->level5Payment, $type);
 
                 $type = "Level 5 Upgrade Fee";
                 
-                $this->unpay(Auth::id(), $level5Payment, $type);
+                $this->unpay(Auth::id(), $this->level5Payment, $type);
         
                 DB::table('users')->where('id', $parent->id)->increment('five');
 
@@ -338,11 +332,11 @@ class AdminController extends Controller
 
                 $type = "Level 6 Benefits";
         
-                $this->pay($parent, $level6Payment, $type);
+                $this->pay($parent, $this->level6Payment, $type);
 
                 $type = "Level 6 Upgrade Fee";
                 
-                $this->unpay(Auth::id(), $level6Payment, $type);
+                $this->unpay(Auth::id(), $this->level6Payment, $type);
         
                 DB::table('users')->where('id', $parent->id)->increment('six');
 
@@ -371,12 +365,6 @@ class AdminController extends Controller
 
     public function upgradeOnlinePayment( $paid_amount) {
 
-          $level1Payment = 1500;
-          $level2Payment = 2500;
-          $level3Payment = 5000;
-          $level4Payment = 16000;
-          $level5Payment = 56000;
-          $level6Payment = 350000;
   
           $level = Auth::user()->level + 1;
       
@@ -399,11 +387,11 @@ class AdminController extends Controller
   
                   $type = "Level 2 Benefits";
           
-                  $this->pay($parent, $level2Payment, $type);
+                  $this->pay($parent, $this->level2Payment, $type);
   
                   $type = "Level 2 Upgrade Fee (Card)";
 
-                  $this->record(Auth::id(), $level2Payment, $type);
+                  $this->record(Auth::id(), $this->level2Payment, $type);
 
                   
                   DB::table('users')->where('id', $parent->id)->increment('two');
@@ -416,11 +404,11 @@ class AdminController extends Controller
   
                   $type = "Level 3 Benefits";
           
-                  $this->pay($parent, $level3Payment, $type);
+                  $this->pay($parent, $this->level3Payment, $type);
   
                   $type = "Level 3 Upgrade Fee (Card)";
                   
-                  $this->record(Auth::id(), $level3Payment, $type);
+                  $this->record(Auth::id(), $this->level3Payment, $type);
           
                   DB::table('users')->where('id', $parent->id)->increment('three');
                   
@@ -432,11 +420,11 @@ class AdminController extends Controller
   
                   $type = "Level 4 Benefits";
           
-                  $this->pay($parent, $level4Payment, $type);
+                  $this->pay($parent, $this->level4Payment, $type);
   
                   $type = "Level 4 Upgrade Fee (Card)";
                   
-                  $this->record(Auth::id(), $level4Payment, $type);
+                  $this->record(Auth::id(), $this->level4Payment, $type);
           
                   DB::table('users')->where('id', $parent->id)->increment('four');
   
@@ -449,11 +437,11 @@ class AdminController extends Controller
   
                   $type = "Level 5 Benefits";
           
-                  $this->pay($parent, $level5Payment, $type);
+                  $this->pay($parent, $this->level5Payment, $type);
   
                   $type = "Level 5 Upgrade Fee(Card)";
 
-                  $this->record(Auth::id(), $level5Payment, $type);
+                  $this->record(Auth::id(), $this->level5Payment, $type);
                   
           
                   DB::table('users')->where('id', $parent->id)->increment('five');
@@ -467,11 +455,11 @@ class AdminController extends Controller
   
                   $type = "Level 6 Benefits";
           
-                  $this->pay($parent, $level6Payment, $type);
+                  $this->pay($parent, $this->level6Payment, $type);
   
                   $type = "Level 6 Upgrade Fee (Card)";
 
-                  $this->record(Auth::id(), $level6Payment, $type);
+                  $this->record(Auth::id(), $this->level6Payment, $type);
           
                   DB::table('users')->where('id', $parent->id)->increment('six');
   
@@ -573,7 +561,7 @@ class AdminController extends Controller
 
             $type = "Referral Bonus";
 
-            $this->pay($parent, 1000, $type);
+            $this->pay($parent, $this->referralBonus, $type);
 
             $parent_id =  $this->getParentId($parent->username);
          }
@@ -596,13 +584,6 @@ class AdminController extends Controller
 
         DB::table('users')->where('id', $node_id)->increment('level');
 
-        $level1Payment = 1500;
-        $level2Payment = 2500;
-        $level3Payment = 5000;
-        $level4Payment = 16000;
-        $level5Payment = 56000;
-        $level6Payment = 350000;
-
         //increment downline count
         if($parent_id != 0) {
 
@@ -612,7 +593,7 @@ class AdminController extends Controller
 
             $type = "Level 1 Benefits";
 
-            $this->pay($realParent, $level1Payment, $type);
+            $this->pay($realParent, $this->level1Payment, $type);
 
         }//end if
 
@@ -620,7 +601,7 @@ class AdminController extends Controller
 
         $type = "Registration Fee";
 
-        $this->pay($ghost, 500, $type);
+        $this->pay($ghost, $this->adminPayment, $type);
 
        DB::table('users')
             ->where('id', $node_id)
@@ -652,7 +633,7 @@ class AdminController extends Controller
     public function onlinePaymentActivate( $paid_amount)
     {
 
-        if($paid_amount < 3000)
+        if($paid_amount < $this->activationFee)
         {
             return response()->json([
                 'message' => 'Insuficient fund',
@@ -680,7 +661,7 @@ class AdminController extends Controller
 
             $type = "Referral Bonus";
 
-            $this->pay($parent, 1000, $type);
+            $this->pay($parent, $this->referralBonus, $type);
 
             $parent_id =  $this->getParentId($parent->username);
          }
@@ -703,13 +684,6 @@ class AdminController extends Controller
 
         DB::table('users')->where('id', $node_id)->increment('level');
 
-        $level1Payment = 1500;
-        $level2Payment = 2500;
-        $level3Payment = 5000;
-        $level4Payment = 16000;
-        $level5Payment = 56000;
-        $level6Payment = 350000;
-
         //increment downline count
         if($parent_id != 0) {
 
@@ -719,7 +693,7 @@ class AdminController extends Controller
 
             $type = "Level 1 Benefits";
 
-            $this->pay($realParent, $level1Payment, $type);
+            $this->pay($realParent, $this->level1Payment, $type);
 
         }//end if
 
@@ -727,7 +701,7 @@ class AdminController extends Controller
 
         $type = "Registration Fee";
 
-        $this->pay($ghost, 500, $type);
+        $this->pay($ghost, $this->adminPayment, $type);
 
        DB::table('users')
             ->where('id', $node_id)

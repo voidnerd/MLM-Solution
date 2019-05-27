@@ -123,7 +123,7 @@
                                     <div class="ts-item-body">
                                         <h4>Register and Activate your account</h4>
                                         <p>
-                                            After you register you just have to activate your account with a token of ₦2,000.
+                                            After you register you just have to activate your account with a token of ₦3,000. 
                                         </p>
                                     </div>
                                     <!--end ts-item-body-->
@@ -147,9 +147,9 @@
                                     </div>
                                     <!--end ts-item-header-->
                                     <div class="ts-item-body">
-                                        <h4>Colaborate and Upgrade</h4>
+                                        <h4>Auto Downline and Upgrade</h4>
                                         <p>
-                                            Get just two downlines: the only downlines you will ever need.
+                                            <b>NO Referrals needed.</b> Downlines will be giving to you automatically. But you can refer a friend and ger ₦1,000 reward instantly.
                                         </p>
                                     </div>
                                     <!--end ts-item-body-->
@@ -471,7 +471,7 @@
                                         </div>
                                         <!--end col-md-6 col-sm-6 -->
                                     </div>
-                                    <!--end row -->
+                                    2 (downlines) x ₦1,500 = ₦3,000 – ₦2,500 (move to 2) = ₦500 profit<!--end row -->
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
@@ -542,7 +542,7 @@
                         <td scope="row">LEVEL 1: (Activation). Pay ₦2000</td>
                       </tr>
                       <tr>
-                        <td scope="row">Get 2 (downlines) x ₦1,500 = ₦3,000 – ₦2,500 (move to 2) = ₦500 profit</td>
+                        <td scope="row">2 (downlines) x ₦1,500 = ₦3,000 – ₦2,500 (move to 2) = ₦500 outstanding</td>
                       
                       </tr>
                       <tr>

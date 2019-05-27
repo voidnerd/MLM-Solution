@@ -75,27 +75,6 @@ class UserAccountController extends Controller
         return redirect()->back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\UserAccounts  $userAccounts
-     * @return \Illuminate\Http\Response
-     */
-    public function show(UserAccounts $userAccounts)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\UserAccounts  $userAccounts
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(UserAccounts $userAccounts)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
