@@ -1,7 +1,7 @@
 
 # MLM Solution
 
-This MLM solution has six level of payments.git
+This MLM solution has six level of payments.\
 Levels are made using tree data structure(clusure table) which makes it better than all the recursive solutions out there.
 
 
@@ -18,6 +18,8 @@ Levels are made using tree data structure(clusure table) which makes it better t
 - `cd [project-directory]`
 - `composer install`
 - `php artisan serve`
+
+TIP: You can change monetary variables on base controller `app/Http/Controllers/Controller.php` :metal: .\
 
 If you need further help DM [ndiecodes](https://twitter.com/ndiecodes) on twitter.
 
