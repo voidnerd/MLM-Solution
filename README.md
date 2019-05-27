@@ -1,7 +1,7 @@
 
 # MLM Solution
 
-This MLM solution has six level of payments.
+This MLM solution has six level of payments.git
 Levels are made using tree data structure(clusure table) which makes it better than all the recursive solutions out there.
 
 
