@@ -22,7 +22,7 @@ Levels are made using tree data structure(clusure table) which makes it better t
 If you need further help DM [ndiecodes](https://twitter.com/ndiecodes) on twitter.
 
 
-## How do I thank you
+## How do I thank you?
 
 You could star the repository or send a thank you message to [ndiecodes](https://twitter.com/ndiecodes) on twitter.
 
