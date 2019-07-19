@@ -9,7 +9,7 @@ Levels are made using tree data structure(clusure table) which makes it better t
 
 - Activation Fee
 - Level payments (all through level six)
-- No central account but all payment request goes through the administrator
+- Paystack payments gateway 
 - Fast Tree Structure
 
 ## Usage
