@@ -22,7 +22,9 @@ Levels are made using tree data structure(clusure table) which makes it better t
 - create your mysql database, and run the `/model.sql`script
 - `php artisan serve`
 
-TIP: You can change monetary variables on base controller `app/Http/Controllers/Controller.php` :metal: .\
+TIP: Change user role from "user" to "admin" in `users table`, after registering your first user; to see full admin privileges. 
+
+TIP: You can change monetary variables on base controller `app/Http/Controllers/Controller.php` :metal:
 
 If you need further help DM [ndiecodes](https://twitter.com/ndiecodes) on twitter.
 
