@@ -18,6 +18,7 @@ Levels are made using tree data structure(clusure table) which makes it better t
 - `cd [project-directory]`
 - `composer install`
 - create a `.env` file, copy all text in `.env.example` into the `.env` file and add your configurations.
+- `php artisan key:generate`
 - `php artisan serve`
 
 TIP: You can change monetary variables on base controller `app/Http/Controllers/Controller.php` :metal: .\
