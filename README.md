@@ -31,7 +31,7 @@ If you need further help DM [ndiecodes](https://twitter.com/ndiecodes) on twitte
 
 ## How do I thank you?
 
-You could star the repository or ![Foo](https://res.cloudinary.com/iamndie/image/upload/v1578985963/patreon2_twips4.png)](https://www.patreon.com/ndiecodes)
+[![Foo](https://res.cloudinary.com/iamndie/image/upload/v1578986171/patreon-button_srjo0f.jpg)](https://www.patreon.com/ndiecodes)
 
 ## Licensing
 
