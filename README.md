@@ -31,8 +31,7 @@ If you need further help DM [ndiecodes](https://twitter.com/ndiecodes) on twitte
 
 ## How do I thank you?
 [
-<img src="https://res.cloudinary.com/iamndie/image/upload/v1578986171/patreon-button_srjo0f.jpg" height="50" width="250">
-](https://www.patreon.com/ndiecodes)
+I don't know...start with giving the repo a star and maybe recommend me a cool job. Gracias.
 
 ## Licensing
 
